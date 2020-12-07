@@ -2,13 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://oracleyue.github.io/post/hugo-even-example/</loc>
-    <lastmod>2018-07-10T00:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://oracleyue.github.io/about/</loc>
     <lastmod>2020-12-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -149,42 +142,35 @@
   </url>
   
   <url>
-    <loc>https://oracleyue.github.io/categories/category-2/</loc>
+    <loc>https://oracleyue.github.io/tags/demo/</loc>
     <lastmod>2018-07-10T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://oracleyue.github.io/categories/category-3/</loc>
+    <loc>https://oracleyue.github.io/categories/demo/</loc>
     <lastmod>2018-07-10T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://oracleyue.github.io/tags/preview/</loc>
+    <loc>https://oracleyue.github.io/tags/hugo/</loc>
     <lastmod>2018-07-10T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://oracleyue.github.io/tags/tag-3/</loc>
+    <loc>https://oracleyue.github.io/post/hugo-even-example/</loc>
     <lastmod>2018-07-10T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://oracleyue.github.io/tags/theme-preview/</loc>
-    <lastmod>2018-07-10T00:00:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://oracleyue.github.io/categories/theme-preview/</loc>
+    <loc>https://oracleyue.github.io/tags/markdown/</loc>
     <lastmod>2018-07-10T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

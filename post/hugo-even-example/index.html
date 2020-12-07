@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="oracleyue" /><meta name="description" content="References  Moving from Hexo to Hugo Quick start - Hugo " /><meta name="keywords" content="oracleyue, blog, Hugo, even" />
+<meta name="author" content="oracleyue" /><meta name="description" content="References  Moving from Hexo to Hugo Quick start - Hugo Host on Github Front matter - Hugo " /><meta name="keywords" content="oracleyue, blog, Hugo, even" />
 
 
 
@@ -44,6 +44,8 @@
 
 Moving from Hexo to Hugo
 Quick start - Hugo
+Host on Github
+Front matter - Hugo
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://oracleyue.github.io/post/hugo-even-example/" />
@@ -54,20 +56,24 @@ Quick start - Hugo
 
 Moving from Hexo to Hugo
 Quick start - Hugo
+Host on Github
+Front matter - Hugo
 ">
 <meta itemprop="datePublished" content="2018-07-10T00:00:00+08:00" />
 <meta itemprop="dateModified" content="2018-07-10T00:00:00+08:00" />
-<meta itemprop="wordCount" content="3028">
+<meta itemprop="wordCount" content="3085">
 
 
 
-<meta itemprop="keywords" content="preview,Theme preview,tag-3," />
+<meta itemprop="keywords" content="demo,hugo,markdown," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Hugo and Even: notes and demo preview"/>
 <meta name="twitter:description" content="References
 
 Moving from Hexo to Hugo
 Quick start - Hugo
+Host on Github
+Front matter - Hugo
 "/>
 
 <!--[if lte IE 9]>
@@ -140,9 +146,7 @@ Quick start - Hugo
       <div class="post-meta">
         <span class="post-time"> 2018-07-10 </span>
         <div class="post-category">
-            <a href="/categories/theme-preview/"> Theme preview </a>
-            <a href="/categories/category-2/"> category-2 </a>
-            <a href="/categories/category-3/"> category-3 </a>
+            <a href="/categories/demo/"> demo </a>
             </div>
         
       </div>
@@ -214,6 +218,8 @@ Quick start - Hugo
 <ul>
 <li><a href="https://liujiacai.net/blog/2020/12/05/hexo-to-hugo/">Moving from Hexo to Hugo</a></li>
 <li><a href="https://gohugo.io/getting-started/quick-start/">Quick start - Hugo</a></li>
+<li><a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">Host on Github</a></li>
+<li><a href="https://gohugo.io/content-management/front-matter/">Front matter - Hugo</a></li>
 </ul>
 <blockquote>
 <p>Based on <a href="https://github.com/facelessuser/MarkdownPreview/blob/master/examples/test.md">MarkdownPreview test.md</a>.</p>
@@ -431,9 +437,23 @@ With this link (https://github.com/revolunet/sublimetext-markdown-preview/), it 
 </code></pre></td></tr></table>
 </div>
 </div><p>Web image
-<img src="https://count.getloli.com/get/@even-preview?theme=konachan" alt="Web Picture" title="Web Picture"></p>
+
+
+
+<figure>
+<img src="https://count.getloli.com/get/@even-preview?theme=konachan" alt="Web Picture (alt text)">
+<figcaption>Web Picture (alt text)</figcaption>
+</figure>
+</p>
 <p>Local image
-<img src="/apple-touch-icon.png" alt="Local Picture" title="Local Picture"></p>
+
+
+
+<figure>
+<img src="/apple-touch-icon.png" alt="Local Picture (alt text)">
+<figcaption>Local Picture (alt text)</figcaption>
+</figure>
+</p>
 <p><a href="http://www.google.com">www.google.com</a></p>
 <p><a href="mailto:contact@revolunet.com">contact@revolunet.com</a></p>
 <p>@revolunet</p>
@@ -936,7 +956,14 @@ function doIt() {
 <td style="text-align:center"></td>
 <td style="text-align:center"></td>
 <td style="text-align:center"></td>
-<td><center><img src="/favicon-16x16.png" alt="checked"></center></td>
+<td><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
 <td style="text-align:center"></td>
 <td style="text-align:center"></td>
 <td><code>2013-08-20T15:16:26.355Z</code></td>
@@ -944,9 +971,30 @@ function doIt() {
 </tr>
 <tr>
 <td><code>LocalDate</code></td>
-<td><center><img src="/favicon-16x16.png" alt="checked"></center></td>
-<td><center><img src="/favicon-16x16.png" alt="checked"></center></td>
-<td style="text-align:center"><center><img src="/favicon-16x16.png" alt="checked"></center></td>
+<td><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
+<td><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
+<td style="text-align:center"><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
 <td style="text-align:center"></td>
 <td style="text-align:center"></td>
 <td></td>
@@ -957,12 +1005,54 @@ function doIt() {
 </tr>
 <tr>
 <td><code>LocalDateTime</code></td>
-<td><center><img src="/favicon-16x16.png" alt="checked"></center></td>
-<td><center><img src="/favicon-16x16.png" alt="checked"></center></td>
-<td style="text-align:center"><center><img src="/favicon-16x16.png" alt="checked"></center></td>
-<td style="text-align:center"><center><img src="/favicon-16x16.png" alt="checked"></center></td>
-<td style="text-align:center"><center><img src="/favicon-16x16.png" alt="checked"></center></td>
-<td><center><img src="/favicon-16x16.png" alt="checked"></center></td>
+<td><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
+<td><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
+<td style="text-align:center"><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
+<td style="text-align:center"><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
+<td style="text-align:center"><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
+<td><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
 <td style="text-align:center"></td>
 <td style="text-align:center"></td>
 <td><code>2013-08-20T08:16:26.937</code></td>
@@ -970,14 +1060,70 @@ function doIt() {
 </tr>
 <tr>
 <td><code>ZonedDateTime</code></td>
-<td><center><img src="/favicon-16x16.png" alt="checked"></center></td>
-<td><center><img src="/favicon-16x16.png" alt="checked"></center></td>
-<td style="text-align:center"><center><img src="/favicon-16x16.png" alt="checked"></center></td>
-<td style="text-align:center"><center><img src="/favicon-16x16.png" alt="checked"></center></td>
-<td style="text-align:center"><center><img src="/favicon-16x16.png" alt="checked"></center></td>
-<td><center><img src="/favicon-16x16.png" alt="checked"></center></td>
-<td style="text-align:center"><center><img src="/favicon-16x16.png" alt="checked"></center></td>
-<td style="text-align:center"><center><img src="/favicon-16x16.png" alt="checked"></center></td>
+<td><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
+<td><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
+<td style="text-align:center"><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
+<td style="text-align:center"><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
+<td style="text-align:center"><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
+<td><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
+<td style="text-align:center"><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
+<td style="text-align:center"><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
 <td><code>2013-08-21T00:16:26.941+09:00[Asia/Tokyo]</code></td>
 <td><a href="https://docs.oracle.com/javase/tutorial/datetime/iso/timezones.html">Time Zone and Offset Classes</a></td>
 </tr>
@@ -986,9 +1132,30 @@ function doIt() {
 <td></td>
 <td></td>
 <td style="text-align:center"></td>
-<td style="text-align:center"><center><img src="/favicon-16x16.png" alt="checked"></center></td>
-<td style="text-align:center"><center><img src="/favicon-16x16.png" alt="checked"></center></td>
-<td><center><img src="/favicon-16x16.png" alt="checked"></center></td>
+<td style="text-align:center"><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
+<td style="text-align:center"><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
+<td><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
 <td style="text-align:center"></td>
 <td style="text-align:center"></td>
 <td><code>08:16:26.943</code></td>
@@ -997,8 +1164,22 @@ function doIt() {
 <tr>
 <td><code>MonthDay</code></td>
 <td></td>
-<td><center><img src="/favicon-16x16.png" alt="checked"></center></td>
-<td style="text-align:center"><center><img src="/favicon-16x16.png" alt="checked"></center></td>
+<td><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
+<td style="text-align:center"><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
 <td style="text-align:center"></td>
 <td style="text-align:center"></td>
 <td></td>
@@ -1009,7 +1190,14 @@ function doIt() {
 </tr>
 <tr>
 <td><code>Year</code></td>
-<td><center><img src="/favicon-16x16.png" alt="checked"></center></td>
+<td><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
 <td></td>
 <td style="text-align:center"></td>
 <td style="text-align:center"></td>
@@ -1022,8 +1210,22 @@ function doIt() {
 </tr>
 <tr>
 <td><code>YearMonth</code></td>
-<td><center><img src="/favicon-16x16.png" alt="checked"></center></td>
-<td><center><img src="/favicon-16x16.png" alt="checked"></center></td>
+<td><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
+<td><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
 <td style="text-align:center"></td>
 <td style="text-align:center"></td>
 <td style="text-align:center"></td>
@@ -1036,7 +1238,14 @@ function doIt() {
 <tr>
 <td><code>Month</code></td>
 <td></td>
-<td><center><img src="/favicon-16x16.png" alt="checked"></center></td>
+<td><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
 <td style="text-align:center"></td>
 <td style="text-align:center"></td>
 <td style="text-align:center"></td>
@@ -1048,13 +1257,62 @@ function doIt() {
 </tr>
 <tr>
 <td><code>OffsetDateTime</code></td>
-<td><center><img src="/favicon-16x16.png" alt="checked"></center></td>
-<td><center><img src="/favicon-16x16.png" alt="checked"></center></td>
-<td style="text-align:center"><center><img src="/favicon-16x16.png" alt="checked"></center></td>
-<td style="text-align:center"><center><img src="/favicon-16x16.png" alt="checked"></center></td>
-<td style="text-align:center"><center><img src="/favicon-16x16.png" alt="checked"></center></td>
-<td><center><img src="/favicon-16x16.png" alt="checked"></center></td>
-<td style="text-align:center"><center><img src="/favicon-16x16.png" alt="checked"></center></td>
+<td><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
+<td><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
+<td style="text-align:center"><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
+<td style="text-align:center"><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
+<td style="text-align:center"><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
+<td><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
+<td style="text-align:center"><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
 <td style="text-align:center"></td>
 <td><code>2013-08-20T08:16:26.954-07:00</code></td>
 <td><a href="https://docs.oracle.com/javase/tutorial/datetime/iso/timezones.html">Time Zone and Offset Classes</a></td>
@@ -1064,10 +1322,38 @@ function doIt() {
 <td></td>
 <td></td>
 <td style="text-align:center"></td>
-<td style="text-align:center"><center><img src="/favicon-16x16.png" alt="checked"></center></td>
-<td style="text-align:center"><center><img src="/favicon-16x16.png" alt="checked"></center></td>
-<td><center><img src="/favicon-16x16.png" alt="checked"></center></td>
-<td style="text-align:center"><center><img src="/favicon-16x16.png" alt="checked"></center></td>
+<td style="text-align:center"><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
+<td style="text-align:center"><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
+<td><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
+<td style="text-align:center"><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
 <td style="text-align:center"></td>
 <td><code>08:16:26.957-07:00</code></td>
 <td><a href="https://docs.oracle.com/javase/tutorial/datetime/iso/timezones.html">Time Zone and Offset Classes</a></td>
@@ -1079,7 +1365,14 @@ function doIt() {
 <td style="text-align:center">**</td>
 <td style="text-align:center">**</td>
 <td style="text-align:center">**</td>
-<td><center><img src="/favicon-16x16.png" alt="checked"></center></td>
+<td><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
 <td style="text-align:center"></td>
 <td style="text-align:center"></td>
 <td><code>PT20H</code> (20 hours)</td>
@@ -1087,9 +1380,30 @@ function doIt() {
 </tr>
 <tr>
 <td><code>Period</code></td>
-<td><center><img src="/favicon-16x16.png" alt="checked"></center></td>
-<td><center><img src="/favicon-16x16.png" alt="checked"></center></td>
-<td style="text-align:center"><center><img src="/favicon-16x16.png" alt="checked"></center></td>
+<td><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
+<td><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
+<td style="text-align:center"><center>
+
+
+<figure>
+<img src="/favicon-16x16.png" alt="checked">
+<figcaption>checked</figcaption>
+</figure>
+</center></td>
 <td style="text-align:center"></td>
 <td style="text-align:center"></td>
 <td></td>
@@ -1461,14 +1775,18 @@ p(h_j=1|\mathbf{v}) &amp; = \sigma\left(\sum_i w_{ij}v_i + c_j\right)
 </div>
 <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/preview/">preview</a>
-          <a href="/tags/theme-preview/">Theme preview</a>
-          <a href="/tags/tag-3/">tag-3</a>
+          <a href="/tags/demo/">demo</a>
+          <a href="/tags/hugo/">hugo</a>
+          <a href="/tags/markdown/">markdown</a>
           </div>
       <nav class="post-nav">
-        
-        <a class="next" href="/post/vim-powerline/">
-            <span class="next-text nav-default">Setup powerline in Vim for Linux/OS X</span>
+        <a class="prev" href="/post/skim-emoji-linux/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Linux下快速浏览粘贴表情的解决方案</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/upgrade-to-emacs26/">
+            <span class="next-text nav-default">关于Emacs更新到26之后的配置更新汇总</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -1476,7 +1794,20 @@ p(h_j=1|\mathbf{v}) &amp; = \sigma\left(\sum_i w_{ij}v_i + c_j\right)
     </footer>
   </article>
         </div>
-        
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'oracleyue-github-io';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
   
 

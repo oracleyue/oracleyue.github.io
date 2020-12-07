@@ -234,7 +234,11 @@ repository</a>, which provides commands <code>es, ec, ecc</code>:</p>
 <li><code>ecc FILENAME</code>: connecting to the <code>coding</code> server and open the file <code>FILENAME</code> in a new frame.</li>
 </ul>
 <p>Alternatively, we could use <code>Alfred.app</code> to perform the same tasks. We need its <code>PowerPack</code> in order to build <code>Workflows</code>. Create an <code>Input</code>  using <code>Keyword</code>, with the keyword <code>es start</code> (with <code>Argument Optional</code>, enabling <code>with space</code>), shown as</p>
-<p><img src="/images/emacs-setup-md-1.png" alt=""></p>
+<p>
+
+
+<img src="/images/emacs-setup-md-1.png" alt="">
+</p>
 <p>Then, connect to an <code>Action</code> of <code>Run Script</code>, in which choose <code>bash</code> and fill the following codes</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -281,7 +285,11 @@ repository</a>, which provides commands <code>es, ec, ecc</code>:</p>
 </div><p>Similarly create workflows for <code>es stop</code>, <code>ec</code>, etc. The scripts are the same as the
 codes provided in <code>emacs-server-func.sh</code>. We just copy and paste them into <code>Alfred</code>
 and create shortcuts to run them. The whole workflow looks as</p>
-<p><img src="/images/emacs-setup-md-2.png" alt=""></p>
+<p>
+
+
+<img src="/images/emacs-setup-md-2.png" alt="">
+</p>
 <p>and you could find the workflow, named <code>Emacs.alfredworkflow</code>, on <a href="https://github.com/oracleyue/dotfiles/tree/master/alfred-workflows">my github repository</a>.</p>
 <p>Since Mac OS X by default only allows one Emacs instance (not via daemon), we may use the follow code to open multiple ones, which is created as a workflow in Alfred triggered by <code>em new</code>:</p>
 <div class="highlight"><div class="chroma">
@@ -480,7 +488,20 @@ to your Automator document.</p>
     </footer>
   </article>
         </div>
-        
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'oracleyue-github-io';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
   
 
