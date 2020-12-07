@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>orgmode on Icarus&#39;s Wings - A blog of oracleyue</title>
+    <link>https://oracleyue.github.io/tags/orgmode/</link>
+    <description>Recent content in orgmode on Icarus&#39;s Wings - A blog of oracleyue</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 04 Dec 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://oracleyue.github.io/tags/orgmode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Emacs as C&#43;&#43; IDE</title>
+      <link>https://oracleyue.github.io/post/emacs-init-cc-irony/</link>
+      <pubDate>Mon, 04 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://oracleyue.github.io/post/emacs-init-cc-irony/</guid>
+      <description>&lt;p&gt;The C++ IDE environment in Emacs is configured mainly:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;using &lt;strong&gt;irony-mode&lt;/strong&gt; and &lt;strong&gt;gtags&lt;/strong&gt;;&lt;/li&gt;
+&lt;li&gt;and, using &lt;strong&gt;company&lt;/strong&gt; as auto-completion engine.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

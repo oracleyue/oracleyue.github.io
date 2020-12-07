@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>关于Emacs更新到26之后的配置更新汇总 - Icarus&#39;s Wings - A blog of oracleyue</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="oracleyue" /><meta name="description" content="更新的Emacs26之后还是给我带来了一些bug问题，浪费点时间调试（主要还是自己不懂），总结下惠及大家，我抛砖引玉了：
+ daemon的启动和emacsclient链接问题， transparent titlebar的加载问题， 新的native line number display。 " /><meta name="keywords" content="oracleyue, blog, Hugo, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.75.1 with theme even" />
+
+
+<link rel="canonical" href="https://oracleyue.github.io/post/upgrade-to-emacs26/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="关于Emacs更新到26之后的配置更新汇总" />
+<meta property="og:description" content="更新的Emacs26之后还是给我带来了一些bug问题，浪费点时间调试（主要还是自己不懂），总结下惠及大家，我抛砖引玉了：
+
+daemon的启动和emacsclient链接问题，
+transparent titlebar的加载问题，
+新的native line number display。
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://oracleyue.github.io/post/upgrade-to-emacs26/" />
+<meta property="article:published_time" content="2018-05-31T00:00:00+00:00" />
+<meta property="article:modified_time" content="2018-05-31T00:00:00+00:00" />
+<meta itemprop="name" content="关于Emacs更新到26之后的配置更新汇总">
+<meta itemprop="description" content="更新的Emacs26之后还是给我带来了一些bug问题，浪费点时间调试（主要还是自己不懂），总结下惠及大家，我抛砖引玉了：
+
+daemon的启动和emacsclient链接问题，
+transparent titlebar的加载问题，
+新的native line number display。
+">
+<meta itemprop="datePublished" content="2018-05-31T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2018-05-31T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1436">
+
+
+
+<meta itemprop="keywords" content="elisp,config," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="关于Emacs更新到26之后的配置更新汇总"/>
+<meta name="twitter:description" content="更新的Emacs26之后还是给我带来了一些bug问题，浪费点时间调试（主要还是自己不懂），总结下惠及大家，我抛砖引玉了：
+
+daemon的启动和emacsclient链接问题，
+transparent titlebar的加载问题，
+新的native line number display。
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Icarus&#39;s Wings</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Icarus&#39;s Wings</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">关于Emacs更新到26之后的配置更新汇总</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-05-31 </span>
+        <div class="post-category">
+            <a href="/categories/emacs/"> Emacs </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#运行deamon和emacsclient链接问题-26相比25严格了许多">运行deamon和emacsclient链接问题： 26相比25严格了许多</a></li>
+            <li><a href="#transparent-titlebar的加载问题">Transparent titlebar的加载问题</a></li>
+            <li><a href="#native-line-numbering">Native line numbering</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>更新的Emacs26之后还是给我带来了一些bug问题，浪费点时间调试（主要还是自己不懂），总结下惠及大家，我抛砖引玉了：</p>
+<ul>
+<li>daemon的启动和emacsclient链接问题，</li>
+<li>transparent titlebar的加载问题，</li>
+<li>新的native line number display。</li>
+</ul>
+<h3 id="运行deamon和emacsclient链接问题-26相比25严格了许多">运行deamon和emacsclient链接问题： 26相比25严格了许多</h3>
+<p>比如原来25，OSX下可以用tcp：<code>emacs --daemon=main</code>加<code>(setq server-use-tcp t)</code>启动，用<code>emacsclient -nc --server-file=main</code>链接；关闭server的话野蛮的直接kill掉，重新再运行上述命令，server依然可以启动。重复运行（不关闭原来的main server）也不会有报错，查看会有多个进程用同样的server名字main。这是我原来默认的方式。</p>
+<p>现在不行了，直接kill掉相应daemon的进程，下次运行会报错，因为tcp方式会在<code>~/.emacs.d/server/</code>生成一个名为<code>main</code>的文件（之前例子给的daemon名字）。正常在emacsclient的frame中运行<code>kill-emacs</code>关闭emacs server的话会删掉这个问题。Emacs25不管这些，26会检查报错。同时现在也不能运行多个同server名字的进程了（这个很合理；原来只是不报错）。</p>
+<p>查了查发现，其实Linux/Unix下，local socket是更好的方式，（如果还想野蛮的通过kill关daemon进程）：</p>
+<ul>
+<li><code>emacs --daemon=main</code> (名字main随便给）</li>
+<li><code>emacsclient -nc --socket-name=main</code> 用来连接、创建frame</li>
+</ul>
+<p>另外，现在daemon有了两个模式，<code>--bg-daemon</code>和<code>--fg-daemon</code>，arch linux中的emacs.service文件建议用<code>fg-daemon</code>。另外，Linux想在emacs中用fctix打中文（我很少输中文，可能一直都有这个问题吧，没发现），需要加前缀改<code>LC_CTYPE</code>，但直接<br>
+<code>ExecStart=LC_CTYPE=zh_CN.UTF-8 /usr/bin/emacs --fg-daemon</code> systemd语法报错，不懂为什么懒得深究，重新创建一个bash文档把它wrap成一个新命令就行了。</p>
+<h3 id="transparent-titlebar的加载问题">Transparent titlebar的加载问题</h3>
+<p><code>(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))</code>这个别卸载你的ui loading函数中（就是daemon下，你需要push到<code>after-make-frame-functions</code>中，用来加载theme，修改modeline，修改字体等的函数），尽量靠前写，不然第一个frame不是透明标题栏，第二个就好了。</p>
+<p>根据不同的theme设置用于ns-transparent-titlebar的底色：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-lisp" data-lang="lisp">    <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nf">eq</span> <span class="p">(</span><span class="nv">frame-parameter</span> <span class="nv">frame</span> <span class="ss">&#39;background-mode</span><span class="p">)</span> <span class="ss">&#39;light</span><span class="p">)</span>
+        <span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;default-frame-alist</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">ns-appearance</span> <span class="o">.</span> <span class="nv">light</span><span class="p">))</span>
+      <span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;default-frame-alist</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">ns-appearance</span> <span class="o">.</span> <span class="nv">dark</span><span class="p">)))</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这里有个比较蛋疼的问题我解决不了(<code>daemon</code>模式下）：<br>
+我运行两个daemon分别使用亮色和暗色的主题，上面那个设置的位置就很纠结了：</p>
+<ul>
+<li>首先它得放在<code>load-theme</code>之后，不然我不可能知道主题的background-mode是light还是dark</li>
+<li>它又“该”放在load-theme之前，不然第一个frame创建时使用默认的值light（当用dark-theme时)</li>
+</ul>
+<p>我暂时折衷用的第一方案，所以emacsclient的第一个frame的titlebar底色设置是不对的（其实只影响标题的字体颜色，背景色是正确的），如果使用dark theme。关了再开一个frame就好了😝</p>
+<h3 id="native-line-numbering">Native line numbering</h3>
+<p>下面是我用的设置，分享给伸手党们 :)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-lisp" data-lang="lisp"><span class="c1">;; config built-in &#34;display-line-number-mode&#34; (require Emacs &gt;= 26)</span>
+<span class="p">(</span><span class="nv">setq-default</span> <span class="nv">display-line-numbers-width</span> <span class="mi">2</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">setq-default</span> <span class="nv">display-line-numbers-type</span> <span class="ss">&#39;relative</span><span class="p">)</span>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">display-line-numbers-current-absolute</span> <span class="no">t</span><span class="p">)</span>
+<span class="c1">;; advanced linum style (optional)</span>
+<span class="p">(</span><span class="nf">use-package</span> <span class="nv">linum-highlight-current-line-number</span>
+  <span class="ss">:config</span>
+  <span class="p">(</span><span class="k">setq</span> <span class="nv">linum-format</span> <span class="ss">&#39;linum-highlight-current-line-number</span><span class="p">))</span>
+<span class="c1">;; enable line numbering (or &#34;linum-mode&#34;)</span>
+<span class="p">(</span><span class="k">let</span> <span class="p">((</span><span class="nv">hook-list</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">sh-mode-hook</span>
+                   <span class="nv">cmake-mode-hook</span>
+                   <span class="nv">matlab-mode-hook</span>
+                   <span class="nv">python-mode-hook</span>
+                   <span class="nv">c-mode-common-hook</span>
+                   <span class="nv">makefile-gmake-mode-hook</span>   <span class="c1">; Gnome</span>
+                   <span class="nv">makefile-bsdmake-mode-hook</span> <span class="c1">; OS X</span>
+                   <span class="nv">ess-mode-hook</span><span class="p">)))</span>  <span class="c1">; R</span>
+  <span class="p">(</span><span class="nb">dolist</span> <span class="p">(</span><span class="nv">hook-element</span> <span class="nv">hook-list</span><span class="p">)</span>
+    <span class="p">(</span><span class="nv">add-hook</span> <span class="nv">hook-element</span> <span class="ss">&#39;display-line-numbers-mode</span><span class="p">)))</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">oracleyue</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2018-05-31
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/elisp/">elisp</a>
+          <a href="/tags/config/">config</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/skim-emoji-linux/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Linux下快速浏览粘贴表情的解决方案</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/emacs-setup-md/">
+            <span class="next-text nav-default">Install Emacs on Mac OS X: daemon, automator app and multiple themes</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:oracleyue@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.facebook.com/zuogong.yue" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://scholar.google.com/citations?user=b3AVP4QAAAAJ&amp;hl=en" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/oracleyue" class="iconfont icon-github" title="github"></a>
+  <a href="https://oracleyue.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020<span class="heart"><i class="iconfont icon-heart"></i></span><span>oracleyue</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

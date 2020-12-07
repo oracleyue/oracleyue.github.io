@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>i3 on Icarus&#39;s Wings - A blog of oracleyue</title>
+    <link>https://oracleyue.github.io/tags/i3/</link>
+    <description>Recent content in i3 on Icarus&#39;s Wings - A blog of oracleyue</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 07 Nov 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://oracleyue.github.io/tags/i3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Show applications in tiling or overlapping mode in i3</title>
+      <link>https://oracleyue.github.io/post/i3/</link>
+      <pubDate>Thu, 07 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://oracleyue.github.io/post/i3/</guid>
+      <description>&lt;p&gt;This blog collects some key but tricky configurations that used for i3
+window manager. For more, one may refer to the official &lt;a href=&#34;https://i3wm.org/docs/userguide.html&#34;&gt;user&amp;rsquo;s guide&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Keyring supports for Git to avoid repeating passwords</title>
+      <link>https://oracleyue.github.io/post/git-keyring/</link>
+      <pubDate>Sat, 05 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://oracleyue.github.io/post/git-keyring/</guid>
+      <description>&lt;p&gt;This article guides you how to set up keychain/keyring to avoid typing your
+password repeatedly, when using git.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux下快速浏览粘贴表情的解决方案</title>
+      <link>https://oracleyue.github.io/post/skim-emoji-linux/</link>
+      <pubDate>Tue, 20 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://oracleyue.github.io/post/skim-emoji-linux/</guid>
+      <description>&lt;p&gt;长期以来，Linux下楼主只能按一般方式用file manager查找和插入图片的方式，由于
+表情一般很多而导致查找非常不便。一不留神，终于让楼主发现了一个好的解决方法。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

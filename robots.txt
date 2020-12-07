@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://oracleyue.github.io/sitemap.xml

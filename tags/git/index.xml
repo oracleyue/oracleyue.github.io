@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on Icarus&#39;s Wings - A blog of oracleyue</title>
+    <link>https://oracleyue.github.io/tags/git/</link>
+    <description>Recent content in git on Icarus&#39;s Wings - A blog of oracleyue</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 05 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://oracleyue.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Keyring supports for Git to avoid repeating passwords</title>
+      <link>https://oracleyue.github.io/post/git-keyring/</link>
+      <pubDate>Sat, 05 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://oracleyue.github.io/post/git-keyring/</guid>
+      <description>&lt;p&gt;This article guides you how to set up keychain/keyring to avoid typing your
+password repeatedly, when using git.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

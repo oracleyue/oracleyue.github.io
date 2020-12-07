@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Keyring supports for Git to avoid repeating passwords - Icarus&#39;s Wings - A blog of oracleyue</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="oracleyue" /><meta name="description" content="This article guides you how to set up keychain/keyring to avoid typing your password repeatedly, when using git.
+" /><meta name="keywords" content="oracleyue, blog, Hugo, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.75.1 with theme even" />
+
+
+<link rel="canonical" href="https://oracleyue.github.io/post/git-keyring/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Keyring supports for Git to avoid repeating passwords" />
+<meta property="og:description" content="This article guides you how to set up keychain/keyring to avoid typing your
+password repeatedly, when using git." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://oracleyue.github.io/post/git-keyring/" />
+<meta property="article:published_time" content="2019-10-05T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-10-05T00:00:00+00:00" />
+<meta itemprop="name" content="Keyring supports for Git to avoid repeating passwords">
+<meta itemprop="description" content="This article guides you how to set up keychain/keyring to avoid typing your
+password repeatedly, when using git.">
+<meta itemprop="datePublished" content="2019-10-05T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2019-10-05T00:00:00+00:00" />
+<meta itemprop="wordCount" content="433">
+
+
+
+<meta itemprop="keywords" content="linux,git,i3,setup," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Keyring supports for Git to avoid repeating passwords"/>
+<meta name="twitter:description" content="This article guides you how to set up keychain/keyring to avoid typing your
+password repeatedly, when using git."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Icarus&#39;s Wings</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Icarus&#39;s Wings</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Keyring supports for Git to avoid repeating passwords</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-10-05 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> Linux </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#connection-via-httphttps">Connection via HTTP/HTTPS</a>
+          <ul>
+            <li><a href="#use-kde-wallet">Use KDE wallet</a></li>
+            <li><a href="#temporarily-store-passwords-in-memory">Temporarily store passwords in memory</a></li>
+          </ul>
+        </li>
+        <li><a href="#connection-via-ssh">Connection via SSH</a>
+          <ul>
+            <li><a href="#i3">i3</a></li>
+            <li><a href="#kde">KDE</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>This article guides you how to set up keychain/keyring to avoid typing your
+password repeatedly, when using git.</p>
+<h2 id="connection-via-httphttps">Connection via HTTP/HTTPS</h2>
+<h3 id="use-kde-wallet">Use KDE wallet</h3>
+<p>To store passwords in the KDE wallet, you need to install <code>ksshaskpass</code> package:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">sudo pacman -S ksshaskpass
+</code></pre></td></tr></table>
+</div>
+</div><p>Then configure git to use it:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">git config --global core.askpass /usr/bin/ksshaskpass
+</code></pre></td></tr></table>
+</div>
+</div><p>Alternatively you can use <code>GIT_ASKPASS</code> environmental variable (in <code>.xinitrc</code> for i3):</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">export</span> <span class="nv">GIT_ASKPASS</span><span class="o">=</span><span class="s1">&#39;/usr/bin/ksshaskpass&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>If you use KDE, you may set the environmental variable by making a script <code>~/.config/plasma-workspace/env/askpass.sh</code>, as suggested by Arch Wiki.</p>
+<h3 id="temporarily-store-passwords-in-memory">Temporarily store passwords in memory</h3>
+<p>You can temporarily store passwords in memory by using credential helper:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">$ git config credential.helper <span class="s1">&#39;cache&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>By default credentials are stored for 15 minutes, to change number of seconds to cache credentials use timeout parameter (30 minutes in this example):</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">$ git config credential.helper <span class="s1">&#39;cache --timeout=1800&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>To clear credentials cache before time out execute command:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">$ git credential-cache <span class="nb">exit</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>You may check manual pages for more information:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">$ man git-credential-cache
+$ man gitcredentials
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="connection-via-ssh">Connection via SSH</h2>
+<p>The methods aforementioned, configuring <code>.gitconfig</code>, does not work for ssh connections (to github/gitlab). To avoid repeating passphrase, we have to set up <code>ssh-agent</code> correctly.</p>
+<h3 id="i3">i3</h3>
+<p>Since <code>i3</code> is not like desktop environments, like KDE/Gnome, which provide a complete set of tools. Thus, we have first install a keyring/keychain tool to store passwords. Here we use <code>kwallet</code> from KDE as an example.</p>
+<p>Firstly, install <code>kwallet</code> and <code>ksshaskpass</code> packages: (you may also install <code>kwalletmanager</code> as a GUI manager for passwords)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">sudo pacman -S kwallet ksshaskpass
+</code></pre></td></tr></table>
+</div>
+</div><p>Then, we need to configure <code>ssh-agent</code> to connect to <code>kwallet</code> to retrieve passphrases:</p>
+<ul>
+<li>
+<p>To run <code>ssh-agent</code> when X starts, add it in <code>.xinitrc</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">eval</span> <span class="k">$(</span>ssh-agent -s<span class="k">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>We then need to add the RSA keys to <code>ssh-agent</code> and ask <code>ssh-agent</code> to contact <code>kwallet</code> for passphrases. Create a script called <code>ssh-add.sh</code>, for example, containing the following:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="cp">#!/bin/sh
+</span><span class="cp"></span>    
+<span class="nb">export</span> <span class="nv">SSH_ASKPASS</span><span class="o">=</span>/usr/bin/ksshaskpass
+ssh-add &lt; /dev/null
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Run <code>ssh-add.sh</code> whenever <code>i3</code> starts by configuring <code>~/.config/i3/config</code> (you may have to change the path of the script):</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">exec</span> --no-startup-id <span class="nv">$HOME</span>/bin/i3cmds/ssh-add.sh
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h3 id="kde">KDE</h3>
+<p>In KDE, the configuration will be way easier, since the packages have been installed and almost configured correctly.</p>
+<p>Add the script <code>~/.config/autostart-scripts/ssh-add.sh</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="cp">#! /bin/bash
+</span><span class="cp"></span><span class="nb">export</span> <span class="nv">SSH_ASKPASS</span><span class="o">=</span>/usr/bin/ksshaskpass
+/usr/bin/ssh-add &lt;/dev/null
+</code></pre></td></tr></table>
+</div>
+</div><p>Remember to make it executable by <code>chmod +x ssh-add.sh</code>.</p>
+<p>As suggested by Arch Wiki, you may set the environmental variable <code>SSH_ASKPASS</code> separately via a script <code>~/.config/plasma-workspace/env/askpass.sh</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="cp">#!/bin/sh
+</span><span class="cp"></span><span class="nb">export</span> <span class="nv">SSH_ASKPASS</span><span class="o">=</span><span class="s1">&#39;/usr/bin/ksshaskpass&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>This should be enough. However, some distributions, like Kubuntu, do not start <code>ssh-agent</code> automatically. You may have to start it by adding <code>eval $(ssh-agent -s)</code>.</p>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">oracleyue</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2019-10-05
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/linux/">linux</a>
+          <a href="/tags/git/">git</a>
+          <a href="/tags/i3/">i3</a>
+          <a href="/tags/setup/">setup</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/i3/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Show applications in tiling or overlapping mode in i3</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/emacs-editing/">
+            <span class="next-text nav-default">A collection of efficient editing commands in Emacs</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:oracleyue@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.facebook.com/zuogong.yue" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://scholar.google.com/citations?user=b3AVP4QAAAAJ&amp;hl=en" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/oracleyue" class="iconfont icon-github" title="github"></a>
+  <a href="https://oracleyue.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020<span class="heart"><i class="iconfont icon-heart"></i></span><span>oracleyue</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

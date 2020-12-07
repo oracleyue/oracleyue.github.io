@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>A collection of efficient editing commands in Emacs - Icarus&#39;s Wings - A blog of oracleyue</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="oracleyue" /><meta name="description" content="This is a summary of useful commands/keybindings in Emacs for efficient editing. Note that it may rely on certain configurations (mostly in init-edit.el). If you found some keybindings are not defined, please refer to the configuration files.
+" /><meta name="keywords" content="oracleyue, blog, Hugo, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.75.1 with theme even" />
+
+
+<link rel="canonical" href="https://oracleyue.github.io/post/emacs-editing/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="A collection of efficient editing commands in Emacs" />
+<meta property="og:description" content="This is a summary of useful commands/keybindings in Emacs for efficient
+editing. Note that it may rely on certain configurations (mostly in
+init-edit.el). If you found some keybindings are not defined, please
+refer to the configuration files." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://oracleyue.github.io/post/emacs-editing/" />
+<meta property="article:published_time" content="2019-09-06T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-09-20T00:00:00+00:00" />
+<meta itemprop="name" content="A collection of efficient editing commands in Emacs">
+<meta itemprop="description" content="This is a summary of useful commands/keybindings in Emacs for efficient
+editing. Note that it may rely on certain configurations (mostly in
+init-edit.el). If you found some keybindings are not defined, please
+refer to the configuration files.">
+<meta itemprop="datePublished" content="2019-09-06T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2019-09-20T00:00:00+00:00" />
+<meta itemprop="wordCount" content="831">
+
+
+
+<meta itemprop="keywords" content="notes,emacs," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="A collection of efficient editing commands in Emacs"/>
+<meta name="twitter:description" content="This is a summary of useful commands/keybindings in Emacs for efficient
+editing. Note that it may rely on certain configurations (mostly in
+init-edit.el). If you found some keybindings are not defined, please
+refer to the configuration files."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Icarus&#39;s Wings</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Icarus&#39;s Wings</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">A collection of efficient editing commands in Emacs</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-09-06 </span>
+        <div class="post-category">
+            <a href="/categories/emacs/"> Emacs </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#basic-operations">Basic Operations</a>
+      <ul>
+        <li><a href="#cursor-movement">Cursor movement</a></li>
+        <li><a href="#buffer-operations">Buffer operations</a></li>
+        <li><a href="#files">Files</a></li>
+        <li><a href="#windows">Windows</a></li>
+      </ul>
+    </li>
+    <li><a href="#file-formatting">File Formatting</a>
+      <ul>
+        <li><a href="#tab-and-space">TAB and SPACE</a></li>
+        <li><a href="#encoding">Encoding</a></li>
+      </ul>
+    </li>
+    <li><a href="#jumping">Jumping</a></li>
+    <li><a href="#advanced-editing">Advanced editing</a>
+      <ul>
+        <li><a href="#copypaste">Copy/Paste</a></li>
+        <li><a href="#rectangle-editing">Rectangle editing</a></li>
+        <li><a href="#programming-supports">Programming Supports</a></li>
+      </ul>
+    </li>
+    <li><a href="#quick-functions">Quick functions</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>This is a summary of useful commands/keybindings in Emacs for efficient
+editing. Note that it may rely on certain configurations (mostly in
+<code>init-edit.el</code>). If you found some keybindings are not defined, please
+refer to the configuration files.</p>
+<h1 id="basic-operations">Basic Operations</h1>
+<h2 id="cursor-movement">Cursor movement</h2>
+<p>Move cursor to the top/middle/bottom of the current window: <code>M-r</code></p>
+<p>Make words in upper case/lower case/capitalized: <code>M-u</code>, <code>M-l</code>, <code>M-c</code></p>
+<p>Swap words: <code>M-t</code></p>
+<p>Open lines:</p>
+<ul>
+<li>move to the next line and then opens a line: <code>open-next-line</code> <code>C-o</code></li>
+<li>open a new line before the current one: <code>open-previous-line</code> <code>M-o</code></li>
+</ul>
+<p>Vertical editing:</p>
+<ul>
+<li>use <code>set-goal-column</code> to do vertical editing: <code>C-x C-n</code></li>
+<li>remove vertical mark: <code>C-u C-x C-n</code></li>
+</ul>
+<p>Move point to the first non-whitespace character on this line:
+<code>back-to-indenentation</code> <code>M-m</code></p>
+<h2 id="buffer-operations">Buffer operations</h2>
+<p>Default in <em>undo-tree</em>:</p>
+<ul>
+<li>undo: <code>C-/</code>, <code>C-_</code></li>
+<li>redo: <code>C-?</code>, <code>M-_</code></li>
+</ul>
+<p>Mark regions:</p>
+<ul>
+<li>expand region: <code>C-=</code></li>
+<li>mark the whole buffer: <code>C-x h</code></li>
+</ul>
+<p>Kill texts/region/buffers:</p>
+<ul>
+<li>kills from the current point to a character: <code>zap-to-char</code> <code>M-z [e]</code></li>
+<li>kill line backwards: <code>M-0 C-k</code> (built-in) OR <code>C-&lt;backspace&gt;</code></li>
+<li>kill one sentence backwards: <code>C-x Backspace</code></li>
+<li>kill/yank to kill-ring:
+<ul>
+<li><code>C-w / M-w</code> to kill or copy the mark region or the current line</li>
+<li><code>C-y</code> to yank</li>
+<li>list contents in kill-ring and select to yank: <code>M-y</code></li>
+</ul>
+</li>
+</ul>
+<p>Join the current line to the above one: <code>M-^</code></p>
+<p>Fill/unfill paragraph/region/buffer:</p>
+<ul>
+<li>fill/unfill paragraph/region: <code>M-q=/=M-Q</code></li>
+<li>set fill-column: <code>C-x f</code></li>
+<li>automatically split long lines up to a prefixed length: use <em>auto-fill</em> mode</li>
+<li>set fill-column: <code>C-x f</code></li>
+</ul>
+<h2 id="files">Files</h2>
+<p>Insert contents of file FILENAME into buffer: <code>insert-file</code> <code>C-x i</code></p>
+<p>Write current buffer into file FILENAME (equiv. &ldquo;Save As&rdquo;): <code>write-file</code>
+<code>C-x C-w</code></p>
+<p>Reload the file from the disk: <code>s-u</code> (s: super/command); <code>C-x C-v</code></p>
+<p>Open file in the read-only mode: <code>C-x C-r</code></p>
+<p>Toggle overwrite mode: <code>M-x overwrite-mode</code></p>
+<p>Count words in region: <code>M-=</code></p>
+<p>Use <code>M-x whitespace-mode</code> to show white spaces as dots</p>
+<h2 id="windows">Windows</h2>
+<p>Toggle window split (horizontal &lt;-&gt; vertical) :: <code>C-x |</code></p>
+<p>Open the <strong>Messages</strong> buffer :: <code>C-h e</code></p>
+<h1 id="file-formatting">File Formatting</h1>
+<h2 id="tab-and-space">TAB and SPACE</h2>
+<p>Insert TAB: <code>C-q TAB</code> (<code>TAB</code> trigger complete or insert 4 spaces)</p>
+<p>Insert 4-spaced TAB: <code>tab-to-tab-stop</code> or <code>M-i</code></p>
+<p>Converting TAB and 4-spaces of regions: <code>tabify</code> and <code>untabify</code></p>
+<p>Remove all except 1 space between characters :: <code>ESC SPC</code> (due to Alfred)
+<code>just-one-space</code> (built-in: M-SPC)</p>
+<p>Delete all trailing whitespaces: <code>delete-trailing-whitespace</code> <code>M-s k</code></p>
+<h2 id="encoding">Encoding</h2>
+<p>Encoding: use <code>utf-8-unix</code> by default</p>
+<ul>
+<li>
+<p>open a file with specific coding system:
+<code>revert-buffer-with-coding-system</code></p>
+</li>
+<li>
+<p>set a encoding system for saving file: <code>set-buffer-file-coding-system</code></p>
+</li>
+<li>
+<p>find out the current coding system used for opening and saving files:
+<code>describe-current-coding-system</code></p>
+</li>
+<li>
+<p>find out what encoding system was used to decode current file:
+<code>describe-variable buffer-file-coding-system</code></p>
+</li>
+<li>
+<p>list all available encodings with <code>M-x list-coding-systems</code></p>
+</li>
+<li>
+<p>declare a file with a particular character encoding: add the following
+line in the first line of your files:</p>
+<blockquote>
+<p>-<strong>- coding: utf-8 -</strong>-</p>
+</blockquote>
+</li>
+</ul>
+<p>Change encodings: <code>utf-8-unix</code>, <code>utf-8-dos</code></p>
+<ul>
+<li>change when saving using <code>C-x RET f</code></li>
+<li>force it immediately by using <code>C-x RET c</code>, and then write to a new file
+<code>C-x C-w RET</code></li>
+</ul>
+<p>Change End-of-Line:</p>
+<ul>
+<li><code>M-x set-buffer-file-coding-system utf-8-unix</code> or use <code>C-x RET f</code></li>
+</ul>
+<h1 id="jumping">Jumping</h1>
+<p>Use <strong>mark rings</strong> to jump:</p>
+<ul>
+<li>set mark: <code>C-SPC C-SPC</code></li>
+<li>jump to previous mark: <code>C-u C-SPC</code>  after it, just <code>C-SPC</code> to continue jumping</li>
+<li>jump to mark saved in global-mark ring: <code>C-x C-SPC</code></li>
+<li>exchange the cursor and the previous mark: <code>C-x C-x</code></li>
+<li>use <code>counsel-mark-ring</code> to show mark ring: <code>M-g SPC</code></li>
+</ul>
+<p>Use <strong>register</strong> (position-register) to jump:</p>
+<ul>
+<li>record the position of point in register [r]: <code>C-x r SPC [r]</code></li>
+<li>jump to the position saved in register [r]: <code>C-x r j [r]</code></li>
+<li>use <code>counsel-register</code> to show the list: <code>M-g r</code></li>
+</ul>
+<p>Use <strong>bookmark</strong> to jump:</p>
+<ul>
+<li><code>C-x r m RET</code> to set the bookmark for the visited file, at point</li>
+<li><code>C-x r m NAME RET</code> to set the bookmark named NAME at point (<code>bookmark-set</code>)</li>
+<li><code>C-x r b NAME RET</code> to jump to the bookmark named NAME (<code>bookmark-jump</code>)</li>
+<li><code>C-x r l</code> to list all bookmarks (<code>list-bookmarks</code>)</li>
+<li><code>M-x bookmark-save</code> to save all bookmark values in the default bookmark file</li>
+</ul>
+<h1 id="advanced-editing">Advanced editing</h1>
+<h2 id="copypaste">Copy/Paste</h2>
+<p>Use register to copy/paste:</p>
+<ul>
+<li><code>C-x r s [R]</code> to copy the region in register</li>
+<li><code>C-x r r [R]</code> to copy the <strong>rectangle</strong> to register</li>
+<li><code>C-x r g [R]</code> to (paste) insert text saved in register</li>
+</ul>
+<h2 id="rectangle-editing">Rectangle editing</h2>
+<p>Rectangle editing:</p>
+<ul>
+<li>mark rectangle: <code>C-x SPC</code></li>
+<li>kill rectangle: <code>C-x r k</code></li>
+<li>copy rectangle: <code>C-x r M-w</code></li>
+<li>yank the last killed rectangle: <code>C-x r y</code></li>
+<li>delete the region-rectangle: <code>C-x r d</code></li>
+<li>open rectangle, shifting text right: <code>C-x r o</code></li>
+<li>blank out rectangle: <code>C-x r c</code></li>
+<li>prefix each line with a string: <code>C-x r t</code></li>
+</ul>
+<p>Use <em>multiple-cursors</em>:</p>
+<ul>
+<li>select one word <code>C-&gt;</code>, then hit <code>C-g</code> to place multiple cursors</li>
+<li>to place cursors in front of each lines:
+select multiple lines, then hit <code>C-S-l C-S-l</code> to place cursors
+OR
+select nothing and hit <code>C-&gt;</code>, then edit</li>
+<li>(disabled) use <code>C-S-SPC</code> to mark rectangular region</li>
+</ul>
+<h2 id="programming-supports">Programming Supports</h2>
+<p>Comment line or region: <code>C-\</code>; uncomment: <code>C-|</code>, <code>M-\</code></p>
+<p>Align comments: <code>M-x align</code>; <code>M-x align-regexp</code> (<code>C-x M-a</code>) (prefix <code>C-u</code>
+for options)</p>
+<p>Use <em>iedit</em>: <code>C-;</code></p>
+<p>Indent region in <em>python-mode</em>:</p>
+<ul>
+<li><code>python-indent-shift-right</code> <code>C-c &gt;</code></li>
+<li><code>python-indent-shift-left</code>  <code>C-c &lt;</code></li>
+</ul>
+<h1 id="quick-functions">Quick functions</h1>
+<p>Insert date/time</p>
+<ul>
+<li><code>insert-date</code> like &ldquo;06 Sep 2019&rdquo;</li>
+<li><code>insert-date-digits</code> like &ldquo;2019/09/06&rdquo;</li>
+<li><code>insert-time</code> like &ldquo;18:37:23&rdquo;</li>
+</ul>
+<p>Add incremental numbers to lines: <code>C-x r N</code></p>
+<p>Automatic correct word by <em>flyspell</em>: <code>flyspell-auto-correct-word</code> <code>C-.</code></p>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">oracleyue</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2019-09-20
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/notes/">notes</a>
+          <a href="/tags/emacs/">emacs</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/git-keyring/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Keyring supports for Git to avoid repeating passwords</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/skim-emoji-linux/">
+            <span class="next-text nav-default">Linux下快速浏览粘贴表情的解决方案</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:oracleyue@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.facebook.com/zuogong.yue" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://scholar.google.com/citations?user=b3AVP4QAAAAJ&amp;hl=en" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/oracleyue" class="iconfont icon-github" title="github"></a>
+  <a href="https://oracleyue.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020<span class="heart"><i class="iconfont icon-heart"></i></span><span>oracleyue</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

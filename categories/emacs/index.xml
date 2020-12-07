@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Emacs on Icarus&#39;s Wings - A blog of oracleyue</title>
+    <link>https://oracleyue.github.io/categories/emacs/</link>
+    <description>Recent content in Emacs on Icarus&#39;s Wings - A blog of oracleyue</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 06 Sep 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://oracleyue.github.io/categories/emacs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A collection of efficient editing commands in Emacs</title>
+      <link>https://oracleyue.github.io/post/emacs-editing/</link>
+      <pubDate>Fri, 06 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://oracleyue.github.io/post/emacs-editing/</guid>
+      <description>&lt;p&gt;This is a summary of useful commands/keybindings in Emacs for efficient
+editing. Note that it may rely on certain configurations (mostly in
+&lt;code&gt;init-edit.el&lt;/code&gt;). If you found some keybindings are not defined, please
+refer to the configuration files.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>关于Emacs更新到26之后的配置更新汇总</title>
+      <link>https://oracleyue.github.io/post/upgrade-to-emacs26/</link>
+      <pubDate>Thu, 31 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://oracleyue.github.io/post/upgrade-to-emacs26/</guid>
+      <description>&lt;p&gt;更新的Emacs26之后还是给我带来了一些bug问题，浪费点时间调试（主要还是自己不懂），总结下惠及大家，我抛砖引玉了：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;daemon的启动和emacsclient链接问题，&lt;/li&gt;
+&lt;li&gt;transparent titlebar的加载问题，&lt;/li&gt;
+&lt;li&gt;新的native line number display。&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Install Emacs on Mac OS X: daemon, automator app and multiple themes</title>
+      <link>https://oracleyue.github.io/post/emacs-setup-md/</link>
+      <pubDate>Sun, 13 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://oracleyue.github.io/post/emacs-setup-md/</guid>
+      <description>&lt;p&gt;This is a quick note on the setup of Emacs on Mac OS X.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Emacs as C&#43;&#43; IDE</title>
+      <link>https://oracleyue.github.io/post/emacs-init-cc-irony/</link>
+      <pubDate>Mon, 04 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://oracleyue.github.io/post/emacs-init-cc-irony/</guid>
+      <description>&lt;p&gt;The C++ IDE environment in Emacs is configured mainly:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;using &lt;strong&gt;irony-mode&lt;/strong&gt; and &lt;strong&gt;gtags&lt;/strong&gt;;&lt;/li&gt;
+&lt;li&gt;and, using &lt;strong&gt;company&lt;/strong&gt; as auto-completion engine.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

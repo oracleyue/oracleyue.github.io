@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Install Emacs on Mac OS X: daemon, automator app and multiple themes - Icarus&#39;s Wings - A blog of oracleyue</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="oracleyue" /><meta name="description" content="This is a quick note on the setup of Emacs on Mac OS X.
+" /><meta name="keywords" content="oracleyue, blog, Hugo, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.75.1 with theme even" />
+
+
+<link rel="canonical" href="https://oracleyue.github.io/post/emacs-setup-md/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Install Emacs on Mac OS X: daemon, automator app and multiple themes" />
+<meta property="og:description" content="This is a quick note on the setup of Emacs on Mac OS X." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://oracleyue.github.io/post/emacs-setup-md/" />
+<meta property="article:published_time" content="2018-05-13T00:00:00+00:00" />
+<meta property="article:modified_time" content="2018-05-13T00:00:00+00:00" />
+<meta itemprop="name" content="Install Emacs on Mac OS X: daemon, automator app and multiple themes">
+<meta itemprop="description" content="This is a quick note on the setup of Emacs on Mac OS X.">
+<meta itemprop="datePublished" content="2018-05-13T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2018-05-13T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1159">
+
+
+
+<meta itemprop="keywords" content="Emacs,setup," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Install Emacs on Mac OS X: daemon, automator app and multiple themes"/>
+<meta name="twitter:description" content="This is a quick note on the setup of Emacs on Mac OS X."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Icarus&#39;s Wings</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Icarus&#39;s Wings</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Install Emacs on Mac OS X: daemon, automator app and multiple themes</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-05-13 </span>
+        <div class="post-category">
+            <a href="/categories/emacs/"> Emacs </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#install-emacs-on-os-x">Install Emacs on OS X</a></li>
+        <li><a href="#run-emacs-as-daemon">Run Emacs as daemon</a></li>
+        <li><a href="#create-an-app-via-automator-to-open-files-in-emacs-clients-by-double-clicks">Create an app via Automator to open files in Emacs clients by double-clicks</a></li>
+        <li><a href="#load-different-themes-for-emacs-serversdaemons">Load different themes for Emacs servers/daemons</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>This is a quick note on the setup of Emacs on Mac OS X.</p>
+<h2 id="install-emacs-on-os-x">Install Emacs on OS X</h2>
+<p>The simplest way to install Emacs on Mac is using <code>Homebrew</code>. Here is the commands:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ brew update
+$ brew install emacs --with-cocoa --with-gnutls
+</code></pre></td></tr></table>
+</div>
+</div><p>If you want to try a patched Emacs with transparent titlebar, install as follows</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ brew tap d12frosted/emacs-plus
+$ brew install emacs-plus --with-natural-title-bar
+</code></pre></td></tr></table>
+</div>
+</div><p>(You may add <code>--without-spacemacs-icon</code>, if you keep only one version of Emacs.)</p>
+<h2 id="run-emacs-as-daemon">Run Emacs as daemon</h2>
+<p>If you have run the Emacs,  you can start an Emacs server by the emacs-lisp function <code>(server-start)</code>. Then you could anywhere open files in or create a frame of  this Emacs by <code>emacsclient -nc</code>. However, this is rarely used. An alternative way is to run Emacs as daemon</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ emacs --daemon
+</code></pre></td></tr></table>
+</div>
+</div><p>and open <code>emacsclient</code> in the same way.</p>
+<p>In my Mac, I run multiple Emacs servers (each Emacs process as daemon is called one server) to allow using multiple color themes (e.g. I use a light theme for text editing like Markdown, LaTeX, and use dark themes for coding). The way to do it is giving each daemon process a name so as to connect to it later via <code>emacsclient</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ emacs --daemon<span class="o">=</span>main
+$ emacs --daemon<span class="o">=</span>coding
+</code></pre></td></tr></table>
+</div>
+</div><p>and later you could connect to them, e.g. the <code>main</code> server, by</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">emacsclient -nc --socket-name<span class="o">=</span>main
+</code></pre></td></tr></table>
+</div>
+</div><p>To stop an Emacs server (the daemon process), you could call <code>(kill-emacs)</code> in any
+Emacs frame connecting to this daemon. Alternatively, use system command <code>kill</code> with
+process ID listed and grepped by <code>ps aux | grep -i 'emacs --daemon'</code>.</p>
+<p>To quickly start Emacs as daemon, connect to and kill them, I wrote a bash script
+function <code>emacs-server-func.sh</code> on <a href="https://github.com/oracleyue/dotfiles/tree/master/OSX/bin">my github
+repository</a>, which provides commands <code>es, ec, ecc</code>:</p>
+<ul>
+<li><code>es</code>: list all Emacs daemon processes</li>
+<li><code>es start</code>: start <code>main</code> and <code>coding</code> servers by default
+<ul>
+<li><code>es start m</code> or <code>es start main</code>: start <code>main</code> server</li>
+<li><code>es start c</code> or <code>es start coding</code>: start <code>coding</code> server</li>
+<li><code>es start YOURNAME</code>: start a sever with your given name</li>
+</ul>
+</li>
+<li><code>es stop</code>: stop all Emacs daemon processes
+<ul>
+<li><code>es stop m</code> or <code>es stop main</code>: stop <code>main</code> server, similar for <code>coding</code></li>
+<li><code>es stop YOURNAME</code>: start the sever with the given name</li>
+</ul>
+</li>
+<li><code>ec FILENAME</code>: connecting to the <code>main</code> server and open the file <code>FILENAME</code> in a new frame</li>
+<li><code>ecc FILENAME</code>: connecting to the <code>coding</code> server and open the file <code>FILENAME</code> in a new frame.</li>
+</ul>
+<p>Alternatively, we could use <code>Alfred.app</code> to perform the same tasks. We need its <code>PowerPack</code> in order to build <code>Workflows</code>. Create an <code>Input</code>  using <code>Keyword</code>, with the keyword <code>es start</code> (with <code>Argument Optional</code>, enabling <code>with space</code>), shown as</p>
+<p><img src="/images/emacs-setup-md-1.png" alt=""></p>
+<p>Then, connect to an <code>Action</code> of <code>Run Script</code>, in which choose <code>bash</code> and fill the following codes</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">EMACS</span><span class="o">=</span>/usr/local/bin/emacs
+
+<span class="k">if</span> <span class="o">[[</span> -z <span class="nv">$1</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+	<span class="nv">$EMACS</span> --daemon<span class="o">=</span>main
+	<span class="nv">$EMACS</span> --daemon<span class="o">=</span>coding
+<span class="k">else</span>
+    <span class="k">case</span> <span class="nv">$1</span> in
+        m<span class="o">)</span>
+            <span class="nv">$EMACS</span> --daemon<span class="o">=</span>main
+            <span class="p">;;</span>
+        c<span class="o">)</span>
+            <span class="nv">$EMACS</span> --daemon<span class="o">=</span>coding
+            <span class="p">;;</span>
+        *<span class="o">)</span>
+            <span class="nv">$EMACS</span> --daemon<span class="o">=</span><span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span>
+            <span class="p">;;</span>
+    <span class="k">esac</span>
+<span class="k">fi</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Similarly create workflows for <code>es stop</code>, <code>ec</code>, etc. The scripts are the same as the
+codes provided in <code>emacs-server-func.sh</code>. We just copy and paste them into <code>Alfred</code>
+and create shortcuts to run them. The whole workflow looks as</p>
+<p><img src="/images/emacs-setup-md-2.png" alt=""></p>
+<p>and you could find the workflow, named <code>Emacs.alfredworkflow</code>, on <a href="https://github.com/oracleyue/dotfiles/tree/master/alfred-workflows">my github repository</a>.</p>
+<p>Since Mac OS X by default only allows one Emacs instance (not via daemon), we may use the follow code to open multiple ones, which is created as a workflow in Alfred triggered by <code>em new</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">open -a /usr/local/opt/emacs-plus/Emacs.app -n
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="create-an-app-via-automator-to-open-files-in-emacs-clients-by-double-clicks">Create an app via Automator to open files in Emacs clients by double-clicks</h2>
+<p><code>Automator</code> is a built-in OS X app for creating custom automated user workflows for
+just about any installed app you might have or even OS functionality. Suppose we
+could like to open files by default in the Emacs client named as <code>main</code>. You may open
+files in the Emacs.app, however, with too much user-defined configurations, it is too
+slow to be acceptable. Using the daemon mode and opening in clients are a better choice.</p>
+<p>The following shows how to create an app that allows opening files in Emacs clients.</p>
+<ol>
+<li>
+<p>Launch <code>Automator</code> and create a new document. Select <code>Application</code> as its type.</p>
+</li>
+<li>
+<p>Search the Actions palette on the left for the <code>Run AppleScript</code> action and add it
+to your Automator document.</p>
+</li>
+<li>
+<p>In the <code>Run AppleScript</code> building block, copy and paste the following codes:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-applescript" data-lang="applescript"><span class="k">on</span> <span class="nb">run</span> <span class="p">{</span><span class="nv">input</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">}</span>
+       
+    <span class="k">set</span> <span class="nv">posixPath</span> <span class="k">to</span> <span class="nv">POSIX</span> <span class="na">path</span> <span class="k">of</span> <span class="nv">input</span>
+       
+    <span class="k">tell</span> <span class="nb">application</span> <span class="s2">&#34;iTerm&#34;</span> <span class="k">to</span> <span class="nb">do shell script</span> <span class="s2">&#34;/usr/local/bin/emacsclient -nc --socket-name=main &#34;</span> <span class="o">&amp;</span> <span class="nb">quoted form</span> <span class="k">of</span> <span class="nv">posixPath</span>
+       
+    <span class="no">return</span> <span class="nv">input</span>
+       
+<span class="k">end</span> <span class="nb">run</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>and Save it with name, e.g. <code>Open in Emacs.app</code> in the file format <code>Application</code>.</p>
+</li>
+<li>
+<p>Now you go to the files with specific extensions, right-click it, choose <code>Get Info</code> and choose our app <code>Open in Emacs.app</code> as the application to open it. If you prefer to using Emacs to open all files of this extension, click <code>Change All...</code>.</p>
+</li>
+</ol>
+<h2 id="load-different-themes-for-emacs-serversdaemons">Load different themes for Emacs servers/daemons</h2>
+<p>In practice, I prefer light themes for text editing (like Markdown, LaTeX, org mode) and dark themes for programming. To achieve, we run multiple Emacs daemon processes, e.g. <code>main</code> and <code>coding</code>. Now we will describe how to load different themes in your <code>.emacs</code> or <code>init.el</code> configurations.</p>
+<p>First of all, we need to prepare a few variables and loading functions:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-lisp" data-lang="lisp"><span class="c1">;; Variables</span>
+<span class="p">(</span><span class="nb">defvar</span> <span class="nv">zyue-theme</span> <span class="no">nil</span>
+  <span class="s">&#34;A symbol representing the color theme to load.&#34;</span><span class="p">)</span>
+<span class="p">(</span><span class="nb">defvar</span> <span class="nv">zyue-font</span> <span class="no">nil</span>
+  <span class="s">&#34;The default font to use. Expects a `font-spec&#39;.&#34;</span><span class="p">)</span>
+
+<span class="c1">;; Init or reload functions</span>
+<span class="p">(</span><span class="nb">defun</span> <span class="nv">zyue-init-ui</span> <span class="p">(</span><span class="k">&amp;optional</span> <span class="nv">frame</span><span class="p">)</span>
+  <span class="c1">;; load theme</span>
+  <span class="p">(</span><span class="nb">when</span> <span class="nv">zyue-theme</span>
+    <span class="p">(</span><span class="nv">load-theme</span> <span class="nv">zyue-theme</span> <span class="no">t</span><span class="p">))</span>
+  <span class="c1">;; if you customize modeline, place it here...</span>
+  <span class="c1">;; load font</span>
+  <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nv">display-graphic-p</span><span class="p">)</span>
+    <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nv">fontp</span> <span class="nv">zyue-font</span><span class="p">)</span>
+      <span class="p">(</span><span class="nv">set-frame-font</span> <span class="nv">zyue-font</span> <span class="no">nil</span> <span class="p">(</span><span class="k">if</span> <span class="nv">frame</span> <span class="p">(</span><span class="nc">list</span> <span class="nv">frame</span><span class="p">)</span> <span class="no">t</span><span class="p">))</span>
+      <span class="p">(</span><span class="nv">set-face-attribute</span> <span class="ss">&#39;fixed-pitch</span> <span class="nv">frame</span> <span class="ss">:font</span> <span class="nv">zyue-font</span><span class="p">))))</span>
+
+<span class="p">(</span><span class="nb">defun</span> <span class="nv">zyue-reload-ui-in-daemon</span> <span class="p">(</span><span class="nv">frame</span><span class="p">)</span>
+  <span class="s">&#34;Reload the theme (and font) in an daemon frame.&#34;</span>
+  <span class="p">(</span><span class="nb">when</span> <span class="p">(</span><span class="nb">or</span> <span class="p">(</span><span class="nv">daemonp</span><span class="p">)</span> <span class="p">(</span><span class="nf">not</span> <span class="p">(</span><span class="nv">display-graphic-p</span><span class="p">)))</span>
+    <span class="p">(</span><span class="nv">with-selected-frame</span> <span class="nv">frame</span>
+      <span class="p">(</span><span class="nv">run-with-timer</span> <span class="mf">0.1</span> <span class="no">nil</span> <span class="nf">#&#39;</span><span class="nv">zyue-init-ui</span><span class="p">))))</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>These functions are essential since the theme has to be loaded when the frame is firstly created, instead of when the elisp files are loaded during <code>emacs --daemon</code>.</p>
+<p>Then we define different themes for each severs (the daemon processes), for examples:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-lisp" data-lang="lisp"><span class="p">(</span><span class="nb">when</span> <span class="vg">*is-mac*</span> <span class="p">(</span><span class="k">setq</span> <span class="nv">zyue-theme</span> <span class="ss">&#39;doom-nord-light</span><span class="p">))</span>
+<span class="p">(</span><span class="nb">when</span> <span class="vg">*is-server-main*</span> <span class="p">(</span><span class="k">setq</span> <span class="nv">zyue-theme</span> <span class="ss">&#39;solarized</span><span class="p">))</span>
+<span class="p">(</span><span class="nb">when</span> <span class="vg">*is-terminal*</span> <span class="p">(</span><span class="k">setq</span> <span class="nv">zyue-theme</span> <span class="ss">&#39;spacemacs-dark</span><span class="p">))</span>
+<span class="p">(</span><span class="nb">when</span> <span class="vg">*is-server-coding*</span> <span class="p">(</span><span class="k">setq</span> <span class="nv">zyue-theme</span> <span class="ss">&#39;atom-one-dark</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>where these constant variables are defined as follows in advance for convenience:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-lisp" data-lang="lisp"><span class="p">(</span><span class="nv">defconst</span> <span class="vg">*is-mac*</span> <span class="p">(</span><span class="nf">string-equal</span> <span class="nv">system-type</span> <span class="s">&#34;darwin&#34;</span><span class="p">))</span>
+<span class="p">(</span><span class="nv">defconst</span> <span class="vg">*is-linux*</span> <span class="p">(</span><span class="nf">string-equal</span> <span class="nv">system-type</span> <span class="s">&#34;gnu/linux&#34;</span><span class="p">))</span>
+<span class="p">(</span><span class="nv">defconst</span> <span class="vg">*is-terminal*</span> <span class="p">(</span><span class="nf">not</span> <span class="p">(</span><span class="nb">or</span> <span class="p">(</span><span class="nv">display-graphic-p</span><span class="p">)</span> <span class="p">(</span><span class="nv">daemonp</span><span class="p">))))</span>
+<span class="p">(</span><span class="nv">defconst</span> <span class="vg">*is-server-main*</span> <span class="p">(</span><span class="nf">string-equal</span> <span class="s">&#34;main&#34;</span> <span class="p">(</span><span class="nv">daemonp</span><span class="p">)))</span>
+<span class="p">(</span><span class="nv">defconst</span> <span class="vg">*is-server-coding*</span> <span class="p">(</span><span class="nf">string-equal</span> <span class="s">&#34;coding&#34;</span> <span class="p">(</span><span class="nv">daemonp</span><span class="p">)))</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>The last step is to load or reload themes depending on specific Emacs running modes:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-lisp" data-lang="lisp"><span class="c1">;; Load the theme and fonts</span>
+<span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nv">daemonp</span><span class="p">)</span>
+    <span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;after-make-frame-functions</span> <span class="nf">#&#39;</span><span class="nv">zyue-reload-ui-in-daemon</span><span class="p">)</span>
+  <span class="p">(</span><span class="nv">zyue-init-ui</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">oracleyue</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2018-05-13
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/emacs/">Emacs</a>
+          <a href="/tags/setup/">setup</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/upgrade-to-emacs26/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">关于Emacs更新到26之后的配置更新汇总</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/taglist-iterm2/">
+            <span class="next-text nav-default">Fix the bug of taglist.vim on iTerm2</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:oracleyue@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.facebook.com/zuogong.yue" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://scholar.google.com/citations?user=b3AVP4QAAAAJ&amp;hl=en" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/oracleyue" class="iconfont icon-github" title="github"></a>
+  <a href="https://oracleyue.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020<span class="heart"><i class="iconfont icon-heart"></i></span><span>oracleyue</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

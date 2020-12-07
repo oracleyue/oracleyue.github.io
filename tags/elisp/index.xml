@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>elisp on Icarus&#39;s Wings - A blog of oracleyue</title>
+    <link>https://oracleyue.github.io/tags/elisp/</link>
+    <description>Recent content in elisp on Icarus&#39;s Wings - A blog of oracleyue</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 31 May 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://oracleyue.github.io/tags/elisp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>关于Emacs更新到26之后的配置更新汇总</title>
+      <link>https://oracleyue.github.io/post/upgrade-to-emacs26/</link>
+      <pubDate>Thu, 31 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://oracleyue.github.io/post/upgrade-to-emacs26/</guid>
+      <description>&lt;p&gt;更新的Emacs26之后还是给我带来了一些bug问题，浪费点时间调试（主要还是自己不懂），总结下惠及大家，我抛砖引玉了：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;daemon的启动和emacsclient链接问题，&lt;/li&gt;
+&lt;li&gt;transparent titlebar的加载问题，&lt;/li&gt;
+&lt;li&gt;新的native line number display。&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

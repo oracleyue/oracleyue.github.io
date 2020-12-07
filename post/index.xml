@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Icarus&#39;s Wings - A blog of oracleyue</title>
+    <link>https://oracleyue.github.io/post/</link>
+    <description>Recent content in Posts on Icarus&#39;s Wings - A blog of oracleyue</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 07 Nov 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://oracleyue.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo and Even: notes and demo preview</title>
+      <link>https://oracleyue.github.io/post/hugo-even-example/</link>
+      <pubDate>Tue, 10 Jul 2018 00:00:00 +0800</pubDate>
+      
+      <guid>https://oracleyue.github.io/post/hugo-even-example/</guid>
+      <description>&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://liujiacai.net/blog/2020/12/05/hexo-to-hugo/&#34;&gt;Moving from Hexo to Hugo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gohugo.io/getting-started/quick-start/&#34;&gt;Quick start - Hugo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Setup powerline in Vim for Linux/OS X</title>
+      <link>https://oracleyue.github.io/post/vim-powerline/</link>
+      <pubDate>Thu, 07 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://oracleyue.github.io/post/vim-powerline/</guid>
+      <description>&lt;p&gt;To use &lt;a href=&#34;https://github.com/powerline/powerline&#34;&gt;powerline&lt;/a&gt; in VIM, the default plugin &lt;code&gt;vim-powerline&lt;/code&gt; may have been out-of-date. I suggest to use the modern plugin, &lt;code&gt;vim-airline&lt;/code&gt;, which provides amazing status-bar settings and powerline styles. In additional, it has accompanied plugin &lt;code&gt;vim-airline-themes&lt;/code&gt; to allows users to easily adjust powerline styles.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Show applications in tiling or overlapping mode in i3</title>
+      <link>https://oracleyue.github.io/post/i3/</link>
+      <pubDate>Thu, 07 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://oracleyue.github.io/post/i3/</guid>
+      <description>&lt;p&gt;This blog collects some key but tricky configurations that used for i3
+window manager. For more, one may refer to the official &lt;a href=&#34;https://i3wm.org/docs/userguide.html&#34;&gt;user&amp;rsquo;s guide&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Keyring supports for Git to avoid repeating passwords</title>
+      <link>https://oracleyue.github.io/post/git-keyring/</link>
+      <pubDate>Sat, 05 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://oracleyue.github.io/post/git-keyring/</guid>
+      <description>&lt;p&gt;This article guides you how to set up keychain/keyring to avoid typing your
+password repeatedly, when using git.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>A collection of efficient editing commands in Emacs</title>
+      <link>https://oracleyue.github.io/post/emacs-editing/</link>
+      <pubDate>Fri, 06 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://oracleyue.github.io/post/emacs-editing/</guid>
+      <description>&lt;p&gt;This is a summary of useful commands/keybindings in Emacs for efficient
+editing. Note that it may rely on certain configurations (mostly in
+&lt;code&gt;init-edit.el&lt;/code&gt;). If you found some keybindings are not defined, please
+refer to the configuration files.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux下快速浏览粘贴表情的解决方案</title>
+      <link>https://oracleyue.github.io/post/skim-emoji-linux/</link>
+      <pubDate>Tue, 20 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://oracleyue.github.io/post/skim-emoji-linux/</guid>
+      <description>&lt;p&gt;长期以来，Linux下楼主只能按一般方式用file manager查找和插入图片的方式，由于
+表情一般很多而导致查找非常不便。一不留神，终于让楼主发现了一个好的解决方法。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>关于Emacs更新到26之后的配置更新汇总</title>
+      <link>https://oracleyue.github.io/post/upgrade-to-emacs26/</link>
+      <pubDate>Thu, 31 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://oracleyue.github.io/post/upgrade-to-emacs26/</guid>
+      <description>&lt;p&gt;更新的Emacs26之后还是给我带来了一些bug问题，浪费点时间调试（主要还是自己不懂），总结下惠及大家，我抛砖引玉了：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;daemon的启动和emacsclient链接问题，&lt;/li&gt;
+&lt;li&gt;transparent titlebar的加载问题，&lt;/li&gt;
+&lt;li&gt;新的native line number display。&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Install Emacs on Mac OS X: daemon, automator app and multiple themes</title>
+      <link>https://oracleyue.github.io/post/emacs-setup-md/</link>
+      <pubDate>Sun, 13 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://oracleyue.github.io/post/emacs-setup-md/</guid>
+      <description>&lt;p&gt;This is a quick note on the setup of Emacs on Mac OS X.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Fix the bug of taglist.vim on iTerm2</title>
+      <link>https://oracleyue.github.io/post/taglist-iterm2/</link>
+      <pubDate>Sun, 06 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://oracleyue.github.io/post/taglist-iterm2/</guid>
+      <description>&lt;p&gt;This is a quick note on how to resolve the bug of &lt;code&gt;taglist&lt;/code&gt; for &lt;code&gt;Vim&lt;/code&gt; running on &lt;code&gt;iTerm2&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Emacs as C&#43;&#43; IDE</title>
+      <link>https://oracleyue.github.io/post/emacs-init-cc-irony/</link>
+      <pubDate>Mon, 04 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://oracleyue.github.io/post/emacs-init-cc-irony/</guid>
+      <description>&lt;p&gt;The C++ IDE environment in Emacs is configured mainly:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;using &lt;strong&gt;irony-mode&lt;/strong&gt; and &lt;strong&gt;gtags&lt;/strong&gt;;&lt;/li&gt;
+&lt;li&gt;and, using &lt;strong&gt;company&lt;/strong&gt; as auto-completion engine.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>TeXShop for the minted package</title>
+      <link>https://oracleyue.github.io/post/texshop-config-for-minted/</link>
+      <pubDate>Mon, 04 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://oracleyue.github.io/post/texshop-config-for-minted/</guid>
+      <description>&lt;p&gt;This is a quick note on essential configurations of TeXShop to compile LaTeX using the &lt;code&gt;minted&lt;/code&gt; package. It works for the operation system &lt;code&gt;OS X&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

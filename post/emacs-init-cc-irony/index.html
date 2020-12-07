@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Emacs as C&#43;&#43; IDE - Icarus&#39;s Wings - A blog of oracleyue</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="oracleyue" /><meta name="description" content="The C&#43;&#43; IDE environment in Emacs is configured mainly:
+ using irony-mode and gtags; and, using company as auto-completion engine. " /><meta name="keywords" content="oracleyue, blog, Hugo, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.75.1 with theme even" />
+
+
+<link rel="canonical" href="https://oracleyue.github.io/post/emacs-init-cc-irony/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Emacs as C&#43;&#43; IDE" />
+<meta property="og:description" content="The C&#43;&#43; IDE environment in Emacs is configured mainly:
+
+using irony-mode and gtags;
+and, using company as auto-completion engine.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://oracleyue.github.io/post/emacs-init-cc-irony/" />
+<meta property="article:published_time" content="2017-12-04T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-12-04T00:00:00+00:00" />
+<meta itemprop="name" content="Emacs as C&#43;&#43; IDE">
+<meta itemprop="description" content="The C&#43;&#43; IDE environment in Emacs is configured mainly:
+
+using irony-mode and gtags;
+and, using company as auto-completion engine.
+">
+<meta itemprop="datePublished" content="2017-12-04T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2017-12-04T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1079">
+
+
+
+<meta itemprop="keywords" content="emacs,orgmode," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Emacs as C&#43;&#43; IDE"/>
+<meta name="twitter:description" content="The C&#43;&#43; IDE environment in Emacs is configured mainly:
+
+using irony-mode and gtags;
+and, using company as auto-completion engine.
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Icarus&#39;s Wings</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Icarus&#39;s Wings</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Emacs as C&#43;&#43; IDE</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-12-04 </span>
+        <div class="post-category">
+            <a href="/categories/emacs/"> Emacs </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#requirements">Requirements</a>
+          <ul>
+            <li><a href="#install-software-in-os">install software in OS</a></li>
+            <li><a href="#install-packages-in-emacs">install packages in emacs</a></li>
+          </ul>
+        </li>
+        <li><a href="#c-coding-styles">C++ Coding styles</a>
+          <ul>
+            <li><a href="#default-style-for-cc">Default style for C/C++</a></li>
+            <li><a href="#basic-edit-enhancement-for-cc">Basic edit enhancement for C/C++</a></li>
+            <li><a href="#google-c-style-and-its-flymake-checker">Google C++ style and its flymake checker</a></li>
+          </ul>
+        </li>
+        <li><a href="#source-code-navigation-using-gtags">Source code navigation using gtags</a></li>
+        <li><a href="#source-code-completion-using-irony">Source code completion using irony</a>
+          <ul>
+            <li><a href="#prerequisites-for-mac-os-x">Prerequisites (For Mac OS X)</a></li>
+            <li><a href="#setup">Setup</a></li>
+            <li><a href="#using-company-with-irony">Using Company with Irony</a></li>
+            <li><a href="#header-file-completion-with-company-irony-c-headers">Header file completion with company-irony-c-headers</a></li>
+            <li><a href="#show-eldoc-for-cc-mode-via-irony-disabled">Show eldoc for C/C++ mode via irony (disabled)</a></li>
+            <li><a href="#auto-generate-clang_complete">Auto-generate .clang_complete</a></li>
+          </ul>
+        </li>
+        <li><a href="#syntax-checking-with-flycheck">Syntax checking with Flycheck</a>
+          <ul>
+            <li><a href="#prerequisites">Prerequisites</a></li>
+            <li><a href="#integrating-rtags-with-flycheck-disabled">Integrating RTags with Flycheck (disabled)</a></li>
+            <li><a href="#integrating-irony-with-flycheck">Integrating Irony with Flycheck</a></li>
+            <li><a href="#keybindings">Keybindings</a></li>
+          </ul>
+        </li>
+        <li><a href="#more-supports-for-cc-programming">More supports for C/C++ programming</a>
+          <ul>
+            <li><a href="#compilation-supports-for-cc-cmake-and-makefile">Compilation supports for C/C++, cmake and makefile</a></li>
+            <li><a href="#major-modes-to-edit-cmake-files">Major modes to edit CMake files</a></li>
+            <li><a href="#major-modes-for-doxygen-documentations-disabled">Major modes for doxygen documentations (disabled)</a></li>
+          </ul>
+        </li>
+        <li><a href="#ends">Ends</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>The C++ IDE environment in Emacs is configured mainly:</p>
+<ul>
+<li>using <strong>irony-mode</strong> and <strong>gtags</strong>;</li>
+<li>and, using <strong>company</strong> as auto-completion engine.</li>
+</ul>
+<h2 id="requirements">Requirements</h2>
+<h3 id="install-software-in-os">install software in OS</h3>
+<ol>
+<li>
+<p>use pip to install <code>cpplint</code> for google-cpp-style</p>
+</li>
+<li>
+<p>have <strong>cmake</strong> installed</p>
+</li>
+<li>
+<p>install <strong>clang/LLVM</strong> and compile <strong>irony-server</strong></p>
+<ul>
+<li>install <strong>LLVM</strong> by <code>brew install llvm</code></li>
+<li>compile <strong>irony-server</strong> as follows:
+<ul>
+<li>
+<p>make a clean build directory</p>
+</li>
+<li>
+<p>run</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">cmake -DCMAKE_PREFIX_PATH=/usr/local/Cellar/llvm/5.0.0/ -DCMAKE_INSTALL_RPATH_USE_LINK_PATH=ON ~/.emacs.d/elpa/   irony-20170828.1218/server/
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>build and run <code>make &amp;&amp; ./bin/irony-server --version</code></p>
+</li>
+<li>
+<p>copy <code>./bin/irony-server</code> under your <code>.emacs.d/bin</code></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="install-packages-in-emacs">install packages in emacs</h3>
+<p>Adding a header for the exported <code>.el</code> file.</p>
+<pre><code>; =====================================================
+;; Programming Environment for C/C++ (modern)
+; =====================================================
+</code></pre>
+<p>Install the additional packages to support the modern C/C++ environment.</p>
+<pre><code>;; check and install essential pkgs
+(setq custom/modern-cc-packages
+      '(irony
+        company-irony
+        company-irony-c-headers
+        flycheck-irony
+        irony-eldoc
+        helm-make))
+(custom/install-packages custom/modern-cc-packages)
+</code></pre>
+<p>(Notes: the old script used before rewriting <code>custom/install-packages</code>)</p>
+<pre><code>(unless (custom/packages-installed-p custom/modern-cc-packages)
+  (package-refresh-contents)
+  (dolist (pkg custom/modern-cc-packages)
+    (unless (package-installed-p pkg)
+      (package-install pkg))))
+</code></pre>
+<h2 id="c-coding-styles">C++ Coding styles</h2>
+<h3 id="default-style-for-cc">Default style for C/C++</h3>
+<pre><code>(require 'cc-mode)
+(setq-default c-default-style &quot;linux&quot;)
+(setq-default c-basic-offset 4)
+</code></pre>
+<h3 id="basic-edit-enhancement-for-cc">Basic edit enhancement for C/C++</h3>
+<ol>
+<li>
+<p>Auto insert pair of symbols using smartparens</p>
+<p>Install <code>smartparens</code> mode and enable it by <code>(require 'smartparens)</code>, which has been enabled in <code>.emacs</code> globally.</p>
+<pre><code>;; /smartparens/: insert pair of symbols
+;; when you press RET, the curly braces automatically add another newline
+(sp-with-modes '(c-mode c++-mode)
+  (sp-local-pair &quot;{&quot; nil :post-handlers '((&quot;||\n[i]&quot; &quot;RET&quot;)))
+  (sp-local-pair &quot;/*&quot; &quot;*/&quot; :post-handlers '((&quot;| &quot; &quot;SPC&quot;) (&quot;* ||\n[i]&quot; &quot;RET&quot;))))
+</code></pre>
+</li>
+</ol>
+<h3 id="google-c-style-and-its-flymake-checker">Google C++ style and its flymake checker</h3>
+<p>Install <code>google-c-style</code> and <code>flymake-google-cpplint</code>.
+You also need to install Python package <code>cpplint</code> by <code>pip</code>.</p>
+<pre><code>;; /google-c-style/ and /flymake-google-cpplint/ style checker
+(when y:enable-google-cpp-style
+  (require 'google-c-style)
+  (add-hook 'c-mode-common-hook 'google-set-c-style)
+  (add-hook 'c-mode-common-hook 'google-make-newline-indent)
+  (defun y:flymake-google-init ()
+    (require 'flymake-google-cpplint)
+    (setq flymake-google-cpplint-command
+      (if (string-equal system-type &quot;darwin&quot;)
+          &quot;/usr/local/bin/cpplint&quot; &quot;/usr/bin/cpplint&quot;))
+    (flymake-google-cpplint-load))
+  (add-hook 'c-mode-hook 'y:flymake-google-init)
+  (add-hook 'c++-mode-hook 'y:flymake-google-init))
+</code></pre>
+<h2 id="source-code-navigation-using-gtags">Source code navigation using gtags</h2>
+<p>See <code>emacs-init-gtags.el</code>, which also supports tag-based code navigation of other languages.</p>
+<h2 id="source-code-completion-using-irony">Source code completion using irony</h2>
+<h3 id="prerequisites-for-mac-os-x">Prerequisites (For Mac OS X)</h3>
+<p>Download a pre-compiled package from llvm.org to install <code>irony-server</code>.
+(change the 4.0.1 version with the latest (the greatest!))</p>
+<ul>
+<li>
+<p>Download <code>clang+llvm-4.0.1-x86_64-apple-darwin.tar.xz</code> from <a href="http://llvm.org/releases/download.html">http://llvm.org/releases/download.html</a></p>
+</li>
+<li>
+<p>Extract it somewhere (e.g: <code>~/Programs/</code>) (Warning: you need to keep it on your computer to allow <code>irony-server</code> to work!)</p>
+</li>
+<li>
+<p>make a clean build directory (e.g. <code>cd ~/tmp &amp;&amp; mkdir build &amp;&amp; cd build</code>)</p>
+</li>
+<li>
+<p>run</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">cmake -DCMAKE_PREFIX_PATH=/Users/oracleyue/Programs/clang+llvm-4.0.1-x86_64-apple-macosx10.9.0/ -DCMAKE_INSTALL_RPATH_USE_LINK_PATH=ON /Users/oracleyue/.emacs.d/elpa/irony-20170828.1218/server/
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>build and run <code>make &amp;&amp; ./bin/irony-server --version</code></p>
+</li>
+<li>
+<p>cp <code>irony-server</code> to your <code>.emacs.d/bin/</code></p>
+</li>
+</ul>
+<h3 id="setup">Setup</h3>
+<p>Install irony-mode from MELPA and add the following to your emacs init file:</p>
+<pre><code>;; /irony/+/company-irony/: code completions
+(add-hook 'c++-mode-hook 'irony-mode)
+(add-hook 'c-mode-hook 'irony-mode)
+(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+
+(setq irony--server-executable (expand-file-name &quot;~/.emacs.d/bin/irony-server&quot;))
+(add-to-list 'irony-additional-clang-options &quot;-std=c++11&quot;)
+</code></pre>
+<p>NOTE: Like RTags, Irony requires a compilation database. To create one run the following:</p>
+<pre><code>$ cd /path/to/project/root
+$ cmake . -DCMAKE_EXPORT_COMPILE_COMMANDS=1
+</code></pre>
+<p>The first time you run irony you must install the <strong>irony-server</strong> by runing the command: <code>M-x irony-install-server</code>.</p>
+<h3 id="using-company-with-irony">Using Company with Irony</h3>
+<p>To use company-mode with Irony, install company-irony from melpa and add the following to your emacs init file:</p>
+<pre><code>(add-hook 'irony-mode-hook 'company-irony-setup-begin-commands)
+(setq company-backends (delete 'company-semantic company-backends))
+;; (eval-after-load 'company
+;;   '(add-to-list 'company-backends 'company-irony))
+</code></pre>
+<h3 id="header-file-completion-with-company-irony-c-headers">Header file completion with company-irony-c-headers</h3>
+<p>To add support for completing C++ headers:</p>
+<ul>
+<li>
+<p>Install <code>company-irony-c-headers</code> from MELPA</p>
+</li>
+<li>
+<p>Remove the following to your emacs init file:</p>
+<pre><code>(eval-after-load 'company
+  '(add-to-list 'company-backends 'company-irony))
+</code></pre>
+</li>
+<li>
+<p>Add the following to your emacs init file:</p>
+<pre><code>(require 'company-irony-c-headers)
+(defun y:add-company-backend-irony ()
+  (setq-local company-backends
+              (append '((company-irony-c-headers company-irony))
+                      company-backends)))
+(add-hook 'c-mode-hook 'y:add-company-backend-irony)
+(add-hook 'c++-mode-hook 'y:add-company-backend-irony)
+</code></pre>
+</li>
+</ul>
+<h3 id="show-eldoc-for-cc-mode-via-irony-disabled">Show eldoc for C/C++ mode via irony (disabled)</h3>
+<p>Enable the minor mode irony-eldoc, as well as eldoc-mode. For an example, place point on top of a symbol, or inside a function call.</p>
+<pre><code>(add-hook 'irony-mode-hook #'irony-eldoc)
+</code></pre>
+<h3 id="auto-generate-clang_complete">Auto-generate .clang_complete</h3>
+<p><code>.clang_complete</code> - A file at the root of your project containing the compilation flags, one per line.</p>
+<p>To generate the <code>.clang_complete</code> file automatically, we use <code>cc_args.py</code>, which has a copy in your <code>~/.emacs.d/git/</code>. Copy it to the folder in your <code>PATH</code> search paths. Then, in your build folder, e.g. <code>&lt;your-project-root&gt;/build</code>,</p>
+<ul>
+<li>run <code>CXX='cc_args.py g++' cmake ..</code></li>
+<li>run <code>make</code> and then you find <code>.clang_complete</code> under your build folder.</li>
+<li>copy it to your project root.</li>
+</ul>
+<h2 id="syntax-checking-with-flycheck">Syntax checking with Flycheck</h2>
+<h3 id="prerequisites">Prerequisites</h3>
+<p>Install <code>flycheck</code> from MELPA and add the following to your emacs init file:</p>
+<pre><code>;; /flycheck/: syntax checker
+(add-hook 'c++-mode-hook 'flycheck-mode)
+(add-hook 'c-mode-hook 'flycheck-mode)
+</code></pre>
+<h3 id="integrating-rtags-with-flycheck-disabled">Integrating RTags with Flycheck (disabled)</h3>
+<p>To enable RTags and flycheck integration add the following to your emacs init file:</p>
+<pre><code>(require 'flycheck-rtags)
+
+(defun my-flycheck-rtags-setup ()
+  (flycheck-select-checker 'rtags)
+  (setq-local flycheck-highlighting-mode nil) ;; RTags creates more accurate overlays.
+  (setq-local flycheck-check-syntax-automatically nil))
+;; c-mode-common-hook is also called by c++-mode
+(add-hook 'c-mode-common-hook #'my-flycheck-rtags-setup)
+</code></pre>
+<h3 id="integrating-irony-with-flycheck">Integrating Irony with Flycheck</h3>
+<p>Install <code>flycheck-irony</code> from MELPA and add the following to your emacs init file:</p>
+<pre><code>(eval-after-load 'flycheck
+  '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
+</code></pre>
+<h3 id="keybindings">Keybindings</h3>
+<ul>
+<li><code>C-c ! n</code> and <code>C-c ! p</code>: jump to next or previous errors</li>
+<li><code>C-c ! l</code>: list errors</li>
+<li><code>C-c ! c</code>: menually run checker</li>
+</ul>
+<h2 id="more-supports-for-cc-programming">More supports for C/C++ programming</h2>
+<h3 id="compilation-supports-for-cc-cmake-and-makefile">Compilation supports for C/C++, cmake and makefile</h3>
+<p>Install <code>helm-make</code> package, and setup as below.
+To compile the whole project, use <code>C-c p c</code> (<code>helm-make-projectile</code>); otherwise, simple run <code>M-x helm-make</code> or <code>M-x compile</code>.</p>
+<pre><code>;; Compile commands in c/c++ and makefile modes
+;; use helm-make
+(global-set-key (kbd &quot;C-c p c&quot;) 'helm-make-projectile)
+(add-hook 'c-mode-common-hook
+          (lambda () (define-key c-mode-base-map
+                       (kbd &quot;C-c C-c&quot;) 'helm-make)))
+;; default mode for Makefile in gnome
+(add-hook 'makefile-gmake-mode-hook
+          (lambda () (define-key makefile-gmake-mode-map
+                       (kbd &quot;C-c C-c&quot;) 'helm-make)))
+;; default mode for Makefile in Mac OS X
+(add-hook 'makefile-bsdmake-mode-hook
+          (lambda () (define-key makefile-bsdmake-mode-map
+                       (kbd &quot;C-c C-c&quot;) 'helm-make)))
+;; compilation setup for cmake-mode
+(add-hook 'cmake-mode-hook
+          (lambda ()
+            (setq compile-command &quot;cd build/ &amp;&amp; cmake .. &amp;&amp; make&quot;)
+            (define-key cmake-mode-map (kbd &quot;C-c C-c&quot;) 'compile)))
+</code></pre>
+<p>If the Makefile is in different directories, e.g. created by <strong>cmake</strong>, we need to specify the location of <code>Makefile</code>. <code>.dir-locals.el</code> file is needed for this purpose. <code>.dir-locals.el</code> should be placed in project root. The file content looks like this:</p>
+<pre><code>((c++-mode (helm-make-build-dir . &quot;build/&quot;)))
+</code></pre>
+<p>Due to the local variable settings, Emacs will ask if the variable <code>helm-make-build-dir</code> is safe. Put the configuration in init file to prevent it.</p>
+<pre><code>(put 'helm-make-build-dir 'safe-local-variable 'stringp)
+</code></pre>
+<h3 id="major-modes-to-edit-cmake-files">Major modes to edit CMake files</h3>
+<pre><code>;; /cmake-mode/: cmake-mode.el
+(require 'cmake-mode)
+;; /cmake-font-lock/: to add more fontifying features
+(add-to-list 'load-path &quot;~/.emacs.d/git/cmake-font-lock&quot;)
+(autoload 'cmake-font-lock-activate &quot;cmake-font-lock&quot; nil t)
+(add-hook 'cmake-mode-hook 'cmake-font-lock-activate)
+;; adding /company-cmake/ for ac-complete
+(load-file (expand-file-name &quot;git/company-cmake.el&quot;
+                             user-emacs-directory))
+(add-to-list 'company-dabbrev-code-modes 'cmake-mode)
+(defun y:company-cmake-setup ()
+  (setq-local company-backends
+              (append '((company-cmake company-dabbrev-code))
+                      company-backends)))
+(add-hook 'cmake-mode-hook 'y:company-cmake-setup)
+</code></pre>
+<h3 id="major-modes-for-doxygen-documentations-disabled">Major modes for doxygen documentations (disabled)</h3>
+<p>To use <code>doxymacs</code>, setup the following in your init file:</p>
+<pre><code>;; /doxymacs/ to manipulate doxygen documentations
+(add-to-list 'load-path &quot;~/.emacs.d/git/doxymacs-1.8.0&quot;)
+(require 'doxymacs)
+(add-hook 'c-mode-common-hook 'doxymacs-mode)
+; fontify the doxygen keywords
+(defun my-doxymacs-font-lock-hook ()
+  (if (or (eq major-mode 'c-mode) (eq major-mode 'c++-mode))
+      (doxymacs-font-lock)))
+(add-hook 'font-lock-mode-hook 'my-doxymacs-font-lock-hook)
+</code></pre>
+<h2 id="ends">Ends</h2>
+<pre><code>(provide 'emacs-init-cc-modern)
+;; ================================================
+;; emacs-init-cc-modern.el ends here</code></pre>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">oracleyue</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2017-12-04
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/emacs/">emacs</a>
+          <a href="/tags/orgmode/">orgmode</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/taglist-iterm2/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Fix the bug of taglist.vim on iTerm2</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/texshop-config-for-minted/">
+            <span class="next-text nav-default">TeXShop for the minted package</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:oracleyue@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.facebook.com/zuogong.yue" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://scholar.google.com/citations?user=b3AVP4QAAAAJ&amp;hl=en" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/oracleyue" class="iconfont icon-github" title="github"></a>
+  <a href="https://oracleyue.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020<span class="heart"><i class="iconfont icon-heart"></i></span><span>oracleyue</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
