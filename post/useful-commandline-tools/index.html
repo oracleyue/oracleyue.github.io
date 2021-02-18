@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Useful Commandline Tools in Linux/Mac OS X - Icarus&#39;s Wings - A blog of oracleyue</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="oracleyue" /><meta name="description" content=" This article keeps collecting useful command-line tools in Linux or Mac OS X (via homebrew). It will be continuously updated.
+ It includes the following functions:
+  tools for downloading videos or webpages;
+  useful tools on dealing with documents (.txt, .pdf, .djvu, etc.);
+  tricks on image operations, like resize, format conversion, etc.; and
+  basic video operations.
+ " /><meta name="keywords" content="oracleyue, blog, Hugo, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.75.1 with theme even" />
+
+
+<link rel="canonical" href="https://oracleyue.github.io/post/useful-commandline-tools/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Useful Commandline Tools in Linux/Mac OS X" />
+<meta property="og:description" content="
+This article keeps collecting useful command-line tools in Linux or Mac
+OS X (via homebrew). It will be continuously updated.
+
+It includes the following functions:
+
+
+tools for downloading videos or webpages;
+
+
+useful tools on dealing with documents (.txt, .pdf, .djvu, etc.);
+
+
+tricks on image operations, like resize, format conversion, etc.; and
+
+
+basic video operations.
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://oracleyue.github.io/post/useful-commandline-tools/" />
+<meta property="article:published_time" content="2021-02-18T20:53:15+11:00" />
+<meta property="article:modified_time" content="2021-02-18T20:53:15+11:00" />
+<meta itemprop="name" content="Useful Commandline Tools in Linux/Mac OS X">
+<meta itemprop="description" content="
+This article keeps collecting useful command-line tools in Linux or Mac
+OS X (via homebrew). It will be continuously updated.
+
+It includes the following functions:
+
+
+tools for downloading videos or webpages;
+
+
+useful tools on dealing with documents (.txt, .pdf, .djvu, etc.);
+
+
+tricks on image operations, like resize, format conversion, etc.; and
+
+
+basic video operations.
+
+">
+<meta itemprop="datePublished" content="2021-02-18T20:53:15+11:00" />
+<meta itemprop="dateModified" content="2021-02-18T20:53:15+11:00" />
+<meta itemprop="wordCount" content="917">
+
+
+
+<meta itemprop="keywords" content="tools,linux," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Useful Commandline Tools in Linux/Mac OS X"/>
+<meta name="twitter:description" content="
+This article keeps collecting useful command-line tools in Linux or Mac
+OS X (via homebrew). It will be continuously updated.
+
+It includes the following functions:
+
+
+tools for downloading videos or webpages;
+
+
+useful tools on dealing with documents (.txt, .pdf, .djvu, etc.);
+
+
+tricks on image operations, like resize, format conversion, etc.; and
+
+
+basic video operations.
+
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Icarus&#39;s Wings</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Icarus&#39;s Wings</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Useful Commandline Tools in Linux/Mac OS X</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-02-18 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> linux </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#headline-1">Download</a>
+<ul>
+<li><a href="#headline-2">YouTube videos</a>
+</li>
+<li><a href="#headline-3">Web pages</a>
+</li>
+</ul>
+</li>
+<li><a href="#headline-4">Documents</a>
+<ul>
+<li><a href="#headline-5">Plain Text</a>
+</li>
+<li><a href="#headline-6">DjVu</a>
+</li>
+<li><a href="#headline-7">PDF</a>
+</li>
+<li><a href="#headline-8">Dictionary</a>
+</li>
+</ul>
+</li>
+<li><a href="#headline-9">Images</a>
+<ul>
+<li><a href="#headline-10">Infomation</a>
+</li>
+<li><a href="#headline-11">Resize</a>
+</li>
+<li><a href="#headline-12">Conversion</a>
+<ul>
+<li><a href="#headline-13">color</a>
+</li>
+<li><a href="#headline-14">SVG</a>
+</li>
+<li><a href="#headline-15">JPEG/PNG</a>
+</li>
+<li><a href="#headline-16">webp</a>
+</li>
+<li><a href="#headline-17">parallel conversion</a>
+</li>
+</ul>
+</li>
+<li><a href="#headline-18">Combination</a>
+</li>
+<li><a href="#headline-19">Quality/Size reduction</a>
+</li>
+</ul>
+</li>
+<li><a href="#headline-20">Videos</a>
+<ul>
+<li><a href="#headline-21">FFMPEG </a>
+</li>
+<li><a href="#headline-22">AVCONV</a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>
+This article keeps collecting useful command-line tools in Linux or Mac
+OS X (via <code class="verbatim">homebrew</code>). It will be continuously updated.</p>
+<p>
+It includes the following functions:</p>
+<ul>
+<li>
+<p>tools for downloading videos or webpages;</p>
+</li>
+<li>
+<p>useful tools on dealing with documents (<code class="verbatim">.txt</code>, <code class="verbatim">.pdf</code>, <code class="verbatim">.djvu</code>, etc.);</p>
+</li>
+<li>
+<p>tricks on image operations, like resize, format conversion, etc.; and</p>
+</li>
+<li>
+<p>basic video operations.</p>
+</li>
+</ul>
+
+<div id="outline-container-headline-1" class="outline-2">
+<h2 id="headline-1">
+Download
+</h2>
+<div id="outline-text-headline-1" class="outline-text-2">
+<div id="outline-container-headline-2" class="outline-3">
+<h3 id="headline-2">
+YouTube videos
+</h3>
+<div id="outline-text-headline-2" class="outline-text-3">
+<p>
+To check the available formats:</p>
+<div class="src src-sh">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">  youtube-dl -F VIDEO_URL</code></pre></td></tr></table>
+</div>
+</div>
+</div>
+<p>
+After downloading, trim the suffixed random ID strings:</p>
+<div class="src src-sh">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">  prename <span class="s2">&#34;s/-[A-z0-9-_]*.mp4/.mp4/&#34;</span> *.mp4</code></pre></td></tr></table>
+</div>
+</div>
+</div>
+<p>
+To download the best video with MP4 format:</p>
+<div class="src src-sh">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">  youtube-dl -f <span class="s1">&#39;best[ext=mp4]&#39;</span> URL</code></pre></td></tr></table>
+</div>
+</div>
+</div>
+<p>
+To download the best MP4 with quality equal or less to 480p:</p>
+<div class="src src-sh">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">  youtube-dl -f <span class="s1">&#39;best[ext=mp4][height&lt;=480]&#39;</span> URL</code></pre></td></tr></table>
+</div>
+</div>
+</div>
+<p>
+To download the best MP4 with quality &lt;= 480p and the best audio in M4A:</p>
+<div class="src src-sh">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">  youtube-dl -f <span class="s1">&#39;bestvideo[ext=mp4][height&lt;=480]+bestaudio[ext=m4a]&#39;</span> URL</code></pre></td></tr></table>
+</div>
+</div>
+</div>
+<p>
+To download items (e.g., 1, 2, …, 10, 12, 18):</p>
+<div class="src src-sh">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">  youtube-dl --playlist-items 1-10,12,18 PLAYLIST_URL</code></pre></td></tr></table>
+</div>
+</div>
+</div>
+<p>
+When the default file name is too long (by default, it uses the video title
+in Youtube), you may specify a file name by a random ID string plus the
+extension:</p>
+<div class="src src-sh">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">  youtube-dl -o <span class="s2">&#34;./%(id)s.%(ext)s&#34;</span> URL</code></pre></td></tr></table>
+</div>
+</div>
+</div>
+<p>
+If you encounter the following error due to Youtube age restriction,</p>
+<pre class="example">
+  ERROR: Content Warning
+  This video may be inappropriate for some users.
+         Sign in to confirm your age
+</pre>
+<p>you may handle by explicitly specifying cookies</p>
+<ul>
+<li>
+<p>use Firefox adds-on <code class="verbatim">Export cookies</code> to export the webpage (which video you want to
+download) cookies to a place, e.g., <code class="verbatim">~/Downloads/cookies.txt</code>;</p>
+</li>
+<li>
+<p>pass this cookies file to <code class="verbatim">youtube-dl</code> as follows:</p>
+</li>
+</ul>
+<div class="src src-sh">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">  youtube-dl --cookies ~/Downloads/cookies.txt -f <span class="s1">&#39;best&#39;</span> URL</code></pre></td></tr></table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-3" class="outline-3">
+<h3 id="headline-3">
+Web pages
+</h3>
+<div id="outline-text-headline-3" class="outline-text-3">
+<p>
+Download all children webpages: <code>wget -r -np -R &#34;index.html*&#34; URL</code></p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-4" class="outline-2">
+<h2 id="headline-4">
+Documents
+</h2>
+<div id="outline-text-headline-4" class="outline-text-2">
+<div id="outline-container-headline-5" class="outline-3">
+<h3 id="headline-5">
+Plain Text
+</h3>
+<div id="outline-text-headline-5" class="outline-text-3">
+<p>
+Convert non-unicode Chinese texts to UTF-8:</p>
+<div class="src src-sh">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">  iconv -f gbk -t utf-8 IN.txt &gt; OUT.txt</code></pre></td></tr></table>
+</div>
+</div>
+</div>
+<p>The Chinese encoding majorly used include:</p>
+<ul>
+<li>
+<p><code class="verbatim">gbk</code></p>
+</li>
+<li>
+<p><code class="verbatim">gb18030</code></p>
+</li>
+<li>
+<p><code class="verbatim">gb2312</code></p>
+</li>
+<li>
+<p><code class="verbatim">big5</code> for traditional Chinese</p>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-headline-6" class="outline-3">
+<h3 id="headline-6">
+DjVu
+</h3>
+<div id="outline-text-headline-6" class="outline-text-3">
+<p>
+<strong>Installation</strong>: </p>
+<ul>
+<li>
+<p>djvu encoding/decoding library support: <code class="verbatim">brew install djvulibre</code></p>
+</li>
+<li>
+<p>djvu default viewer: <code class="verbatim">brew install djview</code> (or <code class="verbatim">brew install djview4</code>
+for its stable version 4)</p>
+</li>
+<li>
+<p>tools to convert djvu to pdf: </p>
+<ul>
+<li>
+<p>use <code class="verbatim">ddjvu</code> command from <code class="verbatim">djvulibre</code>, or</p>
+</li>
+<li>
+<p>install the tool: <code class="verbatim">brew install djvu2pdf</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Usages</strong>:</p>
+<ul>
+<li>
+<p>Break Djvu into separate pages:</p>
+<div class="src src-sh">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">  $ djvmcvt -i input.djvu /path/to/out/dir output-index.djvu</code></pre></td></tr></table>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>Convert Djvu pages into images:</p>
+<div class="src src-sh">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">  $ ddjvu --format<span class="o">=</span>tiff page.djvu page.tiff</code></pre></td></tr></table>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>Convert Djvu pages into PDF:</p>
+<div class="src src-sh">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">  $ ddjvu --format<span class="o">=</span>pdf -quality<span class="o">=</span><span class="m">85</span> inputfile.djvu ouputfile.pdf</code></pre></td></tr></table>
+</div>
+</div>
+</div>
+<p>or, use <code class="verbatim">djvu2pdf</code> tool:</p>
+<div class="src src-sh">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">  $ djvu2pdf in.djvu</code></pre></td></tr></table>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>You can also use –page to export specific pages:</p>
+<div class="src src-sh">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">  $ ddjvu --format<span class="o">=</span>tiff --page<span class="o">=</span>1-10 input.djvu output.tiff</code></pre></td></tr></table>
+</div>
+</div>
+</div>
+<p>This will convert pages from 1 to 10 into one tiff file.</p>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-headline-7" class="outline-3">
+<h3 id="headline-7">
+PDF
+</h3>
+<div id="outline-text-headline-7" class="outline-text-3">
+<p>
+Add margins to PDF files:</p>
+<ul>
+<li>
+<p>use <code class="verbatim">pdfcrop</code> provided by <code class="verbatim">TexLive</code></p>
+<div class="src src-sh">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">  pdfcrop --margin <span class="s1">&#39;29 0 29 0&#39;</span> input.pdf output.pdf</code></pre></td></tr></table>
+</div>
+</div>
+</div>
+<p>The four digits represent &#39;LEFT TOP RIGHT BOTTOM&#39;, respectively.</p>
+</li>
+<li>
+<p>use <code class="verbatim">pdfjam</code> provided by <code class="verbatim">TexLive</code> to do the offset trick for the right and left pages</p>
+<div class="src src-sh">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">  pdfjam --twoside --offset <span class="s1">&#39;1cm 0cm&#39;</span> file.pdf</code></pre></td></tr></table>
+</div>
+</div>
+</div>
+</li>
+</ul>
+<p>Create a blank PDF file in A4:</p>
+<div class="src src-sh">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">  convert xc:none -page A4 blank.pdf</code></pre></td></tr></table>
+</div>
+</div>
+</div>
+<p>or, with a specific size:</p>
+<div class="src src-sh">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">  convert xc:none -page 842x595 blank.pdf</code></pre></td></tr></table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-8" class="outline-3">
+<h3 id="headline-8">
+Dictionary
+</h3>
+<div id="outline-text-headline-8" class="outline-text-3">
+<p>This article shows how to convert the BGL dictionary to the AppleDict format
+for Dictionary.app.</p>
+<p>
+The key tool to convert formats is the Python package <code class="verbatim">pyglossary</code> on
+<a href="https://github.com/ilius/pyglossary">github</a>. You may clone this project, or install from PyPI by <code>$pip
+install pyglossary</code>.</p>
+<p>
+Moreover, we need additional tools to support AppleDict reading and
+writing: </p>
+<ul>
+<li>
+<p>Required Python libraries for AppleDict:</p>
+<ul>
+<li>
+<p>Reading from AppleDict Binary (.dictionary)
+<code>sudo pip3 install lxml</code></p>
+</li>
+<li>
+<p>Writing to AppleDict
+<code>sudo pip3 install lxml beautifulsoup4 html5lib</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Requirements for AppleDict on Mac OS X: if you want to convert
+glossaries into AppleDict format on Mac OS X, you also need:</p>
+<ul>
+<li>
+<p>GNU make as part of <em>Command Line Tools for Xcode</em>.</p>
+</li>
+<li>
+<p><em>Dictionary Development Kit</em> as part of <em>Additional Tools for
+Xcode</em>. Extract to <code class="verbatim">/Applications/Utilities/Dictionary Development
+Kit</code> (if using github clone), or <code class="verbatim">~/Developer/Extras/Dictionary
+Development Kit</code> (if using pip installation).</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>Now it is ready to use <code class="verbatim">pylossary</code> to convert a BGL dictionary to
+AppleDict, e.g., &#34;Merriam-Webster.Collegiate.Dictionary.BGL&#34;:</p>
+<div class="src src-sh">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">  pyglossary --write-format<span class="o">=</span>AppleDict <span class="se">\
+</span><span class="se"></span>             Merriam-Webster.Collegiate.Dictionary.BGL Merriam-Webster
+
+  <span class="nb">cd</span> Merriam-Webster/
+  make
+  make install</code></pre></td></tr></table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-9" class="outline-2">
+<h2 id="headline-9">
+Images
+</h2>
+<div id="outline-text-headline-9" class="outline-text-2">
+<div id="outline-container-headline-10" class="outline-3">
+<h3 id="headline-10">
+Infomation
+</h3>
+<div id="outline-text-headline-10" class="outline-text-3">
+<p>
+To display image meta information: <br>
+<code>magick identify -verbose IN.png</code></p>
+</div>
+</div>
+<div id="outline-container-headline-11" class="outline-3">
+<h3 id="headline-11">
+Resize
+</h3>
+<div id="outline-text-headline-11" class="outline-text-3">
+<p>
+Resize image with fixed ratios (the height and width may be exactly 64,
+which will be modified by the ratio):  <br>
+<code>convert dragon.gif -resize 64x64 resize_dragon.gif</code></p>
+<p>
+Resize image and ignore ratios: <br>
+<code>convert dragon.gif  -resize 64x64\!  exact_dragon.gif</code></p>
+<p>
+Only shrink larger images: <br>
+<code>convert dragon.gif  -resize 64x64\&gt;  shrink_dragon.gif</code></p>
+<p>
+Resize by percentages: <br>
+<code>convert dragon.gif  -resize 50%  half_dragon.gif</code></p>
+</div>
+</div>
+<div id="outline-container-headline-12" class="outline-3">
+<h3 id="headline-12">
+Conversion
+</h3>
+<div id="outline-text-headline-12" class="outline-text-3">
+<div id="outline-container-headline-13" class="outline-4">
+<h4 id="headline-13">
+color
+</h4>
+<div id="outline-text-headline-13" class="outline-text-4">
+<p>
+Convert color images into grayscale: <br>
+<code>convert --colorspace gray IN.jpg OUT.jpg</code></p>
+</div>
+</div>
+<div id="outline-container-headline-14" class="outline-4">
+<h4 id="headline-14">
+SVG
+</h4>
+<div id="outline-text-headline-14" class="outline-text-4">
+<p>
+DEPENDENCY: require the package <code class="verbatim">librsvg</code>; install by
+<code>brew install librsvg</code></p>
+<p>
+Convert img.svg to img.jpg with height set to 1500px: <br>
+<code>rsvg-convert -h 1500 img.svg img.jpg</code></p>
+<p>
+Convert img.svg to img.pdf (vector image): <br>
+<code>rsvg-convert -f pdf -o img.pdf img.svg</code></p>
+</div>
+</div>
+<div id="outline-container-headline-15" class="outline-4">
+<h4 id="headline-15">
+JPEG/PNG
+</h4>
+<div id="outline-text-headline-15" class="outline-text-4">
+<p>
+Convert img.png to img.jpg with density 300, quality 100 and trimmed: <br>
+<code>convert -density 300 -trim -quality 100</code></p>
+</div>
+</div>
+<div id="outline-container-headline-16" class="outline-4">
+<h4 id="headline-16">
+webp
+</h4>
+<div id="outline-text-headline-16" class="outline-text-4">
+<p>
+DEPENDENCY: require the package <code class="verbatim">webp</code>; install by <code>brew install webp</code></p>
+<p>
+Convert img.webp to img.jpg:<br>
+<code>dwebp img.webp -o img.jpg</code></p>
+</div>
+</div>
+<div id="outline-container-headline-17" class="outline-4">
+<h4 id="headline-17">
+parallel conversion
+</h4>
+<div id="outline-text-headline-17" class="outline-text-4">
+<p>
+Use 8-cores to convert images to pdf in parallel:</p>
+<div class="src src-sh">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">  parallel -j <span class="m">8</span> convert <span class="o">{}</span> -density <span class="m">300</span> -quality <span class="m">100</span> <span class="o">{</span>.<span class="o">}</span>.pdf ::: *.png</code></pre></td></tr></table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-18" class="outline-3">
+<h3 id="headline-18">
+Combination
+</h3>
+<div id="outline-text-headline-18" class="outline-text-3">
+<p>
+Concatenate all images vertically as a new one: <br>
+<code>convert -append *.png out.png</code></p>
+</div>
+</div>
+<div id="outline-container-headline-19" class="outline-3">
+<h3 id="headline-19">
+Quality/Size reduction
+</h3>
+<div id="outline-text-headline-19" class="outline-text-3">
+<p>
+Reduce file size of an image: <br>
+<code>convert -resize 1000 -trim -quality 72 IN.jpg OUT.jpg</code></p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-20" class="outline-2">
+<h2 id="headline-20">
+Videos
+</h2>
+<div id="outline-text-headline-20" class="outline-text-2">
+<div id="outline-container-headline-21" class="outline-3">
+<h3 id="headline-21">
+FFMPEG 
+</h3>
+<div id="outline-text-headline-21" class="outline-text-3">
+<p>
+Convert flv to mp4 without losing quality:</p>
+<div class="src src-sh">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">  ffmpeg -i INPUT.flv -c:v libx264 -crf <span class="m">19</span> -strict experimental OUTPUT.mp4</code></pre></td></tr></table>
+</div>
+</div>
+</div>
+<p>
+Alternatively, the following only changes container without reencoding:</p>
+<div class="src src-sh">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">  ffmpeg -i INPUT.flv -codec copy OUTPUT.mp4</code></pre></td></tr></table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-22" class="outline-3">
+<h3 id="headline-22">
+AVCONV
+</h3>
+<div id="outline-text-headline-22" class="outline-text-3">
+<p>
+Combine video file <code class="verbatim">mp4</code> with sound track <code class="verbatim">m4a</code> (useful when you
+download video and audio files separately):</p>
+<div class="src src-sh">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">  avconv -y -i in.mp4 -i in.m4a -c copy out.mp4</code></pre></td></tr></table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">oracleyue</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2021-02-18
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/tools/">tools</a>
+          <a href="/tags/linux/">linux</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/vim-powerline/">
+            <span class="next-text nav-default">Setup powerline in Vim for Linux/OS X</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'oracleyue-github-io';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:oracleyue@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.facebook.com/zuogong.yue" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://scholar.google.com/citations?user=b3AVP4QAAAAJ&amp;hl=en" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/oracleyue" class="iconfont icon-github" title="github"></a>
+  <a href="https://oracleyue.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>oracleyue</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

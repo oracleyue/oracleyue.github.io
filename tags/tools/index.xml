@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tools on Icarus&#39;s Wings - A blog of oracleyue</title>
+    <link>https://oracleyue.github.io/tags/tools/</link>
+    <description>Recent content in tools on Icarus&#39;s Wings - A blog of oracleyue</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 18 Feb 2021 20:53:15 +1100</lastBuildDate><atom:link href="https://oracleyue.github.io/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Useful Commandline Tools in Linux/Mac OS X</title>
+      <link>https://oracleyue.github.io/post/useful-commandline-tools/</link>
+      <pubDate>Thu, 18 Feb 2021 20:53:15 +1100</pubDate>
+      
+      <guid>https://oracleyue.github.io/post/useful-commandline-tools/</guid>
+      <description>&lt;p&gt;
+This article keeps collecting useful command-line tools in Linux or Mac
+OS X (via &lt;code class=&#34;verbatim&#34;&gt;homebrew&lt;/code&gt;). It will be continuously updated.&lt;/p&gt;
+&lt;p&gt;
+It includes the following functions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;tools for downloading videos or webpages;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;useful tools on dealing with documents (&lt;code class=&#34;verbatim&#34;&gt;.txt&lt;/code&gt;, &lt;code class=&#34;verbatim&#34;&gt;.pdf&lt;/code&gt;, &lt;code class=&#34;verbatim&#34;&gt;.djvu&lt;/code&gt;, etc.);&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;tricks on image operations, like resize, format conversion, etc.; and&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;basic video operations.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
