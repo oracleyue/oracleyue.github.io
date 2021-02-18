@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Understanding characteristics of ensemble methods - Icarus&#39;s Wings - A blog of oracleyue</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="oracleyue" /><meta name="description" content=" Note: This article is an answer written by image_doctor to the question Base classifiers for boosting on StackExchange on 23 Mar 2012 at 13:20.
+ There are some characteristics which may add insight to an understanding of ensemble methods.
+" /><meta name="keywords" content="oracleyue, blog, Hugo, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.75.1 with theme even" />
+
+
+<link rel="canonical" href="https://oracleyue.github.io/post/ensemble-ml/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Understanding characteristics of ensemble methods" />
+<meta property="og:description" content="
+Note: This article is an answer written by image_doctor to the question Base
+classifiers for boosting on StackExchange on 23 Mar 2012 at 13:20.
+
+There are some characteristics which may add insight to an understanding
+of ensemble methods." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://oracleyue.github.io/post/ensemble-ml/" />
+<meta property="article:published_time" content="2021-02-18T23:40:49+11:00" />
+<meta property="article:modified_time" content="2021-02-18T23:40:49+11:00" />
+<meta itemprop="name" content="Understanding characteristics of ensemble methods">
+<meta itemprop="description" content="
+Note: This article is an answer written by image_doctor to the question Base
+classifiers for boosting on StackExchange on 23 Mar 2012 at 13:20.
+
+There are some characteristics which may add insight to an understanding
+of ensemble methods.">
+<meta itemprop="datePublished" content="2021-02-18T23:40:49+11:00" />
+<meta itemprop="dateModified" content="2021-02-18T23:40:49+11:00" />
+<meta itemprop="wordCount" content="1041">
+
+
+
+<meta itemprop="keywords" content="machinelearning,AI,computation," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Understanding characteristics of ensemble methods"/>
+<meta name="twitter:description" content="
+Note: This article is an answer written by image_doctor to the question Base
+classifiers for boosting on StackExchange on 23 Mar 2012 at 13:20.
+
+There are some characteristics which may add insight to an understanding
+of ensemble methods."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Icarus&#39;s Wings</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Icarus&#39;s Wings</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Understanding characteristics of ensemble methods</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-02-18 </span>
+        <div class="post-category">
+            <a href="/categories/machinelearning/"> MachineLearning </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#headline-1">Bagging</a>
+</li>
+<li><a href="#headline-2">Random Forests</a>
+</li>
+<li><a href="#headline-3">Boosting</a>
+</li>
+<li><a href="#headline-4">No free lunch</a>
+</li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>
+<em>Note: This article is an answer written by <a href="https://stats.stackexchange.com/users/10065/image-doctor">image_doctor</a> to the question <a href="https://stats.stackexchange.com/questions/25121/base-classifiers-for-boosting">Base
+classifiers for boosting</a> on StackExchange on 23 Mar 2012 at 13:20.</em></p>
+<p>
+There are some characteristics which may add insight to an understanding
+of ensemble methods.</p>
+
+<div id="outline-container-headline-1" class="outline-2">
+<h2 id="headline-1">
+Bagging
+</h2>
+<div id="outline-text-headline-1" class="outline-text-2">
+<p>
+Probably the simplest ensemble method, bagging, which is nothing more
+than a collection of similar homogeneous classifiers built on resampled
+training data and held together by a combination method, ameliorates the
+variance caused by instability in the base classifiers by averaging
+their outputs. The ensemble leverages this instability to address the
+variance component of the error of the base classifier and to a lesser
+degree their bias.</p>
+<p>
+You can think of bagging as providing a significant degree of smoothing
+to what would otherwise be a very unstable &#34;weak&#34; base classifier.One
+reason, apart from their tendency towards computational efficiency, why
+weak classifiers are chosen is that they exhibi higher diversity, which
+is a beneficial characteristic for ensembles.</p>
+<p>
+If you visualise an bagged ensemble full of very strong stable
+classifiers, they will have a very high degree of agreement on their
+classifications of examples presented to the ensemble. In effect they
+all vote the same way. A committee in which all members vote similarly
+has little utility over any single member of the committee.</p>
+<p>
+So to work effectively an ensemble must embrace a degree of diversity
+amongst it&#39;s members. Clearly a committee of members who spew forth
+almost random opinions is not of great utility either. So some
+intermediate position between these extremes is sought.</p>
+<p>
+In practice, as no complete theory on the subject exists, this
+compromise is found using empirical methods such as cross-validation or
+hold out trials. These are used to gauge a suitable strength for the
+base classifier.</p>
+<p>
+Because this search for an optimum ensemble will normally involve
+adjusting parameters of the base classifiers and the ensemble itself, it
+is desirable that the number of such parameters be kept as small as
+possible. If not, the dimensionality of the parameter search space
+quickly means that finding the global minimum is computationally
+intractable. Decision trees are a popular choice because, as has been
+mentioned, they can be used effectively without necessarily tuning any
+of their parameters.</p>
+</div>
+</div>
+<div id="outline-container-headline-2" class="outline-2">
+<h2 id="headline-2">
+Random Forests
+</h2>
+<div id="outline-text-headline-2" class="outline-text-2">
+<p>
+Random forests, which are primarily bagged decision trees, leverage the
+significant instability of trees by the injecting of a strong stochastic
+component [ the permutations of a small number of features/factors at
+each decision node within a tree ] to create diversity within the
+ensemble. Because each node of a tree is presented with a new random
+selection of features the trees are highly diverse. The ensemble then
+has the effect of averaging out the variance and bias of the diverse
+collection of trees.</p>
+<p>
+To be effective a &#34;random forest&#34; of naive Bayes classifiers, or any
+other stable base classifier such as SVMs, needs the addition of
+stochastic element. For stable classifiers relatively small variations
+in training data, such as arise from bagging, lead to very similar
+classifiers.</p>
+<p>
+To increase diversity other approaches could be applied. For instance
+permuting the features shown to each base classifier. This has a
+restriction that the significant available diversity is held to the
+number of combinations of the feature set. Once the combinations have
+been exhausted there are no new classifiers available to the ensemble
+which would vote differently to existing members.</p>
+<p>
+For problems with relatively few features this severely limits the
+available pool of classifiers. It would be possible to inject further
+sources of randomness, say by aggressively sub-sampling the training
+data. The evidence would seem to be, that in the general case, such an
+approach is inferior to the particular blend of bias and diversity that
+a random forest offers.</p>
+<p>
+It is possible to successfully utilise other unstable base classifiers,
+such as multi-layer perceptrons (neural networks) which have few nodes
+and restricted amounts of training or point based space filling
+approaches for instance stochastic discrimination, to inject diversity
+in ensembles methods. Certainly in the case of MLPs a degree of
+parameter tuning is essential.</p>
+</div>
+</div>
+<div id="outline-container-headline-3" class="outline-2">
+<h2 id="headline-3">
+Boosting
+</h2>
+<div id="outline-text-headline-3" class="outline-text-2">
+<p>
+Boosting takes a different approach to building the ensemble than the
+simple agglomerative model adopted by Bagging. I suppose conceptually if
+you think of bagging as being a flat ensemble model, boosting constructs
+a layered classifier.</p>
+<p>
+Each round of boosting chooses a new classifier from a set of potential
+classifiers constructed from training data weighted, or resampled,
+according to the mis-classifications of the previous round. The new
+classifier is selected so as to minimise the total ensemble error.</p>
+<p>
+This is in sharp contrast to the lack of selection criteria resent in
+random forest ensemble construction. Each new base classifier is
+specifically required to focus on the weak points of the existing
+ensemble, with the result that boosting aggressively drives down
+training error.</p>
+<p>
+In the early stages of ensemble construction boosting has few weak
+classifiers and each is focused on different areas of the training
+space, the effect of this is to primarily reduce bias. As the ensemble
+size grows the scope for bias reduction diminishes and error from
+variance is improved.</p>
+<p>
+The benefit from instability in the base classifier for boosting is that
+as the ensemble grows, the number of remaining mis-classified examples
+falls. A higher degree of diversity is needed to generate a classifier
+which adopts a usefully different view of the remaining samples than its
+predecessors.</p>
+<p>
+The power of this approach can be seen by the fact that acceptable
+results can be achieved with only decision stumps, though MLPs have
+proved very effective in general.</p>
+<p>
+Because of this constant focus on the misclassified examples, boosting&#39;s
+weakness is that it can be susceptible to noise, to some extent
+logitboost attempts to address this failing.</p>
+</div>
+</div>
+<div id="outline-container-headline-4" class="outline-2">
+<h2 id="headline-4">
+No free lunch
+</h2>
+<div id="outline-text-headline-4" class="outline-text-2">
+<p>
+It is worth remembering that no grand unified theory of machine learning
+exists and that the results of any particular classifier are highly
+dependent on the type of data it is used with. So, a priori, there isn&#39;t
+any hard and fast reason to assert one classifier type being superior
+over another, other than the consensus derived from previous
+experimentation with similar data and the general utility shown by an
+algorithm across a variety of data sets. To get a good solution, you may
+want to experiment with a handful of popular approaches.</p>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">oracleyue</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2021-02-18
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/machinelearning/">machinelearning</a>
+          <a href="/tags/ai/">AI</a>
+          <a href="/tags/computation/">computation</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/useful-commandline-tools/">
+            <span class="next-text nav-default">Useful commandline tools in Linux/Mac OS X</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'oracleyue-github-io';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:oracleyue@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.facebook.com/zuogong.yue" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://scholar.google.com/citations?user=b3AVP4QAAAAJ&amp;hl=en" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/oracleyue" class="iconfont icon-github" title="github"></a>
+  <a href="https://oracleyue.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>oracleyue</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

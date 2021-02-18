@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>computation on Icarus&#39;s Wings - A blog of oracleyue</title>
+    <link>https://oracleyue.github.io/tags/computation/</link>
+    <description>Recent content in computation on Icarus&#39;s Wings - A blog of oracleyue</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 18 Feb 2021 23:40:49 +1100</lastBuildDate><atom:link href="https://oracleyue.github.io/tags/computation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Understanding characteristics of ensemble methods</title>
+      <link>https://oracleyue.github.io/post/ensemble-ml/</link>
+      <pubDate>Thu, 18 Feb 2021 23:40:49 +1100</pubDate>
+      
+      <guid>https://oracleyue.github.io/post/ensemble-ml/</guid>
+      <description>&lt;p&gt;
+&lt;em&gt;Note: This article is an answer written by &lt;a href=&#34;https://stats.stackexchange.com/users/10065/image-doctor&#34;&gt;image_doctor&lt;/a&gt; to the question &lt;a href=&#34;https://stats.stackexchange.com/questions/25121/base-classifiers-for-boosting&#34;&gt;Base
+classifiers for boosting&lt;/a&gt; on StackExchange on 23 Mar 2012 at 13:20.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;
+There are some characteristics which may add insight to an understanding
+of ensemble methods.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
