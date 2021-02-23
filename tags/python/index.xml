@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python on Icarus&#39;s Wings - A blog of oracleyue</title>
+    <link>https://oracleyue.github.io/tags/python/</link>
+    <description>Recent content in python on Icarus&#39;s Wings - A blog of oracleyue</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 23 Feb 2021 22:05:07 +1100</lastBuildDate><atom:link href="https://oracleyue.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to convert DJVU to PDF with table of contents</title>
+      <link>https://oracleyue.github.io/post/djvu2pdf_with_toc/</link>
+      <pubDate>Tue, 23 Feb 2021 22:05:07 +1100</pubDate>
+      
+      <guid>https://oracleyue.github.io/post/djvu2pdf_with_toc/</guid>
+      <description>&lt;p&gt;
+This article is based on the &lt;a href=&#34;https://superuser.com/questions/801893/converting-djvu-to-pdf-and-preserving-table-of-contents-how-is-it-possible&#34;&gt;answer by pyrocrasty&lt;/a&gt; on StackExchange, and
+&lt;a href=&#34;https://github.com/kcroker/dpsprep&#34;&gt;kcroker&amp;#39;s dpsprep&lt;/a&gt;. It tells the essential idea and tools to convert DJVU
+to PDF with TOC preserved. A python script is given at the end to ease
+your usage.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
