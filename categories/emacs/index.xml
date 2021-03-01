@@ -16,10 +16,11 @@
       <description>&lt;p&gt;
 This article keeps collecting useful commands/keybindings in Emacs for
 efficient editing. &lt;/p&gt;
-&lt;p&gt;
-&lt;strong&gt;Warning&lt;/strong&gt;: It may rely on certain configurations (see &lt;a href=&#34;https://github.com/oracleyue/dotfiles/tree/master/_emacs.d&#34;&gt;my .emacs.d on
+&lt;blockquote&gt;
+&lt;p&gt;⚠️ &lt;strong&gt;Warning&lt;/strong&gt;: It may rely on certain configurations (see &lt;a href=&#34;https://github.com/oracleyue/dotfiles/tree/master/_emacs.d&#34;&gt;my .emacs.d on
 github&lt;/a&gt;). If you found some keybindings are not defined, please refer to
-the configuration files.&lt;/p&gt;</description>
+the configuration files.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -43,19 +44,6 @@ the configuration files.&lt;/p&gt;</description>
       
       <guid>https://oracleyue.github.io/post/emacs-setup-md/</guid>
       <description>&lt;p&gt;This is a quick note on the setup of Emacs on Mac OS X.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Emacs as C&#43;&#43; IDE</title>
-      <link>https://oracleyue.github.io/post/emacs-init-cc-irony/</link>
-      <pubDate>Mon, 04 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://oracleyue.github.io/post/emacs-init-cc-irony/</guid>
-      <description>&lt;p&gt;The C++ IDE environment in Emacs is configured mainly:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;using &lt;strong&gt;irony-mode&lt;/strong&gt; and &lt;strong&gt;gtags&lt;/strong&gt;;&lt;/li&gt;
-&lt;li&gt;and, using &lt;strong&gt;company&lt;/strong&gt; as auto-completion engine.&lt;/li&gt;
-&lt;/ul&gt;</description>
     </item>
     
   </channel>
