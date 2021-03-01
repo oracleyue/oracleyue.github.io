@@ -56,7 +56,7 @@ init-edit.el). If you found some keybindings are not defined, please
 refer to the configuration files.">
 <meta itemprop="datePublished" content="2019-09-06T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2019-09-20T00:00:00+00:00" />
-<meta itemprop="wordCount" content="868">
+<meta itemprop="wordCount" content="871">
 
 
 
@@ -299,14 +299,15 @@ continue jumping</li>
 <li>exchange the cursor and the previous mark: <code>C-x C-x</code></li>
 <li>use <code>counsel-mark-ring</code> to show mark ring: <code>M-g SPC</code></li>
 </ul>
-<p>Use <strong>register</strong> (position-register) to jump between few files:</p>
+<p>Use <strong>register</strong> (position-register) to jump between files (within
+current Emacs session):</p>
 <ul>
 <li>use <code>counsel-register</code> to show the list: <code>M-g r</code></li>
 <li>record the position of point in register [r]: <code>C-x r SPC [a-z]</code> (where
 <code>[a-z]</code> denotes any single letter)</li>
 <li>jump to the position saved in register [r]: <code>C-x r j [a-z]</code></li>
 </ul>
-<p>Use <strong>bookmark</strong> to jump persistently between files:</p>
+<p>Use <strong>bookmark</strong> to jump between files persistently:</p>
 <ul>
 <li><code>M-g b</code> (or <code>C-x r b</code>): call <code>counsel-bookmark</code> to create or jump
 to bookmarks from a list</li>
