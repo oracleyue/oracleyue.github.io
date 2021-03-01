@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>A collection of efficient editing commands in Emacs - Icarus&#39;s Wings - A blog of oracleyue</title>
+  <title>Useful commands in Emacs for efficient editing - Icarus&#39;s Wings - A blog of oracleyue</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="oracleyue" /><meta name="description" content="This is a summary of useful commands/keybindings in Emacs for efficient editing. Note that it may rely on certain configurations (mostly in init-edit.el). If you found some keybindings are not defined, please refer to the configuration files.
+<meta name="author" content="oracleyue" /><meta name="description" content=" This article keeps collecting useful commands/keybindings in Emacs for efficient editing.  Warning: It may rely on certain configurations (see my .emacs.d on github). If you found some keybindings are not defined, please refer to the configuration files.
 " /><meta name="keywords" content="oracleyue, blog, Hugo, even" />
 
 
@@ -40,33 +40,42 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="A collection of efficient editing commands in Emacs" />
-<meta property="og:description" content="This is a summary of useful commands/keybindings in Emacs for efficient
-editing. Note that it may rely on certain configurations (mostly in
-init-edit.el). If you found some keybindings are not defined, please
-refer to the configuration files." />
+<meta property="og:title" content="Useful commands in Emacs for efficient editing" />
+<meta property="og:description" content="
+This article keeps collecting useful commands/keybindings in Emacs for
+efficient editing. 
+
+Warning: It may rely on certain configurations (see my .emacs.d on
+github). If you found some keybindings are not defined, please refer to
+the configuration files." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://oracleyue.github.io/post/emacs-editing/" />
 <meta property="article:published_time" content="2019-09-06T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-09-20T00:00:00+00:00" />
-<meta itemprop="name" content="A collection of efficient editing commands in Emacs">
-<meta itemprop="description" content="This is a summary of useful commands/keybindings in Emacs for efficient
-editing. Note that it may rely on certain configurations (mostly in
-init-edit.el). If you found some keybindings are not defined, please
-refer to the configuration files.">
+<meta property="article:modified_time" content="2021-03-02T00:00:00+00:00" />
+<meta itemprop="name" content="Useful commands in Emacs for efficient editing">
+<meta itemprop="description" content="
+This article keeps collecting useful commands/keybindings in Emacs for
+efficient editing. 
+
+Warning: It may rely on certain configurations (see my .emacs.d on
+github). If you found some keybindings are not defined, please refer to
+the configuration files.">
 <meta itemprop="datePublished" content="2019-09-06T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2019-09-20T00:00:00+00:00" />
-<meta itemprop="wordCount" content="871">
+<meta itemprop="dateModified" content="2021-03-02T00:00:00+00:00" />
+<meta itemprop="wordCount" content="942">
 
 
 
 <meta itemprop="keywords" content="notes,emacs," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="A collection of efficient editing commands in Emacs"/>
-<meta name="twitter:description" content="This is a summary of useful commands/keybindings in Emacs for efficient
-editing. Note that it may rely on certain configurations (mostly in
-init-edit.el). If you found some keybindings are not defined, please
-refer to the configuration files."/>
+<meta name="twitter:title" content="Useful commands in Emacs for efficient editing"/>
+<meta name="twitter:description" content="
+This article keeps collecting useful commands/keybindings in Emacs for
+efficient editing. 
+
+Warning: It may rely on certain configurations (see my .emacs.d on
+github). If you found some keybindings are not defined, please refer to
+the configuration files."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -133,7 +142,7 @@ refer to the configuration files."/>
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">A collection of efficient editing commands in Emacs</h1>
+      <h1 class="post-title">Useful commands in Emacs for efficient editing</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2019-09-06 </span>
@@ -148,110 +157,248 @@ refer to the configuration files."/>
   <h2 class="post-toc-title">Contents</h2>
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-  <ul>
-    <li><a href="#basic-operations">Basic Operations</a>
-      <ul>
-        <li><a href="#cursor-movement">Cursor movement</a></li>
-        <li><a href="#buffer-operations">Buffer operations</a></li>
-        <li><a href="#files">Files</a></li>
-        <li><a href="#windows">Windows</a></li>
-      </ul>
-    </li>
-    <li><a href="#file-formatting">File Formatting</a>
-      <ul>
-        <li><a href="#tab-and-space">TAB and SPACE</a></li>
-        <li><a href="#encoding">Encoding</a></li>
-      </ul>
-    </li>
-    <li><a href="#jumping">Jumping</a></li>
-    <li><a href="#advanced-editing">Advanced editing</a>
-      <ul>
-        <li><a href="#copypaste">Copy/Paste</a></li>
-        <li><a href="#rectangle-editing">Rectangle editing</a></li>
-        <li><a href="#programming-supports">Programming Supports</a></li>
-      </ul>
-    </li>
-    <li><a href="#quick-functions">Quick functions</a></li>
-  </ul>
+<ul>
+<li><a href="#headline-1">Basic Operations</a>
+<ul>
+<li><a href="#headline-2">Cursor movement</a>
+</li>
+<li><a href="#headline-3">Buffer operations</a>
+</li>
+<li><a href="#headline-4">Files</a>
+</li>
+<li><a href="#headline-5">Windows</a>
+</li>
+</ul>
+</li>
+<li><a href="#headline-6">Formatting</a>
+<ul>
+<li><a href="#headline-7">TAB and SPACE</a>
+</li>
+<li><a href="#headline-8">Whitespaces (view and cleanup)</a>
+</li>
+<li><a href="#headline-9">Encoding</a>
+</li>
+</ul>
+</li>
+<li><a href="#headline-10">Jumping</a>
+<ul>
+<li><a href="#headline-11">Use <strong>mark rings</strong> to jump within buffer</a>
+</li>
+<li><a href="#headline-12">Use <strong>register</strong> to jump between files (within current Emacs session)</a>
+</li>
+<li><a href="#headline-13">Use <strong>bookmark</strong> to jump between files persistently</a>
+</li>
+</ul>
+</li>
+<li><a href="#headline-14">Advanced editing</a>
+<ul>
+<li><a href="#headline-15">Copy/Paste</a>
+</li>
+<li><a href="#headline-16">Rectangle editing</a>
+</li>
+<li><a href="#headline-17">Programming Supports</a>
+</li>
+</ul>
+</li>
+<li><a href="#headline-18">Quick functions</a>
+</li>
+</ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      <p>This is a summary of useful commands/keybindings in Emacs for efficient
-editing. Note that it may rely on certain configurations (mostly in
-<code>init-edit.el</code>). If you found some keybindings are not defined, please
-refer to the configuration files.</p>
-<h1 id="basic-operations">Basic Operations</h1>
-<h2 id="cursor-movement">Cursor movement</h2>
-<p>Move cursor to the top/middle/bottom of the current window: <code>M-r</code></p>
-<p>Make words in upper case/lower case/capitalized: <code>M-u</code>, <code>M-l</code>, <code>M-c</code></p>
-<p>Swap words: <code>M-t</code></p>
-<p>Open lines:</p>
+      <p>
+This article keeps collecting useful commands/keybindings in Emacs for
+efficient editing. </p>
+<p>
+<strong>Warning</strong>: It may rely on certain configurations (see <a href="https://github.com/oracleyue/dotfiles/tree/master/_emacs.d">my .emacs.d on
+github</a>). If you found some keybindings are not defined, please refer to
+the configuration files.</p>
+
+<div id="outline-container-headline-1" class="outline-2">
+<h2 id="headline-1">
+Basic Operations
+</h2>
+<div id="outline-text-headline-1" class="outline-text-2">
+<div id="outline-container-headline-2" class="outline-3">
+<h3 id="headline-2">
+Cursor movement
+</h3>
+<div id="outline-text-headline-2" class="outline-text-3">
+<p>
+Move cursor to the top/middle/bottom of the current window: <code class="verbatim">M-r</code></p>
+<p>
+Make words in upper case/lower case/capitalized: <code class="verbatim">M-u</code>, <code class="verbatim">M-l</code>, <code class="verbatim">M-c</code></p>
+<p>
+Swap words: <code class="verbatim">M-t</code></p>
+<p>
+Open lines:</p>
 <ul>
-<li>move to the next line and then opens a line: <code>open-next-line</code> <code>C-o</code></li>
-<li>open a new line before the current one: <code>open-previous-line</code> <code>M-o</code></li>
+<li>
+<p>move to the next line and then opens a line: <code>open-next-line</code> <code class="verbatim">C-o</code></p>
+</li>
+<li>
+<p>open a new line before the current one: <code>open-previous-line</code> <code class="verbatim">M-o</code> </p>
+</li>
 </ul>
 <p>Vertical editing:</p>
 <ul>
-<li>use <code>set-goal-column</code> to do vertical editing: <code>C-x C-n</code></li>
-<li>remove vertical mark: <code>C-u C-x C-n</code></li>
+<li>
+<p>use <code>set-goal-column</code> to do vertical editing: <code class="verbatim">C-x C-n</code></p>
+</li>
+<li>
+<p>remove vertical mark: <code class="verbatim">C-u C-x C-n</code>           </p>
+</li>
 </ul>
 <p>Move point to the first non-whitespace character on this line:
-<code>back-to-indenentation</code> <code>M-m</code></p>
-<h2 id="buffer-operations">Buffer operations</h2>
-<p>Default in <em>undo-tree</em>:</p>
+<code>back-to-indenentation</code> <code class="verbatim">M-m</code>  </p>
+</div>
+</div>
+<div id="outline-container-headline-3" class="outline-3">
+<h3 id="headline-3">
+Buffer operations
+</h3>
+<div id="outline-text-headline-3" class="outline-text-3">
+<p>
+Default in <em>undo-tree</em>:</p>
 <ul>
-<li>undo: <code>C-/</code>, <code>C-_</code></li>
-<li>redo: <code>C-?</code>, <code>M-_</code></li>
+<li>
+<p>undo: <code class="verbatim">C-/</code>, <code class="verbatim">C-_</code></p>
+</li>
+<li>
+<p>redo: <code class="verbatim">C-?</code>, <code class="verbatim">M-_</code></p>
+</li>
 </ul>
 <p>Mark regions:</p>
 <ul>
-<li>expand region: <code>C-=</code></li>
-<li>mark the whole buffer: <code>C-x h</code></li>
+<li>
+<p>expand region: <code class="verbatim">C-=</code>  </p>
+</li>
+<li>
+<p>mark the whole buffer: <code class="verbatim">C-x h</code>    </p>
+</li>
 </ul>
 <p>Kill texts/region/buffers:</p>
 <ul>
-<li>kills from the current point to a character: <code>zap-to-char</code> <code>M-z [e]</code></li>
-<li>kill line backwards: <code>M-0 C-k</code> (built-in) OR <code>C-&lt;backspace&gt;</code></li>
-<li>kill one sentence backwards: <code>C-x Backspace</code></li>
-<li>kill/yank to kill-ring:
+<li>
+<p>kills from the current point to a character: <code>zap-to-char</code> <code class="verbatim">M-z [e]</code></p>
+</li>
+<li>
+<p>kill line backwards: <code class="verbatim">M-0 C-k</code> (built-in) OR <code class="verbatim">C-&lt;backspace&gt;</code></p>
+</li>
+<li>
+<p>kill one sentence backwards: <code class="verbatim">C-x Backspace</code></p>
+</li>
+<li>
+<p>kill/yank to kill-ring:</p>
 <ul>
-<li><code>C-w / M-w</code> to kill or copy the mark region or the current line</li>
-<li><code>C-y</code> to yank</li>
-<li>list contents in kill-ring and select to yank: <code>M-y</code></li>
+<li>
+<p><code class="verbatim">C-w / M-w</code> to kill or copy the mark region or the current line</p>
+</li>
+<li>
+<p><code class="verbatim">C-y</code> to yank</p>
+</li>
+<li>
+<p>list contents in kill-ring and select to yank: <code class="verbatim">M-y</code></p>
+</li>
 </ul>
 </li>
 </ul>
-<p>Join the current line to the above one: <code>M-^</code></p>
-<p>Fill/unfill paragraph/region/buffer:</p>
+<p>Join the current line to the above one: <code class="verbatim">M-^</code></p>
+<p>
+Fill/unfill paragraph/region/buffer:</p>
 <ul>
-<li>fill/unfill paragraph/region: <code>M-q=/=M-Q</code></li>
-<li>set fill-column: <code>C-x f</code></li>
-<li>automatically split long lines up to a prefixed length: use <em>auto-fill</em> mode</li>
-<li>set fill-column: <code>C-x f</code></li>
+<li>
+<p>fill/unfill paragraph/region: <code class="verbatim">M-q=/=M-Q</code></p>
+</li>
+<li>
+<p>set fill-column: <code class="verbatim">C-x f</code></p>
+</li>
+<li>
+<p>automatically split long lines up to a prefixed length: use <em>auto-fill</em> mode</p>
+</li>
+<li>
+<p>set fill-column: <code class="verbatim">C-x f</code></p>
+</li>
 </ul>
-<h2 id="files">Files</h2>
-<p>Insert contents of file FILENAME into buffer: <code>insert-file</code> <code>C-x i</code></p>
-<p>Write current buffer into file FILENAME (equiv. &ldquo;Save As&rdquo;): <code>write-file</code>
-<code>C-x C-w</code></p>
-<p>Reload the file from the disk: <code>s-u</code> (s: super/command); <code>C-x C-v</code></p>
-<p>Open file in the read-only mode: <code>C-x C-r</code></p>
-<p>Toggle overwrite mode: <code>M-x overwrite-mode</code></p>
-<p>Count words in region: <code>M-=</code></p>
-<p>Use <code>M-x whitespace-mode</code> to show white spaces as dots</p>
-<h2 id="windows">Windows</h2>
-<p>Toggle window split (horizontal &lt;-&gt; vertical) :: <code>C-x |</code></p>
-<p>Open the <strong>Messages</strong> buffer :: <code>C-h e</code></p>
-<h1 id="file-formatting">File Formatting</h1>
-<h2 id="tab-and-space">TAB and SPACE</h2>
-<p>Insert TAB: <code>C-q TAB</code> (<code>TAB</code> trigger complete or insert 4 spaces)</p>
-<p>Insert 4-spaced TAB: <code>tab-to-tab-stop</code> or <code>M-i</code></p>
-<p>Converting TAB and 4-spaces of regions: <code>tabify</code> and <code>untabify</code></p>
-<p>Remove all except 1 space between characters :: <code>ESC SPC</code> (due to Alfred)
-<code>just-one-space</code> (built-in: M-SPC)</p>
-<p>Delete all trailing whitespaces: <code>delete-trailing-whitespace</code> <code>M-s k</code></p>
-<h2 id="encoding">Encoding</h2>
-<p>Encoding: use <code>utf-8-unix</code> by default</p>
+</div>
+</div>
+<div id="outline-container-headline-4" class="outline-3">
+<h3 id="headline-4">
+Files
+</h3>
+<div id="outline-text-headline-4" class="outline-text-3">
+<p>
+Insert contents of file FILENAME into buffer: <code>insert-file</code> <code class="verbatim">C-x i</code></p>
+<p>
+Write current buffer into file FILENAME (equiv. &#34;Save As&#34;): <code>write-file</code>
+<code class="verbatim">C-x C-w</code></p>
+<p>
+Reload the file from the disk: <code class="verbatim">s-u</code> (s: super/command); <code class="verbatim">C-x C-v</code></p>
+<p>
+Open file in the read-only mode: <code class="verbatim">C-x C-r</code></p>
+<p>
+Toggle overwrite mode: <code class="verbatim">M-x overwrite-mode</code></p>
+<p>
+Count words in region: <code class="verbatim">M-=</code></p>
+</div>
+</div>
+<div id="outline-container-headline-5" class="outline-3">
+<h3 id="headline-5">
+Windows
+</h3>
+<div id="outline-text-headline-5" class="outline-text-3">
+<p>
+Toggle window split (horizontal &lt;-&gt; vertical) :: <code class="verbatim">C-x |</code></p>
+<p>
+Open the <strong>Messages</strong> buffer :: <code class="verbatim">C-h e</code></p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-6" class="outline-2">
+<h2 id="headline-6">
+Formatting
+</h2>
+<div id="outline-text-headline-6" class="outline-text-2">
+<div id="outline-container-headline-7" class="outline-3">
+<h3 id="headline-7">
+TAB and SPACE
+</h3>
+<div id="outline-text-headline-7" class="outline-text-3">
+<p>
+Insert TAB: <code class="verbatim">C-q TAB</code> (<code class="verbatim">TAB</code> trigger complete or insert 4 spaces)</p>
+<p>
+Insert 4-spaced TAB: <code class="verbatim">tab-to-tab-stop</code> or <code class="verbatim">M-i</code></p>
+<p>
+Converting TAB and 4-spaces of regions: <code class="verbatim">tabify</code> and <code class="verbatim">untabify</code></p>
+</div>
+</div>
+<div id="outline-container-headline-8" class="outline-3">
+<h3 id="headline-8">
+Whitespaces (view and cleanup)
+</h3>
+<div id="outline-text-headline-8" class="outline-text-3">
+<p>
+Enable <code class="verbatim">whitespace-mode</code> to show white spaces as dots or colourised
+blocks.</p>
+<p>
+Remove all except 1 trailing whitespaces: <code class="verbatim">M-x SPC</code> or <code class="verbatim">Esc SPC</code>,
+to call <code>just-one-space</code></p>
+<p>
+Delete all trailing whitespaces in the whole buffer:
+<code class="verbatim">M-s k</code> to call <code>delete-trailing-whitespace</code> </p>
+<p>
+Remove all following blank lines: <code class="verbatim">C-x C-o</code> to call <code>delete-blank-lines</code></p>
+</div>
+</div>
+<div id="outline-container-headline-9" class="outline-3">
+<h3 id="headline-9">
+Encoding
+</h3>
+<div id="outline-text-headline-9" class="outline-text-3">
+<p>
+Encoding: use <code class="verbatim">utf-8-unix</code> by default</p>
 <ul>
 <li>
 <p>open a file with specific coding system:
@@ -262,110 +409,260 @@ refer to the configuration files.</p>
 </li>
 <li>
 <p>find out the current coding system used for opening and saving files:
-<code>describe-current-coding-system</code></p>
+<code>describe-current-coding-system</code> </p>
 </li>
 <li>
 <p>find out what encoding system was used to decode current file:
-<code>describe-variable buffer-file-coding-system</code></p>
+<code>describe-variable buffer-file-coding-system</code> </p>
 </li>
 <li>
-<p>list all available encodings with <code>M-x list-coding-systems</code></p>
+<p>list all available encodings with <code>M-x list-coding-systems</code> </p>
 </li>
 <li>
 <p>declare a file with a particular character encoding: add the following
 line in the first line of your files:</p>
 <blockquote>
-<p>-<strong>- coding: utf-8 -</strong>-</p>
+<p>-<strong>- coding: utf-8 -</strong>- </p>
 </blockquote>
 </li>
 </ul>
-<p>Change encodings: <code>utf-8-unix</code>, <code>utf-8-dos</code></p>
+<p>Typical procedure on converting other encoded files to UTF-8:</p>
+<ol>
+<li>
+<p>reload the buffer with an alternative encoding to confirm the right one to choose: <code class="verbatim">C-x
+RET r</code>, e.g. <code class="verbatim">gbk</code>;</p>
+</li>
+<li>
+<p>two ways to change encoding to UTF-8, then save as a new file:</p>
 <ul>
-<li>change when saving using <code>C-x RET f</code></li>
-<li>force it immediately by using <code>C-x RET c</code>, and then write to a new file
-<code>C-x C-w RET</code></li>
+<li>
+<p>change when saving using <code class="verbatim">C-x RET f</code>, e.g., <code class="verbatim">utf-8-unix</code>, then <code class="verbatim">C-x C-s</code>;</p>
+</li>
+<li>
+<p>load it immediately by using <code class="verbatim">C-x RET c</code>, e.g. <code class="verbatim">utf-8-emacs-unix</code>, and then write to
+a new file <code class="verbatim">C-x C-w RET</code>.</p>
+</li>
 </ul>
+</li>
+</ol>
 <p>Change End-of-Line:</p>
 <ul>
-<li><code>M-x set-buffer-file-coding-system utf-8-unix</code> or use <code>C-x RET f</code></li>
+<li>
+<p><code class="verbatim">M-x set-buffer-file-coding-system utf-8-unix</code> or use <code class="verbatim">C-x RET f</code></p>
+</li>
 </ul>
-<h1 id="jumping">Jumping</h1>
-<p>Use <strong>mark rings</strong> to jump within buffer:</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-10" class="outline-2">
+<h2 id="headline-10">
+Jumping
+</h2>
+<div id="outline-text-headline-10" class="outline-text-2">
+<div id="outline-container-headline-11" class="outline-3">
+<h3 id="headline-11">
+Use <strong>mark rings</strong> to jump within buffer
+</h3>
+<div id="outline-text-headline-11" class="outline-text-3">
 <ul>
-<li>set mark: <code>C-SPC C-SPC</code></li>
-<li>jump to previous mark: <code>C-u C-SPC</code>  after it, just <code>C-SPC</code> to
-continue jumping</li>
-<li>jump to mark saved in global-mark ring: <code>C-x C-SPC</code></li>
-<li>exchange the cursor and the previous mark: <code>C-x C-x</code></li>
-<li>use <code>counsel-mark-ring</code> to show mark ring: <code>M-g SPC</code></li>
+<li>
+<p>set mark: <code class="verbatim">C-SPC C-SPC</code></p>
+</li>
+<li>
+<p>jump to previous mark: <code class="verbatim">C-u C-SPC</code>  after it, just <code class="verbatim">C-SPC</code> to continue jumping</p>
+</li>
+<li>
+<p>jump to mark saved in global-mark ring: <code class="verbatim">C-x C-SPC</code></p>
+</li>
+<li>
+<p>exchange the cursor and the previous mark: <code class="verbatim">C-x C-x</code></p>
+</li>
+<li>
+<p>use <code class="verbatim">counsel-mark-ring</code> to show mark ring: <code class="verbatim">M-g SPC</code></p>
+</li>
 </ul>
-<p>Use <strong>register</strong> (position-register) to jump between files (within
-current Emacs session):</p>
+</div>
+</div>
+<div id="outline-container-headline-12" class="outline-3">
+<h3 id="headline-12">
+Use <strong>register</strong> to jump between files (within current Emacs session)
+</h3>
+<div id="outline-text-headline-12" class="outline-text-3">
 <ul>
-<li>use <code>counsel-register</code> to show the list: <code>M-g r</code></li>
-<li>record the position of point in register [r]: <code>C-x r SPC [a-z]</code> (where
-<code>[a-z]</code> denotes any single letter)</li>
-<li>jump to the position saved in register [r]: <code>C-x r j [a-z]</code></li>
+<li>
+<p>record the position of point in register <code class="verbatim">[x]</code>: <code class="verbatim">C-x r SPC [x]</code> (where
+<code class="verbatim">[x]</code> denotes any single letter)</p>
+</li>
+<li>
+<p>jump to the position saved in register <code class="verbatim">[x]</code>: <code class="verbatim">C-x r j [x]</code></p>
+</li>
+<li>
+<p>use <code class="verbatim">counsel-register</code> to show the list: <code class="verbatim">M-g r</code>  </p>
+</li>
 </ul>
-<p>Use <strong>bookmark</strong> to jump between files persistently:</p>
+</div>
+</div>
+<div id="outline-container-headline-13" class="outline-3">
+<h3 id="headline-13">
+Use <strong>bookmark</strong> to jump between files persistently
+</h3>
+<div id="outline-text-headline-13" class="outline-text-3">
+<p>
+Most frequently used:</p>
 <ul>
-<li><code>M-g b</code> (or <code>C-x r b</code>): call <code>counsel-bookmark</code> to create or jump
-to bookmarks from a list</li>
-<li><code>C-x r l</code>: list all bookmarks (<code>list-bookmarks</code>). In this
-temporary buffer, you can manage bookmarks like in Dired.</li>
-<li><code>C-x r m RET</code>: set the bookmark for the visited file, at point</li>
-<li><code>C-x r m NAME RET</code>: set the bookmark named NAME at point (<code>bookmark-set</code>)</li>
-<li><code>C-x r b NAME RET</code>: jump to the bookmark named NAME (<code>bookmark-jump</code>)</li>
-<li><code>M-x bookmark-save</code>: save all bookmark values in the default bookmark file</li>
+<li>
+<p><code class="verbatim">M-g b</code> (or <code class="verbatim">C-x r b</code>): call <code class="verbatim">counsel-bookmark</code> to create or jump to
+bookmarks from a list</p>
+</li>
+<li>
+<p><code class="verbatim">C-x r l</code>: list all bookmarks (<code class="verbatim">list-bookmarks</code>). In this temporary
+buffer, you can manage bookmarks like in Dired.</p>
+</li>
 </ul>
-<h1 id="advanced-editing">Advanced editing</h1>
-<h2 id="copypaste">Copy/Paste</h2>
-<p>Use register to copy/paste:</p>
+<p>More operations:</p>
 <ul>
-<li><code>C-x r s [R]</code> to copy the region in register</li>
-<li><code>C-x r r [R]</code> to copy the <strong>rectangle</strong> to register</li>
-<li><code>C-x r g [R]</code> to (paste) insert text saved in register</li>
+<li>
+<p><code class="verbatim">C-x r m RET</code> to set the bookmark for the visited file, at point</p>
+</li>
+<li>
+<p><code class="verbatim">C-x r m NAME RET</code> to set the bookmark named NAME at point (<code>bookmark-set</code>)</p>
+</li>
+<li>
+<p><code class="verbatim">C-x r b NAME RET</code> to jump to the bookmark named NAME (<code>bookmark-jump</code>)</p>
+</li>
+<li>
+<p><code class="verbatim">M-x bookmark-save</code> to save all bookmark values in the default bookmark file</p>
+</li>
 </ul>
-<h2 id="rectangle-editing">Rectangle editing</h2>
-<p>Rectangle editing:</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-14" class="outline-2">
+<h2 id="headline-14">
+Advanced editing
+</h2>
+<div id="outline-text-headline-14" class="outline-text-2">
+<div id="outline-container-headline-15" class="outline-3">
+<h3 id="headline-15">
+Copy/Paste
+</h3>
+<div id="outline-text-headline-15" class="outline-text-3">
+<p>
+Use register to copy/paste:</p>
 <ul>
-<li>mark rectangle: <code>C-x SPC</code></li>
-<li>kill rectangle: <code>C-x r k</code></li>
-<li>copy rectangle: <code>C-x r M-w</code></li>
-<li>yank the last killed rectangle: <code>C-x r y</code></li>
-<li>delete the region-rectangle: <code>C-x r d</code></li>
-<li>open rectangle, shifting text right: <code>C-x r o</code></li>
-<li>blank out rectangle: <code>C-x r c</code></li>
-<li>prefix each line with a string: <code>C-x r t</code></li>
+<li>
+<p><code class="verbatim">C-x r s [R]</code> to copy the region in register</p>
+</li>
+<li>
+<p><code class="verbatim">C-x r r [R]</code> to copy the <strong>rectangle</strong> to register</p>
+</li>
+<li>
+<p><code class="verbatim">C-x r g [R]</code> to (paste) insert text saved in register</p>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-headline-16" class="outline-3">
+<h3 id="headline-16">
+Rectangle editing
+</h3>
+<div id="outline-text-headline-16" class="outline-text-3">
+<p>
+Rectangle editing:</p>
+<ul>
+<li>
+<p>mark rectangle: <code class="verbatim">C-x SPC</code></p>
+</li>
+<li>
+<p>kill rectangle: <code class="verbatim">C-x r k</code></p>
+</li>
+<li>
+<p>copy rectangle: <code class="verbatim">C-x r M-w</code></p>
+</li>
+<li>
+<p>yank the last killed rectangle: <code class="verbatim">C-x r y</code></p>
+</li>
+<li>
+<p>delete the region-rectangle: <code class="verbatim">C-x r d</code></p>
+</li>
+<li>
+<p>open rectangle, shifting text right: <code class="verbatim">C-x r o</code></p>
+</li>
+<li>
+<p>blank out rectangle: <code class="verbatim">C-x r c</code></p>
+</li>
+<li>
+<p>prefix each line with a string: <code class="verbatim">C-x r t</code> </p>
+</li>
 </ul>
 <p>Use <em>multiple-cursors</em>:</p>
 <ul>
-<li>select one word <code>C-&gt;</code>, then hit <code>C-g</code> to place multiple cursors</li>
-<li>to place cursors in front of each lines:
-select multiple lines, then hit <code>C-S-l C-S-l</code> to place cursors
+<li>
+<p>select one word <code class="verbatim">C-&gt;</code>, then hit <code class="verbatim">C-g</code> to place multiple cursors</p>
+</li>
+<li>
+<p>to place cursors in front of each lines:
+select multiple lines, then hit <code class="verbatim">C-S-l C-S-l</code> to place cursors
 OR
-select nothing and hit <code>C-&gt;</code>, then edit</li>
-<li>(disabled) use <code>C-S-SPC</code> to mark rectangular region</li>
+select nothing and hit <code class="verbatim">C-&gt;</code>, then edit</p>
+</li>
+<li>
+<p>(disabled) use <code class="verbatim">C-S-SPC</code> to mark rectangular region</p>
+</li>
 </ul>
-<h2 id="programming-supports">Programming Supports</h2>
-<p>Comment line or region: <code>C-\</code>; uncomment: <code>C-|</code>, <code>M-\</code></p>
-<p>Align comments: <code>M-x align</code>; <code>M-x align-regexp</code> (<code>C-x M-a</code>) (prefix <code>C-u</code>
+</div>
+</div>
+<div id="outline-container-headline-17" class="outline-3">
+<h3 id="headline-17">
+Programming Supports
+</h3>
+<div id="outline-text-headline-17" class="outline-text-3">
+<p>
+Comment line or region: <code class="verbatim">C-\</code>; uncomment: <code class="verbatim">C-|</code>, <code class="verbatim">M-\</code></p>
+<p>
+Align comments: <code class="verbatim">M-x align</code>; <code class="verbatim">M-x align-regexp</code> (<code class="verbatim">C-x M-a</code>) (prefix <code class="verbatim">C-u</code>
 for options)</p>
-<p>Use <em>iedit</em>: <code>C-;</code></p>
-<p>Indent region in <em>python-mode</em>:</p>
+<p>
+Use <em>iedit</em>: <code class="verbatim">C-;</code></p>
+<p>
+Indent region in <em>python-mode</em>:</p>
 <ul>
-<li><code>python-indent-shift-right</code> <code>C-c &gt;</code></li>
-<li><code>python-indent-shift-left</code>  <code>C-c &lt;</code></li>
+<li>
+<p><code>python-indent-shift-right</code> <code class="verbatim">C-c &gt;</code></p>
+</li>
+<li>
+<p><code>python-indent-shift-left</code>  <code class="verbatim">C-c &lt;</code></p>
+</li>
 </ul>
-<h1 id="quick-functions">Quick functions</h1>
-<p>Insert date/time</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-18" class="outline-2">
+<h2 id="headline-18">
+Quick functions
+</h2>
+<div id="outline-text-headline-18" class="outline-text-2">
+<p>
+Insert date/time</p>
 <ul>
-<li><code>insert-date</code> like &ldquo;06 Sep 2019&rdquo;</li>
-<li><code>insert-date-digits</code> like &ldquo;2019/09/06&rdquo;</li>
-<li><code>insert-time</code> like &ldquo;18:37:23&rdquo;</li>
+<li>
+<p><code>insert-date</code> like &#34;06 Sep 2019&#34;</p>
+</li>
+<li>
+<p><code>insert-date-digits</code> like &#34;2019/09/06&#34;</p>
+</li>
+<li>
+<p><code>insert-time</code> like &#34;18:37:23&#34;</p>
+</li>
 </ul>
-<p>Add incremental numbers to lines: <code>C-x r N</code></p>
-<p>Automatic correct word by <em>flyspell</em>: <code>flyspell-auto-correct-word</code> <code>C-.</code></p>
+<p>Add incremental numbers to lines: <code class="verbatim">C-x r N</code></p>
+<p>
+Automatic correct word by <em>flyspell</em>: <code>flyspell-auto-correct-word</code> <code class="verbatim">C-.</code></p>
+</div>
+</div>
     </div>
 
     <div class="post-copyright">
@@ -376,7 +673,7 @@ for options)</p>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        2019-09-20
+        2021-03-02
         
     </span>
   </p>
