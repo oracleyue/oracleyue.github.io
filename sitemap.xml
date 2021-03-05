@@ -10,7 +10,63 @@
   
   <url>
     <loc>https://oracleyue.github.io/categories/</loc>
-    <lastmod>2021-03-02T00:00:00+00:00</lastmod>
+    <lastmod>2021-03-05T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://oracleyue.github.io/categories/emacs/</loc>
+    <lastmod>2021-03-05T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://oracleyue.github.io/tags/emacs/</loc>
+    <lastmod>2021-03-05T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://oracleyue.github.io/post/fix-issues-projectile/</loc>
+    <lastmod>2021-03-05T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://oracleyue.github.io/</loc>
+    <lastmod>2021-03-05T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://oracleyue.github.io/tags/linux/</loc>
+    <lastmod>2021-03-05T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://oracleyue.github.io/post/</loc>
+    <lastmod>2021-03-05T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://oracleyue.github.io/tags/programming/</loc>
+    <lastmod>2021-03-05T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://oracleyue.github.io/tags/</loc>
+    <lastmod>2021-03-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -23,13 +79,6 @@
   </url>
   
   <url>
-    <loc>https://oracleyue.github.io/</loc>
-    <lastmod>2021-03-02T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://oracleyue.github.io/categories/linux/</loc>
     <lastmod>2021-02-23T22:05:07+11:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -37,29 +86,8 @@
   </url>
   
   <url>
-    <loc>https://oracleyue.github.io/tags/linux/</loc>
-    <lastmod>2021-02-23T22:05:07+11:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://oracleyue.github.io/post/</loc>
-    <lastmod>2021-03-02T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://oracleyue.github.io/tags/python/</loc>
     <lastmod>2021-02-23T22:05:07+11:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://oracleyue.github.io/tags/</loc>
-    <lastmod>2021-03-02T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -170,20 +198,6 @@
   </url>
   
   <url>
-    <loc>https://oracleyue.github.io/categories/emacs/</loc>
-    <lastmod>2021-03-02T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://oracleyue.github.io/tags/emacs/</loc>
-    <lastmod>2021-03-02T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://oracleyue.github.io/tags/notes/</loc>
     <lastmod>2021-03-02T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -226,7 +240,7 @@
   </url>
   
   <url>
-    <loc>https://oracleyue.github.io/post/hugo-even-example/</loc>
+    <loc>https://oracleyue.github.io/post/demo-hugo/</loc>
     <lastmod>2018-07-10T00:00:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -289,14 +303,21 @@
   </url>
   
   <url>
-    <loc>https://oracleyue.github.io/tags/mac/</loc>
+    <loc>https://oracleyue.github.io/categories/latex/</loc>
     <lastmod>2017-12-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://oracleyue.github.io/categories/misc/</loc>
+    <loc>https://oracleyue.github.io/tags/latex/</loc>
+    <lastmod>2017-12-04T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://oracleyue.github.io/tags/mac/</loc>
     <lastmod>2017-12-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

@@ -6,7 +6,17 @@
     <description>Recent content in Emacs on Icarus&#39;s Wings - A blog of oracleyue</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 06 Sep 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://oracleyue.github.io/categories/emacs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://oracleyue.github.io/categories/emacs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fix issues of Projectile for better project management</title>
+      <link>https://oracleyue.github.io/post/fix-issues-projectile/</link>
+      <pubDate>Fri, 05 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://oracleyue.github.io/post/fix-issues-projectile/</guid>
+      <description>Customize project detection We may like to control whether a folder should be guessed as a project root. Sometimes you may see a folder annoyingly being added to project list, e.g., HOME, Dropbox root. This is mostly likely due to default set of a long list for projectile-project-root-files. For better control, it is good to reset it. You may find the policy in the well-written Projectile Docs.
+1 2 3 4  ;; control project root additional guess (besides &amp;#34;.</description>
+    </item>
+    
     <item>
       <title>Useful commands in Emacs for efficient editing</title>
       <link>https://oracleyue.github.io/post/emacs-editing/</link>

@@ -8,11 +8,11 @@
     <language>en</language>
     <lastBuildDate>Tue, 10 Jul 2018 00:00:00 +0800</lastBuildDate><atom:link href="https://oracleyue.github.io/tags/demo/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Hugo and Even: notes and demo preview</title>
-      <link>https://oracleyue.github.io/post/hugo-even-example/</link>
+      <title>Hugo: a demo of blog article in markdown</title>
+      <link>https://oracleyue.github.io/post/demo-hugo/</link>
       <pubDate>Tue, 10 Jul 2018 00:00:00 +0800</pubDate>
       
-      <guid>https://oracleyue.github.io/post/hugo-even-example/</guid>
+      <guid>https://oracleyue.github.io/post/demo-hugo/</guid>
       <description>&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://liujiacai.net/blog/2020/12/05/hexo-to-hugo/&#34;&gt;Moving from Hexo to Hugo&lt;/a&gt;&lt;/li&gt;
