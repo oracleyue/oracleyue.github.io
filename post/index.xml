@@ -101,14 +101,15 @@ password repeatedly, when using git.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Useful commands in Emacs for efficient editing</title>
+      <title>Notes of Efficient Editing in Emacs</title>
       <link>https://oracleyue.github.io/post/emacs-editing/</link>
       <pubDate>Fri, 06 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>https://oracleyue.github.io/post/emacs-editing/</guid>
       <description>&lt;p&gt;
 This article keeps collecting useful commands/keybindings in Emacs for
-efficient editing. &lt;/p&gt;
+efficient editing. If you are experienced users, jump to the last
+section to see if anything is interesting.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;⚠️ &lt;strong&gt;Warning&lt;/strong&gt;: It may rely on certain configurations (see &lt;a href=&#34;https://github.com/oracleyue/dotfiles/tree/master/_emacs.d&#34;&gt;my .emacs.d on
 github&lt;/a&gt;). If you found some keybindings are not defined, please refer to

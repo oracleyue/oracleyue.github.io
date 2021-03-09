@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Useful commands in Emacs for efficient editing - Icarus&#39;s Wings - A blog of oracleyue</title>
+  <title>Notes of Efficient Editing in Emacs - Icarus&#39;s Wings - A blog of oracleyue</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,8 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="oracleyue" /><meta name="description" content=" This article keeps collecting useful commands/keybindings in Emacs for efficient editing.  ⚠️ Warning: It may rely on certain configurations (see my .emacs.d on github). If you found some keybindings are not defined, please refer to the configuration files.
+<meta name="author" content="oracleyue" /><meta name="description" content=" This article keeps collecting useful commands/keybindings in Emacs for efficient editing. If you are experienced users, jump to the last section to see if anything is interesting.
+ ⚠️ Warning: It may rely on certain configurations (see my .emacs.d on github). If you found some keybindings are not defined, please refer to the configuration files.
 " /><meta name="keywords" content="oracleyue, blog, Hugo, even" />
 
 
@@ -40,10 +41,11 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Useful commands in Emacs for efficient editing" />
+<meta property="og:title" content="Notes of Efficient Editing in Emacs" />
 <meta property="og:description" content="
 This article keeps collecting useful commands/keybindings in Emacs for
-efficient editing. 
+efficient editing. If you are experienced users, jump to the last
+section to see if anything is interesting.
 
 ⚠️ Warning: It may rely on certain configurations (see my .emacs.d on
 github). If you found some keybindings are not defined, please refer to
@@ -52,28 +54,30 @@ the configuration files.
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://oracleyue.github.io/post/emacs-editing/" />
 <meta property="article:published_time" content="2019-09-06T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-03-02T00:00:00+00:00" />
-<meta itemprop="name" content="Useful commands in Emacs for efficient editing">
+<meta property="article:modified_time" content="2021-03-10T00:00:00+00:00" />
+<meta itemprop="name" content="Notes of Efficient Editing in Emacs">
 <meta itemprop="description" content="
 This article keeps collecting useful commands/keybindings in Emacs for
-efficient editing. 
+efficient editing. If you are experienced users, jump to the last
+section to see if anything is interesting.
 
 ⚠️ Warning: It may rely on certain configurations (see my .emacs.d on
 github). If you found some keybindings are not defined, please refer to
 the configuration files.
 ">
 <meta itemprop="datePublished" content="2019-09-06T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2021-03-02T00:00:00+00:00" />
-<meta itemprop="wordCount" content="943">
+<meta itemprop="dateModified" content="2021-03-10T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1121">
 
 
 
 <meta itemprop="keywords" content="notes,emacs," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Useful commands in Emacs for efficient editing"/>
+<meta name="twitter:title" content="Notes of Efficient Editing in Emacs"/>
 <meta name="twitter:description" content="
 This article keeps collecting useful commands/keybindings in Emacs for
-efficient editing. 
+efficient editing. If you are experienced users, jump to the last
+section to see if anything is interesting.
 
 ⚠️ Warning: It may rely on certain configurations (see my .emacs.d on
 github). If you found some keybindings are not defined, please refer to
@@ -145,7 +149,7 @@ the configuration files.
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Useful commands in Emacs for efficient editing</h1>
+      <h1 class="post-title">Notes of Efficient Editing in Emacs</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2019-09-06 </span>
@@ -173,7 +177,7 @@ the configuration files.
 </li>
 </ul>
 </li>
-<li><a href="#headline-6">Formatting</a>
+<li><a href="#headline-6">Formatting and Editing</a>
 <ul>
 <li><a href="#headline-7">TAB and SPACE</a>
 </li>
@@ -181,29 +185,33 @@ the configuration files.
 </li>
 <li><a href="#headline-9">Encoding</a>
 </li>
+<li><a href="#headline-10">Copy/Paste</a>
+</li>
+<li><a href="#headline-11">Rectangle editing</a>
+</li>
+<li><a href="#headline-12">Programming Supports</a>
+</li>
 </ul>
 </li>
-<li><a href="#headline-10">Jumping</a>
+<li><a href="#headline-13">Jumping</a>
 <ul>
-<li><a href="#headline-11">Use <strong>mark rings</strong> to jump within buffer</a>
+<li><a href="#headline-14">Use mark-rings to jump within buffer</a>
 </li>
-<li><a href="#headline-12">Use <strong>register</strong> to jump between files (within current Emacs session)</a>
+<li><a href="#headline-15">Use register to jump between files (within current Emacs session)</a>
 </li>
-<li><a href="#headline-13">Use <strong>bookmark</strong> to jump between files persistently</a>
+<li><a href="#headline-16">Use bookmark to jump between files persistently</a>
 </li>
 </ul>
 </li>
-<li><a href="#headline-14">Advanced editing</a>
+<li><a href="#headline-17">Advanced Skills</a>
 <ul>
-<li><a href="#headline-15">Copy/Paste</a>
+<li><a href="#headline-18">References</a>
 </li>
-<li><a href="#headline-16">Rectangle editing</a>
+<li><a href="#headline-19">Using ivy-occur to allow multi-file editing by searching</a>
 </li>
-<li><a href="#headline-17">Programming Supports</a>
+<li><a href="#headline-20">Editing multiple file/folder names in Dired</a>
 </li>
 </ul>
-</li>
-<li><a href="#headline-18">Quick functions</a>
 </li>
 </ul>
 </nav>
@@ -212,7 +220,8 @@ the configuration files.
     <div class="post-content">
       <p>
 This article keeps collecting useful commands/keybindings in Emacs for
-efficient editing. </p>
+efficient editing. If you are experienced users, jump to the last
+section to see if anything is interesting.</p>
 <blockquote>
 <p>⚠️ <strong>Warning</strong>: It may rely on certain configurations (see <a href="https://github.com/oracleyue/dotfiles/tree/master/_emacs.d">my .emacs.d on
 github</a>). If you found some keybindings are not defined, please refer to
@@ -345,6 +354,8 @@ Open file in the read-only mode: <code class="verbatim">C-x C-r</code></p>
 Toggle overwrite mode: <code class="verbatim">M-x overwrite-mode</code></p>
 <p>
 Count words in region: <code class="verbatim">M-=</code></p>
+<p>
+Automatic correct word by <em>flyspell</em>: <code>flyspell-auto-correct-word</code> <code class="verbatim">C-.</code></p>
 </div>
 </div>
 <div id="outline-container-headline-5" class="outline-3">
@@ -362,7 +373,7 @@ Open the <strong>Messages</strong> buffer :: <code class="verbatim">C-h e</code>
 </div>
 <div id="outline-container-headline-6" class="outline-2">
 <h2 id="headline-6">
-Formatting
+Formatting and Editing
 </h2>
 <div id="outline-text-headline-6" class="outline-text-2">
 <div id="outline-container-headline-7" class="outline-3">
@@ -457,102 +468,11 @@ a new file <code class="verbatim">C-x C-w RET</code>.</p>
 </ul>
 </div>
 </div>
-</div>
-</div>
-<div id="outline-container-headline-10" class="outline-2">
-<h2 id="headline-10">
-Jumping
-</h2>
-<div id="outline-text-headline-10" class="outline-text-2">
-<div id="outline-container-headline-11" class="outline-3">
-<h3 id="headline-11">
-Use <strong>mark rings</strong> to jump within buffer
-</h3>
-<div id="outline-text-headline-11" class="outline-text-3">
-<ul>
-<li>
-<p>set mark: <code class="verbatim">C-SPC C-SPC</code></p>
-</li>
-<li>
-<p>jump to previous mark: <code class="verbatim">C-u C-SPC</code>  after it, just <code class="verbatim">C-SPC</code> to continue jumping</p>
-</li>
-<li>
-<p>jump to mark saved in global-mark ring: <code class="verbatim">C-x C-SPC</code></p>
-</li>
-<li>
-<p>exchange the cursor and the previous mark: <code class="verbatim">C-x C-x</code></p>
-</li>
-<li>
-<p>use <code class="verbatim">counsel-mark-ring</code> to show mark ring: <code class="verbatim">M-g SPC</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-headline-12" class="outline-3">
-<h3 id="headline-12">
-Use <strong>register</strong> to jump between files (within current Emacs session)
-</h3>
-<div id="outline-text-headline-12" class="outline-text-3">
-<ul>
-<li>
-<p>record the position of point in register <code class="verbatim">[x]</code>: <code class="verbatim">C-x r SPC [x]</code> (where
-<code class="verbatim">[x]</code> denotes any single letter)</p>
-</li>
-<li>
-<p>jump to the position saved in register <code class="verbatim">[x]</code>: <code class="verbatim">C-x r j [x]</code></p>
-</li>
-<li>
-<p>use <code class="verbatim">counsel-register</code> to show the list: <code class="verbatim">M-g r</code>  </p>
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-headline-13" class="outline-3">
-<h3 id="headline-13">
-Use <strong>bookmark</strong> to jump between files persistently
-</h3>
-<div id="outline-text-headline-13" class="outline-text-3">
-<p>
-Most frequently used:</p>
-<ul>
-<li>
-<p><code class="verbatim">M-g b</code> (or <code class="verbatim">C-x r b</code>): call <code class="verbatim">counsel-bookmark</code> to create or jump to
-bookmarks from a list</p>
-</li>
-<li>
-<p><code class="verbatim">C-x r l</code>: list all bookmarks (<code class="verbatim">list-bookmarks</code>). In this temporary
-buffer, you can manage bookmarks like in Dired.</p>
-</li>
-</ul>
-<p>More operations:</p>
-<ul>
-<li>
-<p><code class="verbatim">C-x r m RET</code> to set the bookmark for the visited file, at point</p>
-</li>
-<li>
-<p><code class="verbatim">C-x r m NAME RET</code> to set the bookmark named NAME at point (<code>bookmark-set</code>)</p>
-</li>
-<li>
-<p><code class="verbatim">C-x r b NAME RET</code> to jump to the bookmark named NAME (<code>bookmark-jump</code>)</p>
-</li>
-<li>
-<p><code class="verbatim">M-x bookmark-save</code> to save all bookmark values in the default bookmark file</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-headline-14" class="outline-2">
-<h2 id="headline-14">
-Advanced editing
-</h2>
-<div id="outline-text-headline-14" class="outline-text-2">
-<div id="outline-container-headline-15" class="outline-3">
-<h3 id="headline-15">
+<div id="outline-container-headline-10" class="outline-3">
+<h3 id="headline-10">
 Copy/Paste
 </h3>
-<div id="outline-text-headline-15" class="outline-text-3">
+<div id="outline-text-headline-10" class="outline-text-3">
 <p>
 Use register to copy/paste:</p>
 <ul>
@@ -568,11 +488,11 @@ Use register to copy/paste:</p>
 </ul>
 </div>
 </div>
-<div id="outline-container-headline-16" class="outline-3">
-<h3 id="headline-16">
+<div id="outline-container-headline-11" class="outline-3">
+<h3 id="headline-11">
 Rectangle editing
 </h3>
-<div id="outline-text-headline-16" class="outline-text-3">
+<div id="outline-text-headline-11" class="outline-text-3">
 <p>
 Rectangle editing:</p>
 <ul>
@@ -616,13 +536,14 @@ select nothing and hit <code class="verbatim">C-&gt;</code>, then edit</p>
 <p>(disabled) use <code class="verbatim">C-S-SPC</code> to mark rectangular region</p>
 </li>
 </ul>
+<p>Add incremental numbers to lines: <code class="verbatim">C-x r N</code></p>
 </div>
 </div>
-<div id="outline-container-headline-17" class="outline-3">
-<h3 id="headline-17">
+<div id="outline-container-headline-12" class="outline-3">
+<h3 id="headline-12">
 Programming Supports
 </h3>
-<div id="outline-text-headline-17" class="outline-text-3">
+<div id="outline-text-headline-12" class="outline-text-3">
 <p>
 Comment line or region: <code class="verbatim">C-\</code>; uncomment: <code class="verbatim">C-|</code>, <code class="verbatim">M-\</code></p>
 <p>
@@ -644,27 +565,174 @@ Indent region in <em>python-mode</em>:</p>
 </div>
 </div>
 </div>
-<div id="outline-container-headline-18" class="outline-2">
-<h2 id="headline-18">
-Quick functions
+<div id="outline-container-headline-13" class="outline-2">
+<h2 id="headline-13">
+Jumping
 </h2>
-<div id="outline-text-headline-18" class="outline-text-2">
-<p>
-Insert date/time</p>
+<div id="outline-text-headline-13" class="outline-text-2">
+<div id="outline-container-headline-14" class="outline-3">
+<h3 id="headline-14">
+Use mark-rings to jump within buffer
+</h3>
+<div id="outline-text-headline-14" class="outline-text-3">
 <ul>
 <li>
-<p><code>insert-date</code> like &#34;06 Sep 2019&#34;</p>
+<p>set mark: <code class="verbatim">C-SPC C-SPC</code></p>
 </li>
 <li>
-<p><code>insert-date-digits</code> like &#34;2019/09/06&#34;</p>
+<p>jump to previous mark: <code class="verbatim">C-u C-SPC</code>  after it, just <code class="verbatim">C-SPC</code> to continue jumping</p>
 </li>
 <li>
-<p><code>insert-time</code> like &#34;18:37:23&#34;</p>
+<p>jump to mark saved in global-mark ring: <code class="verbatim">C-x C-SPC</code></p>
+</li>
+<li>
+<p>exchange the cursor and the previous mark: <code class="verbatim">C-x C-x</code></p>
+</li>
+<li>
+<p>use <code class="verbatim">counsel-mark-ring</code> to show mark ring: <code class="verbatim">M-g SPC</code></p>
 </li>
 </ul>
-<p>Add incremental numbers to lines: <code class="verbatim">C-x r N</code></p>
+</div>
+</div>
+<div id="outline-container-headline-15" class="outline-3">
+<h3 id="headline-15">
+Use register to jump between files (within current Emacs session)
+</h3>
+<div id="outline-text-headline-15" class="outline-text-3">
+<ul>
+<li>
+<p>record the position of point in register <code class="verbatim">[x]</code>: <code class="verbatim">C-x r SPC [x]</code> (where
+<code class="verbatim">[x]</code> denotes any single letter)</p>
+</li>
+<li>
+<p>jump to the position saved in register <code class="verbatim">[x]</code>: <code class="verbatim">C-x r j [x]</code></p>
+</li>
+<li>
+<p>use <code class="verbatim">counsel-register</code> to show the list: <code class="verbatim">M-g r</code>  </p>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-headline-16" class="outline-3">
+<h3 id="headline-16">
+Use bookmark to jump between files persistently
+</h3>
+<div id="outline-text-headline-16" class="outline-text-3">
 <p>
-Automatic correct word by <em>flyspell</em>: <code>flyspell-auto-correct-word</code> <code class="verbatim">C-.</code></p>
+Most frequently used:</p>
+<ul>
+<li>
+<p><code class="verbatim">M-g b</code> (or <code class="verbatim">C-x r b</code>): call <code class="verbatim">counsel-bookmark</code> to create or jump to
+bookmarks from a list</p>
+</li>
+<li>
+<p><code class="verbatim">C-x r l</code>: list all bookmarks (<code class="verbatim">list-bookmarks</code>). In this temporary
+buffer, you can manage bookmarks like in Dired.</p>
+</li>
+</ul>
+<p>More operations:</p>
+<ul>
+<li>
+<p><code class="verbatim">C-x r m RET</code> to set the bookmark for the visited file, at point</p>
+</li>
+<li>
+<p><code class="verbatim">C-x r m NAME RET</code> to set the bookmark named NAME at point (<code>bookmark-set</code>)</p>
+</li>
+<li>
+<p><code class="verbatim">C-x r b NAME RET</code> to jump to the bookmark named NAME (<code>bookmark-jump</code>)</p>
+</li>
+<li>
+<p><code class="verbatim">M-x bookmark-save</code> to save all bookmark values in the default bookmark file</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-17" class="outline-2">
+<h2 id="headline-17">
+Advanced Skills
+</h2>
+<div id="outline-text-headline-17" class="outline-text-2">
+<div id="outline-container-headline-18" class="outline-3">
+<h3 id="headline-18">
+References
+</h3>
+<div id="outline-text-headline-18" class="outline-text-3">
+<p>
+From abo-abo&#39;s blog <code class="verbatim">(or emacs irrelevant</code>:</p>
+<ul>
+<li>
+<p><a href="https://oremacs.com/2017/11/18/dired-occur">https://oremacs.com/2017/11/18/dired-occur</a></p>
+</li>
+<li>
+<p><a href="https://oremacs.com/2015/11/04/ivy-occur">https://oremacs.com/2015/11/04/ivy-occur</a></p>
+</li>
+<li>
+<p><a href="https://oremacs.com/2015/01/27/my-refactoring-workflow">https://oremacs.com/2015/01/27/my-refactoring-workflow</a></p>
+</li>
+</ul>
+<p>From emacs-china.org:</p>
+<ul>
+<li>
+<p><a href="https://emacs-china.org/t/topic/16439">https://emacs-china.org/t/topic/16439</a></p>
+</li>
+<li>
+<p><a href="https://emacs-china.org/t/emacs/16537">https://emacs-china.org/t/emacs/16537</a></p>
+</li>
+<li>
+<p><a href="https://emacs-china.org/t/counsel-rg/14385">https://emacs-china.org/t/counsel-rg/14385</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-headline-19" class="outline-3">
+<h3 id="headline-19">
+Using ivy-occur to allow multi-file editing by searching
+</h3>
+<div id="outline-text-headline-19" class="outline-text-3">
+<ol>
+<li>
+<p>Search by <code>counsel-rg</code> (or any others), which lists results in the
+minibuffer.</p>
+</li>
+<li>
+<p>Call <code>ivy-occur</code> by <code class="verbatim">C-c C-o</code>, which freezes the minibuffer like a
+buffer to keep the results. You may use <code class="verbatim">C-x 1</code> to view in a full
+window. In this mini-buffer window, you are allowed with second search
+and editing. Use <code class="verbatim">w h</code> or <code class="verbatim">C-x C-q</code> to call
+<code>ivy-wgrep-change-to-wgrep-mode</code> to allow editing the search results.</p>
+</li>
+<li>
+<p>In the editing mode, you may do replace or other operations. After
+<code class="verbatim">C-c C-c</code> to save your editing, all operations will be applied to and
+in effect in these original files.</p>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-headline-20" class="outline-3">
+<h3 id="headline-20">
+Editing multiple file/folder names in Dired
+</h3>
+<div id="outline-text-headline-20" class="outline-text-3">
+<ol>
+<li>
+<p>Open this folder in Dired, then <code class="verbatim">M-x dired-toggle-read-only</code>.</p>
+</li>
+<li>
+<p>Edit file name in whatever way you prefer.</p>
+</li>
+<li>
+<p><code class="verbatim">C-x C-s</code> (or <code class="verbatim">C-c C-c</code>) to save. </p>
+</li>
+</ol>
+<p>Example: We like to change all files names like &#34;abc20201003.mp4&#34; to
+&#34;20201003abc.mp4&#34;. Follow the above procedure, and, during editing, use
+<code class="verbatim">M-x query-replace-regexp</code> with <code class="verbatim">^\([^0-9]*\)\([0-9]*\)\.mp4</code>, then type
+<code class="verbatim">\2\1.mp4</code>.</p>
+</div>
+</div>
 </div>
 </div>
     </div>
@@ -677,7 +745,7 @@ Automatic correct word by <em>flyspell</em>: <code>flyspell-auto-correct-word</c
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        2021-03-02
+        2021-03-10
         
     </span>
   </p>
