@@ -13,8 +13,14 @@
       <pubDate>Fri, 05 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://oracleyue.github.io/post/fix-issues-projectile/</guid>
-      <description>Customize project detection We may like to control whether a folder should be guessed as a project root. Sometimes you may see a folder annoyingly being added to project list, e.g., HOME, Dropbox root. This is mostly likely due to default set of a long list for projectile-project-root-files. For better control, it is good to reset it. You may find the policy in the well-written Projectile Docs.
-1 2 3 4  ;; control project root additional guess (besides &amp;#34;.</description>
+      <description>&lt;h2 id=&#34;customize-project-detection&#34;&gt;Customize project detection&lt;/h2&gt;
+&lt;p&gt;We may like to control whether a folder should be guessed as a project
+root. Sometimes you may see a folder annoyingly being added to project
+list, e.g., HOME, Dropbox root. This is mostly likely due to default set
+of a long list for &lt;code&gt;projectile-project-root-files&lt;/code&gt;. For better control,
+it is good to reset it. You may find the policy in the well-written
+&lt;a href=&#34;https://docs.projectile.mx/projectile/projects.html#supported-project-types&#34;&gt;Projectile
+Docs&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -117,6 +117,34 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/setup-opengl/">The first step to OpenGL programming on macOS</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2021-03-10 </span>
+      <div class="post-category">
+          <a href="/categories/programming/"> programming </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <div id="outline-container-headline-1" class="outline-2">
+<h2 id="headline-1">
+Setup
+</h2>
+<div id="outline-text-headline-1" class="outline-text-2">
+<p>The OpenGL has been originally provided on macOS. However, to ease our
+development, we need to install <code class="verbatim">GLEW</code> and <code class="verbatim">GLFW</code> using Homebrew, by
+<code>brew install glew glfw</code>.</p>
+    </div>
+    <div class="read-more">
+      <a href="/post/setup-opengl/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/emacs-editing/">Notes of Efficient Editing in Emacs</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2019-09-06 </span>
@@ -157,8 +185,14 @@ the configuration files.</p>
   
   <div class="post-content">
     <div class="post-summary">
-      Customize project detection We may like to control whether a folder should be guessed as a project root. Sometimes you may see a folder annoyingly being added to project list, e.g., HOME, Dropbox root. This is mostly likely due to default set of a long list for projectile-project-root-files. For better control, it is good to reset it. You may find the policy in the well-written Projectile Docs.
-1 2 3 4  ;; control project root additional guess (besides &#34;.
+      <h2 id="customize-project-detection">Customize project detection</h2>
+<p>We may like to control whether a folder should be guessed as a project
+root. Sometimes you may see a folder annoyingly being added to project
+list, e.g., HOME, Dropbox root. This is mostly likely due to default set
+of a long list for <code>projectile-project-root-files</code>. For better control,
+it is good to reset it. You may find the policy in the well-written
+<a href="https://docs.projectile.mx/projectile/projects.html#supported-project-types">Projectile
+Docs</a>.</p>
     </div>
     <div class="read-more">
       <a href="/post/fix-issues-projectile/" class="read-more-link">Read more...</a>
@@ -213,45 +247,6 @@ of ensemble methods.</p>
     </div>
     <div class="read-more">
       <a href="/post/ensemble-ml/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/useful-commandline-tools/">Useful commandline tools in Linux/Mac OS X</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2021-02-18 </span>
-      <div class="post-category">
-          <a href="/categories/linux/"> Linux </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>
-This article keeps collecting useful command-line tools in Linux or Mac
-OS X (via <code class="verbatim">homebrew</code>). It will be continuously updated.</p>
-<p>
-It includes the following functions:</p>
-<ul>
-<li>
-<p>tools for downloading videos or webpages;</p>
-</li>
-<li>
-<p>useful tools on dealing with documents (<code class="verbatim">.txt</code>, <code class="verbatim">.pdf</code>, <code class="verbatim">.djvu</code>, etc.);</p>
-</li>
-<li>
-<p>tricks on image operations, like resize, format conversion, etc.; and</p>
-</li>
-<li>
-<p>basic video operations.</p>
-</li>
-</ul>
-    </div>
-    <div class="read-more">
-      <a href="/post/useful-commandline-tools/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>

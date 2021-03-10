@@ -6,15 +6,37 @@
     <description>Recent content in Posts on Icarus&#39;s Wings - A blog of oracleyue</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 05 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://oracleyue.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 10 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://oracleyue.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The first step to OpenGL programming on macOS</title>
+      <link>https://oracleyue.github.io/post/setup-opengl/</link>
+      <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://oracleyue.github.io/post/setup-opengl/</guid>
+      <description>&lt;div id=&#34;outline-container-headline-1&#34; class=&#34;outline-2&#34;&gt;
+&lt;h2 id=&#34;headline-1&#34;&gt;
+Setup
+&lt;/h2&gt;
+&lt;div id=&#34;outline-text-headline-1&#34; class=&#34;outline-text-2&#34;&gt;
+&lt;p&gt;The OpenGL has been originally provided on macOS. However, to ease our
+development, we need to install &lt;code class=&#34;verbatim&#34;&gt;GLEW&lt;/code&gt; and &lt;code class=&#34;verbatim&#34;&gt;GLFW&lt;/code&gt; using Homebrew, by
+&lt;code&gt;brew install glew glfw&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Fix issues of Projectile for better project management</title>
       <link>https://oracleyue.github.io/post/fix-issues-projectile/</link>
       <pubDate>Fri, 05 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://oracleyue.github.io/post/fix-issues-projectile/</guid>
-      <description>Customize project detection We may like to control whether a folder should be guessed as a project root. Sometimes you may see a folder annoyingly being added to project list, e.g., HOME, Dropbox root. This is mostly likely due to default set of a long list for projectile-project-root-files. For better control, it is good to reset it. You may find the policy in the well-written Projectile Docs.
-1 2 3 4  ;; control project root additional guess (besides &amp;#34;.</description>
+      <description>&lt;h2 id=&#34;customize-project-detection&#34;&gt;Customize project detection&lt;/h2&gt;
+&lt;p&gt;We may like to control whether a folder should be guessed as a project
+root. Sometimes you may see a folder annoyingly being added to project
+list, e.g., HOME, Dropbox root. This is mostly likely due to default set
+of a long list for &lt;code&gt;projectile-project-root-files&lt;/code&gt;. For better control,
+it is good to reset it. You may find the policy in the well-written
+&lt;a href=&#34;https://docs.projectile.mx/projectile/projects.html#supported-project-types&#34;&gt;Projectile
+Docs&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>

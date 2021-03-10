@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>opengl on Icarus&#39;s Wings - A blog of oracleyue</title>
+    <link>https://oracleyue.github.io/tags/opengl/</link>
+    <description>Recent content in opengl on Icarus&#39;s Wings - A blog of oracleyue</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 10 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://oracleyue.github.io/tags/opengl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The first step to OpenGL programming on macOS</title>
+      <link>https://oracleyue.github.io/post/setup-opengl/</link>
+      <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://oracleyue.github.io/post/setup-opengl/</guid>
+      <description>&lt;div id=&#34;outline-container-headline-1&#34; class=&#34;outline-2&#34;&gt;
+&lt;h2 id=&#34;headline-1&#34;&gt;
+Setup
+&lt;/h2&gt;
+&lt;div id=&#34;outline-text-headline-1&#34; class=&#34;outline-text-2&#34;&gt;
+&lt;p&gt;The OpenGL has been originally provided on macOS. However, to ease our
+development, we need to install &lt;code class=&#34;verbatim&#34;&gt;GLEW&lt;/code&gt; and &lt;code class=&#34;verbatim&#34;&gt;GLFW&lt;/code&gt; using Homebrew, by
+&lt;code&gt;brew install glew glfw&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

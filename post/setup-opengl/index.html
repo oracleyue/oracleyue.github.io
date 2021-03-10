@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>The first step to OpenGL programming on macOS - Icarus&#39;s Wings - A blog of oracleyue</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="oracleyue" /><meta name="description" content="Setup  The OpenGL has been originally provided on macOS. However, to ease our development, we need to install GLEW and GLFW using Homebrew, by brew install glew glfw.
+" /><meta name="keywords" content="oracleyue, blog, Hugo, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.75.1 with theme even" />
+
+
+<link rel="canonical" href="https://oracleyue.github.io/post/setup-opengl/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="The first step to OpenGL programming on macOS" />
+<meta property="og:description" content="
+
+Setup
+
+
+The OpenGL has been originally provided on macOS. However, to ease our
+development, we need to install GLEW and GLFW using Homebrew, by
+brew install glew glfw." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://oracleyue.github.io/post/setup-opengl/" />
+<meta property="article:published_time" content="2021-03-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-03-10T00:00:00+00:00" />
+<meta itemprop="name" content="The first step to OpenGL programming on macOS">
+<meta itemprop="description" content="
+
+Setup
+
+
+The OpenGL has been originally provided on macOS. However, to ease our
+development, we need to install GLEW and GLFW using Homebrew, by
+brew install glew glfw.">
+<meta itemprop="datePublished" content="2021-03-10T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-03-10T00:00:00+00:00" />
+<meta itemprop="wordCount" content="347">
+
+
+
+<meta itemprop="keywords" content="cpp,opengl," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="The first step to OpenGL programming on macOS"/>
+<meta name="twitter:description" content="
+
+Setup
+
+
+The OpenGL has been originally provided on macOS. However, to ease our
+development, we need to install GLEW and GLFW using Homebrew, by
+brew install glew glfw."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Icarus&#39;s Wings</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Icarus&#39;s Wings</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">The first step to OpenGL programming on macOS</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-03-10 </span>
+        <div class="post-category">
+            <a href="/categories/programming/"> programming </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#headline-1">Setup</a>
+</li>
+<li><a href="#headline-2">Including and Linking on macOS</a>
+</li>
+<li><a href="#headline-3">Minimal Compilation</a>
+</li>
+<li><a href="#headline-4">A Simple Makefile Sample</a>
+</li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <div id="outline-container-headline-1" class="outline-2">
+<h2 id="headline-1">
+Setup
+</h2>
+<div id="outline-text-headline-1" class="outline-text-2">
+<p>The OpenGL has been originally provided on macOS. However, to ease our
+development, we need to install <code class="verbatim">GLEW</code> and <code class="verbatim">GLFW</code> using Homebrew, by
+<code>brew install glew glfw</code>.</p>
+
+<p>
+The official <code class="verbatim">GLEW</code> website states: “GLEW provides efficient run-time
+mechanisms for determining which OpenGL extensions are supported on the
+target platform”. It’s a useful extension for developing OpenGL
+programs. </p>
+<p>
+The package <code class="verbatim">GLFW</code> is an extension for managing windows. OpenGL is a
+bare-bones library which does not concern itself with the creation and
+management of windows. That job is made easy by GLFW.</p>
+</div>
+</div>
+<div id="outline-container-headline-2" class="outline-2">
+<h2 id="headline-2">
+Including and Linking on macOS
+</h2>
+<div id="outline-text-headline-2" class="outline-text-2">
+<blockquote>
+<p>⚠️ <strong>Warning</strong>: On macOS you&#39;re not using libraries to include
+  system level APIs, but Frameworks. </p>
+</blockquote>
+<p>
+To include headers in source, use <code class="verbatim">#include &lt;OpenGL/gl.h&gt;</code> and <code class="verbatim">#include
+&lt;GLUT/glut.h&gt;</code>.</p>
+<p>
+To link OpenGL libraries, use options <code class="verbatim">-framework OpenGL</code> and
+<code class="verbatim">-framework GLUT</code>.</p>
+<p>
+Make sure to use something like <code class="verbatim">#ifdef __APPLE__</code> when determining how
+to <code class="verbatim">#include</code> the headers, the rest of the world tends to follow the
+convention: <code class="verbatim">&lt;GL/gl.h&gt;</code>.</p>
+</div>
+</div>
+<div id="outline-container-headline-3" class="outline-2">
+<h2 id="headline-3">
+Minimal Compilation
+</h2>
+<div id="outline-text-headline-3" class="outline-text-2">
+<p>
+The minimal compilation can be done by </p>
+<div class="src src-sh">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">  g++ main.cpp -o a.out -lglfw -lGLEW -framework OpenGL</code></pre></td></tr></table>
+</div>
+</div>
+</div>
+<p>where,</p>
+<ul>
+<li>
+<p><code class="verbatim">g++</code> is the compiler. No surprises here.</p>
+</li>
+<li>
+<p><code class="verbatim">main.cpp</code> is the file which contains the code (e.g. the above code)
+and is to be compiled</p>
+</li>
+<li>
+<p><code class="verbatim">-o</code> test.o specifies that the output executable should be named
+<code class="verbatim">a.out</code></p>
+</li>
+<li>
+<p><code class="verbatim">-lglfw</code> and <code class="verbatim">-lGLEW</code> links the libraries GLFW and GLEW (which we
+installed via <code class="verbatim">brew</code>)</p>
+</li>
+<li>
+<p><code class="verbatim">-framework OpenGL</code> is the important flag which links the actual
+OpenGL framework to our code.</p>
+</li>
+</ul>
+<p>Note that, since our <code class="verbatim">brew</code> install path <code class="verbatim">/usr/local/</code> is not in search
+paths by default, to make it available at system level, we can add
+search paths in <code class="verbatim">.bashrc</code>:</p>
+<div class="src src-sh">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">  <span class="nb">export</span> <span class="nv">C_INCLUDE_PATH</span><span class="o">=</span>/usr/local/include:<span class="nv">$C_INCLUDE_PATH</span>
+  <span class="nb">export</span> <span class="nv">CPLUS_INCLUDE_PATH</span><span class="o">=</span>/usr/local/include:<span class="nv">$CPLUS_INCLUDE_PATH</span>
+  <span class="nb">export</span> <span class="nv">LIBRARY_PATH</span><span class="o">=</span>/usr/local/lib:<span class="nv">$LIBRARY_PATH</span></code></pre></td></tr></table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-4" class="outline-2">
+<h2 id="headline-4">
+A Simple Makefile Sample
+</h2>
+<div id="outline-text-headline-4" class="outline-text-2">
+<p>
+Here we provides a simple example of <code class="verbatim">makefile</code>, supposing we have
+<code class="verbatim">main.cpp</code>:</p>
+<div class="src src-makefile">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-makefile" data-lang="makefile">  <span class="nv">OPENGLLIB</span><span class="o">=</span>-framework OpenGL
+  <span class="nv">GLEWLIB</span><span class="o">=</span> -lGLEW
+  <span class="nv">GLFWLIB</span> <span class="o">=</span> -lglfw
+  <span class="nv">LIBS</span><span class="o">=</span><span class="k">$(</span>OPENGLLIB<span class="k">)</span> <span class="k">$(</span>GLEWLIB<span class="k">)</span> <span class="k">$(</span>GLFWLIB<span class="k">)</span>
+  <span class="nv">LDFLAGS</span><span class="o">=</span>-L/usr/local/lib
+  <span class="nv">CPPFLAGS</span><span class="o">=</span>-I/usr/local/include
+
+  <span class="nv">BIN</span><span class="o">=</span>a.out
+  <span class="nv">SRCS</span><span class="o">=</span>main.cpp
+  <span class="nv">INCLUDES</span><span class="o">=</span>
+
+  all: <span class="k">$(</span>BIN<span class="k">)</span>
+
+
+  <span class="k">$(</span>BIN<span class="k">)</span>: <span class="k">$(</span>SRCS<span class="k">)</span> <span class="k">$(</span>INCLUDES<span class="k">)</span>
+      g++ <span class="k">$(</span>CPPFLAGS<span class="k">)</span> <span class="k">$(</span>SRCS<span class="k">)</span> -o <span class="k">$(</span>BIN<span class="k">)</span> <span class="k">$(</span>LDFLAGS<span class="k">)</span> <span class="k">$(</span>LIBS<span class="k">)</span>
+
+  clean:
+      rm -f *~ *.o <span class="k">$(</span>BIN<span class="k">)</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+</div>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">oracleyue</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2021-03-10
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/cpp/">cpp</a>
+          <a href="/tags/opengl/">opengl</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/fix-issues-projectile/">
+            <span class="next-text nav-default">Fix issues of Projectile for better project management</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'oracleyue-github-io';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:oracleyue@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.facebook.com/zuogong.yue" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="https://www.linkedin.com/in/zuogong-yue-2921a223" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://scholar.google.com/citations?user=b3AVP4QAAAAJ&amp;hl=en" class="iconfont icon-google" title="google"></a>
+      <a href="https://github.com/oracleyue" class="iconfont icon-github" title="github"></a>
+  <a href="https://oracleyue.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>oracleyue</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

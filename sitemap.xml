@@ -16,22 +16,8 @@
   </url>
   
   <url>
-    <loc>https://oracleyue.github.io/categories/emacs/</loc>
+    <loc>https://oracleyue.github.io/tags/cpp/</loc>
     <lastmod>2021-03-10T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://oracleyue.github.io/tags/emacs/</loc>
-    <lastmod>2021-03-10T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://oracleyue.github.io/post/fix-issues-projectile/</loc>
-    <lastmod>2021-03-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -44,8 +30,8 @@
   </url>
   
   <url>
-    <loc>https://oracleyue.github.io/tags/linux/</loc>
-    <lastmod>2021-03-05T00:00:00+00:00</lastmod>
+    <loc>https://oracleyue.github.io/tags/opengl/</loc>
+    <lastmod>2021-03-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -58,8 +44,8 @@
   </url>
   
   <url>
-    <loc>https://oracleyue.github.io/tags/programming/</loc>
-    <lastmod>2021-03-05T00:00:00+00:00</lastmod>
+    <loc>https://oracleyue.github.io/categories/programming/</loc>
+    <lastmod>2021-03-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -67,6 +53,48 @@
   <url>
     <loc>https://oracleyue.github.io/tags/</loc>
     <lastmod>2021-03-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://oracleyue.github.io/post/setup-opengl/</loc>
+    <lastmod>2021-03-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://oracleyue.github.io/categories/emacs/</loc>
+    <lastmod>2021-03-09T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://oracleyue.github.io/tags/emacs/</loc>
+    <lastmod>2021-03-09T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://oracleyue.github.io/post/fix-issues-projectile/</loc>
+    <lastmod>2021-03-05T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://oracleyue.github.io/tags/linux/</loc>
+    <lastmod>2021-03-05T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://oracleyue.github.io/tags/programming/</loc>
+    <lastmod>2021-03-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -199,14 +227,14 @@
   
   <url>
     <loc>https://oracleyue.github.io/tags/notes/</loc>
-    <lastmod>2021-03-10T00:00:00+00:00</lastmod>
+    <lastmod>2021-03-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://oracleyue.github.io/post/emacs-editing/</loc>
-    <lastmod>2021-03-10T00:00:00+00:00</lastmod>
+    <lastmod>2021-03-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
