@@ -6,7 +6,16 @@
     <description>Recent content in python on Icarus&#39;s Wings - A blog of oracleyue</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 23 Feb 2021 22:05:07 +1100</lastBuildDate><atom:link href="https://oracleyue.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://oracleyue.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tutorial on basic SSH and Jupyter Notebook</title>
+      <link>https://oracleyue.github.io/post/ssh-jupyter-guides/</link>
+      <pubDate>Fri, 15 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://oracleyue.github.io/post/ssh-jupyter-guides/</guid>
+      <description>Setup your SSH access Please go through the following procedure to set up your SSH access to your group servers. Generate your SSH key-pair by ssh-keygen -t rsa -b 4096. For more, refer to https://docs.gitlab.com/ee/ssh/. Contact your server admin and send him/her your SSH pub key ~/.ssh/id_rsa.pub, to set up your SSH pub key for authentication. (WARNING: DO NOT send your private key ~/.ssh/id_rsa and keep it safe!) Edit ~/.ssh/config</description>
+    </item>
+    
     <item>
       <title>How to convert DJVU to PDF with table of contents</title>
       <link>https://oracleyue.github.io/post/djvu2pdf_with_toc/</link>

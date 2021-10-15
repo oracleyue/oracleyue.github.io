@@ -6,7 +6,7 @@
     <description>Recent content on Icarus&#39;s Wings - A blog of oracleyue</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 10 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://oracleyue.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://oracleyue.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
       <link>https://oracleyue.github.io/about/</link>
@@ -17,6 +17,15 @@
  Biography Work Experience   Apr 2019 - Present: Postdoctoral fellow at School of Electrical Engineering and Telecommunications, the University of New South Wales, Sydney, Australia
   Mar 2018 - Mar 2019: Postdoctoral research associate and PhD at Luxembourg Centre for Systems Biomedicine, Luxembourg
   Research Interests  network inference/reconstruction system identification machine learning linear and nonlinear systems signal processing  To get more about his work, please visit</description>
+    </item>
+    
+    <item>
+      <title>Tutorial on basic SSH and Jupyter Notebook</title>
+      <link>https://oracleyue.github.io/post/ssh-jupyter-guides/</link>
+      <pubDate>Fri, 15 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://oracleyue.github.io/post/ssh-jupyter-guides/</guid>
+      <description>Setup your SSH access Please go through the following procedure to set up your SSH access to your group servers. Generate your SSH key-pair by ssh-keygen -t rsa -b 4096. For more, refer to https://docs.gitlab.com/ee/ssh/. Contact your server admin and send him/her your SSH pub key ~/.ssh/id_rsa.pub, to set up your SSH pub key for authentication. (WARNING: DO NOT send your private key ~/.ssh/id_rsa and keep it safe!) Edit ~/.ssh/config</description>
     </item>
     
     <item>

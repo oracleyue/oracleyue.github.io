@@ -24,7 +24,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.75.1 with theme even" />
+<meta name="generator" content="Hugo 0.87.0 with theme even" />
 
 
 <link rel="canonical" href="https://oracleyue.github.io/post/emacs-setup-md/" />
@@ -36,26 +36,22 @@
 
 
 
-<link href="/sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css" rel="stylesheet">
+<link href="/sass/main.min.154ed883776547b0e136be39b3037f61350da06f888d0868d1756a9463cd9520.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
 <meta property="og:title" content="Install Emacs on Mac OS X: daemon, automator app and multiple themes" />
 <meta property="og:description" content="This is a quick note on the setup of Emacs on Mac OS X." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://oracleyue.github.io/post/emacs-setup-md/" />
+<meta property="og:url" content="https://oracleyue.github.io/post/emacs-setup-md/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2018-05-13T00:00:00+00:00" />
 <meta property="article:modified_time" content="2018-05-13T00:00:00+00:00" />
+
 <meta itemprop="name" content="Install Emacs on Mac OS X: daemon, automator app and multiple themes">
-<meta itemprop="description" content="This is a quick note on the setup of Emacs on Mac OS X.">
-<meta itemprop="datePublished" content="2018-05-13T00:00:00+00:00" />
+<meta itemprop="description" content="This is a quick note on the setup of Emacs on Mac OS X."><meta itemprop="datePublished" content="2018-05-13T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2018-05-13T00:00:00+00:00" />
 <meta itemprop="wordCount" content="1159">
-
-
-
-<meta itemprop="keywords" content="Emacs,setup," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Emacs,setup," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Install Emacs on Mac OS X: daemon, automator app and multiple themes"/>
 <meta name="twitter:description" content="This is a quick note on the setup of Emacs on Mac OS X."/>
 
@@ -158,22 +154,22 @@
 <p>The simplest way to install Emacs on Mac is using <code>Homebrew</code>. Here is the commands:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ brew update
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ brew update
 $ brew install emacs --with-cocoa --with-gnutls
 </code></pre></td></tr></table>
 </div>
 </div><p>If you want to try a patched Emacs with transparent titlebar, install as follows</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ brew tap d12frosted/emacs-plus
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ brew tap d12frosted/emacs-plus
 $ brew install emacs-plus --with-natural-title-bar
 </code></pre></td></tr></table>
 </div>
@@ -182,31 +178,31 @@ $ brew install emacs-plus --with-natural-title-bar
 <p>If you have run the Emacs,  you can start an Emacs server by the emacs-lisp function <code>(server-start)</code>. Then you could anywhere open files in or create a frame of  this Emacs by <code>emacsclient -nc</code>. However, this is rarely used. An alternative way is to run Emacs as daemon</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ emacs --daemon
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ emacs --daemon
 </code></pre></td></tr></table>
 </div>
 </div><p>and open <code>emacsclient</code> in the same way.</p>
 <p>In my Mac, I run multiple Emacs servers (each Emacs process as daemon is called one server) to allow using multiple color themes (e.g. I use a light theme for text editing like Markdown, LaTeX, and use dark themes for coding). The way to do it is giving each daemon process a name so as to connect to it later via <code>emacsclient</code>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ emacs --daemon<span class="o">=</span>main
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ emacs --daemon<span class="o">=</span>main
 $ emacs --daemon<span class="o">=</span>coding
 </code></pre></td></tr></table>
 </div>
 </div><p>and later you could connect to them, e.g. the <code>main</code> server, by</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">emacsclient -nc --socket-name<span class="o">=</span>main
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">emacsclient -nc --socket-name<span class="o">=</span>main
 </code></pre></td></tr></table>
 </div>
 </div><p>To stop an Emacs server (the daemon process), you could call <code>(kill-emacs)</code> in any
@@ -244,7 +240,7 @@ repository</a>, which provides commands <code>es, ec, ecc</code>:</p>
 <p>Then, connect to an <code>Action</code> of <code>Run Script</code>, in which choose <code>bash</code> and fill the following codes</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -264,7 +260,7 @@ repository</a>, which provides commands <code>es, ec, ecc</code>:</p>
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">EMACS</span><span class="o">=</span>/usr/local/bin/emacs
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">EMACS</span><span class="o">=</span>/usr/local/bin/emacs
 
 <span class="k">if</span> <span class="o">[[</span> -z <span class="nv">$1</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
 	<span class="nv">$EMACS</span> --daemon<span class="o">=</span>main
@@ -298,10 +294,10 @@ and create shortcuts to run them. The whole workflow looks as</p>
 <p>Since Mac OS X by default only allows one Emacs instance (not via daemon), we may use the follow code to open multiple ones, which is created as a workflow in Alfred triggered by <code>em new</code>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">open -a /usr/local/opt/emacs-plus/Emacs.app -n
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">open -a /usr/local/opt/emacs-plus/Emacs.app -n
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="create-an-app-via-automator-to-open-files-in-emacs-clients-by-double-clicks">Create an app via Automator to open files in Emacs clients by double-clicks</h2>
@@ -323,7 +319,7 @@ to your Automator document.</p>
 <p>In the <code>Run AppleScript</code> building block, copy and paste the following codes:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -334,14 +330,14 @@ to your Automator document.</p>
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-applescript" data-lang="applescript"><span class="k">on</span> <span class="nb">run</span> <span class="p">{</span><span class="nv">input</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">}</span>
-       
+<pre tabindex="0" class="chroma"><code class="language-applescript" data-lang="applescript"><span class="k">on</span> <span class="nb">run</span> <span class="p">{</span><span class="nv">input</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">}</span>
+
     <span class="k">set</span> <span class="nv">posixPath</span> <span class="k">to</span> <span class="nv">POSIX</span> <span class="na">path</span> <span class="k">of</span> <span class="nv">input</span>
-       
+
     <span class="k">tell</span> <span class="nb">application</span> <span class="s2">&#34;iTerm&#34;</span> <span class="k">to</span> <span class="nb">do shell script</span> <span class="s2">&#34;/usr/local/bin/emacsclient -nc --socket-name=main &#34;</span> <span class="o">&amp;</span> <span class="nb">quoted form</span> <span class="k">of</span> <span class="nv">posixPath</span>
-       
+
     <span class="no">return</span> <span class="nv">input</span>
-       
+
 <span class="k">end</span> <span class="nb">run</span>
 </code></pre></td></tr></table>
 </div>
@@ -356,7 +352,7 @@ to your Automator document.</p>
 <p>First of all, we need to prepare a few variables and loading functions:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -381,7 +377,7 @@ to your Automator document.</p>
 </span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-lisp" data-lang="lisp"><span class="c1">;; Variables</span>
+<pre tabindex="0" class="chroma"><code class="language-lisp" data-lang="lisp"><span class="c1">;; Variables</span>
 <span class="p">(</span><span class="nb">defvar</span> <span class="nv">zyue-theme</span> <span class="no">nil</span>
   <span class="s">&#34;A symbol representing the color theme to load.&#34;</span><span class="p">)</span>
 <span class="p">(</span><span class="nb">defvar</span> <span class="nv">zyue-font</span> <span class="no">nil</span>
@@ -410,13 +406,13 @@ to your Automator document.</p>
 <p>Then we define different themes for each severs (the daemon processes), for examples:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-lisp" data-lang="lisp"><span class="p">(</span><span class="nb">when</span> <span class="vg">*is-mac*</span> <span class="p">(</span><span class="k">setq</span> <span class="nv">zyue-theme</span> <span class="ss">&#39;doom-nord-light</span><span class="p">))</span>
+<pre tabindex="0" class="chroma"><code class="language-lisp" data-lang="lisp"><span class="p">(</span><span class="nb">when</span> <span class="vg">*is-mac*</span> <span class="p">(</span><span class="k">setq</span> <span class="nv">zyue-theme</span> <span class="ss">&#39;doom-nord-light</span><span class="p">))</span>
 <span class="p">(</span><span class="nb">when</span> <span class="vg">*is-server-main*</span> <span class="p">(</span><span class="k">setq</span> <span class="nv">zyue-theme</span> <span class="ss">&#39;solarized</span><span class="p">))</span>
 <span class="p">(</span><span class="nb">when</span> <span class="vg">*is-terminal*</span> <span class="p">(</span><span class="k">setq</span> <span class="nv">zyue-theme</span> <span class="ss">&#39;spacemacs-dark</span><span class="p">))</span>
 <span class="p">(</span><span class="nb">when</span> <span class="vg">*is-server-coding*</span> <span class="p">(</span><span class="k">setq</span> <span class="nv">zyue-theme</span> <span class="ss">&#39;atom-one-dark</span><span class="p">))</span>
@@ -425,14 +421,14 @@ to your Automator document.</p>
 </div><p>where these constant variables are defined as follows in advance for convenience:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-lisp" data-lang="lisp"><span class="p">(</span><span class="nv">defconst</span> <span class="vg">*is-mac*</span> <span class="p">(</span><span class="nf">string-equal</span> <span class="nv">system-type</span> <span class="s">&#34;darwin&#34;</span><span class="p">))</span>
+<pre tabindex="0" class="chroma"><code class="language-lisp" data-lang="lisp"><span class="p">(</span><span class="nv">defconst</span> <span class="vg">*is-mac*</span> <span class="p">(</span><span class="nf">string-equal</span> <span class="nv">system-type</span> <span class="s">&#34;darwin&#34;</span><span class="p">))</span>
 <span class="p">(</span><span class="nv">defconst</span> <span class="vg">*is-linux*</span> <span class="p">(</span><span class="nf">string-equal</span> <span class="nv">system-type</span> <span class="s">&#34;gnu/linux&#34;</span><span class="p">))</span>
 <span class="p">(</span><span class="nv">defconst</span> <span class="vg">*is-terminal*</span> <span class="p">(</span><span class="nf">not</span> <span class="p">(</span><span class="nb">or</span> <span class="p">(</span><span class="nv">display-graphic-p</span><span class="p">)</span> <span class="p">(</span><span class="nv">daemonp</span><span class="p">))))</span>
 <span class="p">(</span><span class="nv">defconst</span> <span class="vg">*is-server-main*</span> <span class="p">(</span><span class="nf">string-equal</span> <span class="s">&#34;main&#34;</span> <span class="p">(</span><span class="nv">daemonp</span><span class="p">)))</span>
@@ -442,13 +438,13 @@ to your Automator document.</p>
 </div><p>The last step is to load or reload themes depending on specific Emacs running modes:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-lisp" data-lang="lisp"><span class="c1">;; Load the theme and fonts</span>
+<pre tabindex="0" class="chroma"><code class="language-lisp" data-lang="lisp"><span class="c1">;; Load the theme and fonts</span>
 <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="nv">daemonp</span><span class="p">)</span>
     <span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;after-make-frame-functions</span> <span class="nf">#&#39;</span><span class="nv">zyue-reload-ui-in-daemon</span><span class="p">)</span>
   <span class="p">(</span><span class="nv">zyue-init-ui</span><span class="p">))</span>
@@ -556,7 +552,7 @@ to your Automator document.</p>
 
 
 
-<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
 
 
 

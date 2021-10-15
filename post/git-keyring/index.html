@@ -24,7 +24,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.75.1 with theme even" />
+<meta name="generator" content="Hugo 0.87.0 with theme even" />
 
 
 <link rel="canonical" href="https://oracleyue.github.io/post/git-keyring/" />
@@ -36,7 +36,7 @@
 
 
 
-<link href="/sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css" rel="stylesheet">
+<link href="/sass/main.min.154ed883776547b0e136be39b3037f61350da06f888d0868d1756a9463cd9520.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -44,20 +44,16 @@
 <meta property="og:description" content="This article guides you how to set up keychain/keyring to avoid typing your
 password repeatedly, when using git." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://oracleyue.github.io/post/git-keyring/" />
+<meta property="og:url" content="https://oracleyue.github.io/post/git-keyring/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2019-10-05T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-10-05T00:00:00+00:00" />
+
 <meta itemprop="name" content="Keyring supports for Git to avoid repeating passwords">
 <meta itemprop="description" content="This article guides you how to set up keychain/keyring to avoid typing your
-password repeatedly, when using git.">
-<meta itemprop="datePublished" content="2019-10-05T00:00:00+00:00" />
+password repeatedly, when using git."><meta itemprop="datePublished" content="2019-10-05T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2019-10-05T00:00:00+00:00" />
 <meta itemprop="wordCount" content="433">
-
-
-
-<meta itemprop="keywords" content="linux,git,i3,setup," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="linux,git,i3,setup," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Keyring supports for Git to avoid repeating passwords"/>
 <meta name="twitter:description" content="This article guides you how to set up keychain/keyring to avoid typing your
 password repeatedly, when using git."/>
@@ -171,28 +167,28 @@ password repeatedly, when using git.</p>
 <p>To store passwords in the KDE wallet, you need to install <code>ksshaskpass</code> package:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">sudo pacman -S ksshaskpass
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">sudo pacman -S ksshaskpass
 </code></pre></td></tr></table>
 </div>
 </div><p>Then configure git to use it:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">git config --global core.askpass /usr/bin/ksshaskpass
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">git config --global core.askpass /usr/bin/ksshaskpass
 </code></pre></td></tr></table>
 </div>
 </div><p>Alternatively you can use <code>GIT_ASKPASS</code> environmental variable (in <code>.xinitrc</code> for i3):</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">export</span> <span class="nv">GIT_ASKPASS</span><span class="o">=</span><span class="s1">&#39;/usr/bin/ksshaskpass&#39;</span>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">export</span> <span class="nv">GIT_ASKPASS</span><span class="o">=</span><span class="s1">&#39;/usr/bin/ksshaskpass&#39;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>If you use KDE, you may set the environmental variable by making a script <code>~/.config/plasma-workspace/env/askpass.sh</code>, as suggested by Arch Wiki.</p>
@@ -200,38 +196,38 @@ password repeatedly, when using git.</p>
 <p>You can temporarily store passwords in memory by using credential helper:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">$ git config credential.helper <span class="s1">&#39;cache&#39;</span>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ git config credential.helper <span class="s1">&#39;cache&#39;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>By default credentials are stored for 15 minutes, to change number of seconds to cache credentials use timeout parameter (30 minutes in this example):</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">$ git config credential.helper <span class="s1">&#39;cache --timeout=1800&#39;</span>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ git config credential.helper <span class="s1">&#39;cache --timeout=1800&#39;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>To clear credentials cache before time out execute command:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">$ git credential-cache <span class="nb">exit</span>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ git credential-cache <span class="nb">exit</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>You may check manual pages for more information:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">$ man git-credential-cache
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ man git-credential-cache
 $ man gitcredentials
 </code></pre></td></tr></table>
 </div>
@@ -242,10 +238,10 @@ $ man gitcredentials
 <p>Firstly, install <code>kwallet</code> and <code>ksshaskpass</code> packages: (you may also install <code>kwalletmanager</code> as a GUI manager for passwords)</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">sudo pacman -S kwallet ksshaskpass
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">sudo pacman -S kwallet ksshaskpass
 </code></pre></td></tr></table>
 </div>
 </div><p>Then, we need to configure <code>ssh-agent</code> to connect to <code>kwallet</code> to retrieve passphrases:</p>
@@ -254,10 +250,10 @@ $ man gitcredentials
 <p>To run <code>ssh-agent</code> when X starts, add it in <code>.xinitrc</code>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">eval</span> <span class="k">$(</span>ssh-agent -s<span class="k">)</span>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">eval</span> <span class="k">$(</span>ssh-agent -s<span class="k">)</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -265,14 +261,14 @@ $ man gitcredentials
 <p>We then need to add the RSA keys to <code>ssh-agent</code> and ask <code>ssh-agent</code> to contact <code>kwallet</code> for passphrases. Create a script called <code>ssh-add.sh</code>, for example, containing the following:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="cp">#!/bin/sh
-</span><span class="cp"></span>    
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="cp">#!/bin/sh
+</span><span class="cp"></span>
 <span class="nb">export</span> <span class="nv">SSH_ASKPASS</span><span class="o">=</span>/usr/bin/ksshaskpass
 ssh-add &lt; /dev/null
 </code></pre></td></tr></table>
@@ -282,10 +278,10 @@ ssh-add &lt; /dev/null
 <p>Run <code>ssh-add.sh</code> whenever <code>i3</code> starts by configuring <code>~/.config/i3/config</code> (you may have to change the path of the script):</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">exec</span> --no-startup-id <span class="nv">$HOME</span>/bin/i3cmds/ssh-add.sh
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">exec</span> --no-startup-id <span class="nv">$HOME</span>/bin/i3cmds/ssh-add.sh
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -295,12 +291,12 @@ ssh-add &lt; /dev/null
 <p>Add the script <code>~/.config/autostart-scripts/ssh-add.sh</code>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="cp">#! /bin/bash
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="cp">#! /bin/bash
 </span><span class="cp"></span><span class="nb">export</span> <span class="nv">SSH_ASKPASS</span><span class="o">=</span>/usr/bin/ksshaskpass
 /usr/bin/ssh-add &lt;/dev/null
 </code></pre></td></tr></table>
@@ -309,11 +305,11 @@ ssh-add &lt; /dev/null
 <p>As suggested by Arch Wiki, you may set the environmental variable <code>SSH_ASKPASS</code> separately via a script <code>~/.config/plasma-workspace/env/askpass.sh</code>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="cp">#!/bin/sh
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="cp">#!/bin/sh
 </span><span class="cp"></span><span class="nb">export</span> <span class="nv">SSH_ASKPASS</span><span class="o">=</span><span class="s1">&#39;/usr/bin/ksshaskpass&#39;</span>
 </code></pre></td></tr></table>
 </div>
@@ -421,7 +417,7 @@ ssh-add &lt; /dev/null
 
 
 
-<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
 
 
 

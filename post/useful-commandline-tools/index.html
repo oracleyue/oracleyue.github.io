@@ -29,7 +29,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.75.1 with theme even" />
+<meta name="generator" content="Hugo 0.87.0 with theme even" />
 
 
 <link rel="canonical" href="https://oracleyue.github.io/post/useful-commandline-tools/" />
@@ -41,7 +41,7 @@
 
 
 
-<link href="/sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css" rel="stylesheet">
+<link href="/sass/main.min.154ed883776547b0e136be39b3037f61350da06f888d0868d1756a9463cd9520.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -66,9 +66,10 @@ basic video operations.
 
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://oracleyue.github.io/post/useful-commandline-tools/" />
+<meta property="og:url" content="https://oracleyue.github.io/post/useful-commandline-tools/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-02-18T20:53:15+11:00" />
 <meta property="article:modified_time" content="2021-02-18T20:53:15+11:00" />
+
 <meta itemprop="name" content="Useful commandline tools in Linux/Mac OS X">
 <meta itemprop="description" content="
 This article keeps collecting useful command-line tools in Linux or Mac
@@ -88,15 +89,10 @@ tricks on image operations, like resize, format conversion, etc.; and
 
 basic video operations.
 
-">
-<meta itemprop="datePublished" content="2021-02-18T20:53:15+11:00" />
+"><meta itemprop="datePublished" content="2021-02-18T20:53:15+11:00" />
 <meta itemprop="dateModified" content="2021-02-18T20:53:15+11:00" />
 <meta itemprop="wordCount" content="917">
-
-
-
-<meta itemprop="keywords" content="tools,linux," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="tools,linux," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Useful commandline tools in Linux/Mac OS X"/>
 <meta name="twitter:description" content="
 This article keeps collecting useful command-line tools in Linux or Mac
@@ -293,10 +289,10 @@ To check the available formats:</p>
 <div class="src src-sh">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">  youtube-dl -F VIDEO_URL</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">  youtube-dl -F VIDEO_URL</code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -305,10 +301,10 @@ After downloading, trim the suffixed random ID strings:</p>
 <div class="src src-sh">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">  prename <span class="s2">&#34;s/-[A-z0-9-_]*.mp4/.mp4/&#34;</span> *.mp4</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">  prename <span class="s2">&#34;s/-[A-z0-9-_]*.mp4/.mp4/&#34;</span> *.mp4</code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -317,10 +313,10 @@ To download the best video with MP4 format:</p>
 <div class="src src-sh">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">  youtube-dl -f <span class="s1">&#39;best[ext=mp4]&#39;</span> URL</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">  youtube-dl -f <span class="s1">&#39;best[ext=mp4]&#39;</span> URL</code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -329,10 +325,10 @@ To download the best MP4 with quality equal or less to 480p:</p>
 <div class="src src-sh">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">  youtube-dl -f <span class="s1">&#39;best[ext=mp4][height&lt;=480]&#39;</span> URL</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">  youtube-dl -f <span class="s1">&#39;best[ext=mp4][height&lt;=480]&#39;</span> URL</code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -341,10 +337,10 @@ To download the best MP4 with quality &lt;= 480p and the best audio in M4A:</p>
 <div class="src src-sh">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">  youtube-dl -f <span class="s1">&#39;bestvideo[ext=mp4][height&lt;=480]+bestaudio[ext=m4a]&#39;</span> URL</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">  youtube-dl -f <span class="s1">&#39;bestvideo[ext=mp4][height&lt;=480]+bestaudio[ext=m4a]&#39;</span> URL</code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -353,10 +349,10 @@ To download items (e.g., 1, 2, …, 10, 12, 18):</p>
 <div class="src src-sh">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">  youtube-dl --playlist-items 1-10,12,18 PLAYLIST_URL</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">  youtube-dl --playlist-items 1-10,12,18 PLAYLIST_URL</code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -367,10 +363,10 @@ extension:</p>
 <div class="src src-sh">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">  youtube-dl -o <span class="s2">&#34;./%(id)s.%(ext)s&#34;</span> URL</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">  youtube-dl -o <span class="s2">&#34;./%(id)s.%(ext)s&#34;</span> URL</code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -394,10 +390,10 @@ download) cookies to a place, e.g., <code class="verbatim">~/Downloads/cookies.t
 <div class="src src-sh">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">  youtube-dl --cookies ~/Downloads/cookies.txt -f <span class="s1">&#39;best&#39;</span> URL</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">  youtube-dl --cookies ~/Downloads/cookies.txt -f <span class="s1">&#39;best&#39;</span> URL</code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -429,10 +425,10 @@ Convert non-unicode Chinese texts to UTF-8:</p>
 <div class="src src-sh">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">  iconv -f gbk -t utf-8 IN.txt &gt; OUT.txt</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">  iconv -f gbk -t utf-8 IN.txt &gt; OUT.txt</code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -487,10 +483,10 @@ for its stable version 4)</p>
 <div class="src src-sh">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">  $ djvmcvt -i input.djvu /path/to/out/dir output-index.djvu</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">  $ djvmcvt -i input.djvu /path/to/out/dir output-index.djvu</code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -500,10 +496,10 @@ for its stable version 4)</p>
 <div class="src src-sh">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">  $ ddjvu --format<span class="o">=</span>tiff page.djvu page.tiff</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">  $ ddjvu --format<span class="o">=</span>tiff page.djvu page.tiff</code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -513,10 +509,10 @@ for its stable version 4)</p>
 <div class="src src-sh">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">  $ ddjvu --format<span class="o">=</span>pdf -quality<span class="o">=</span><span class="m">85</span> inputfile.djvu ouputfile.pdf</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">  $ ddjvu --format<span class="o">=</span>pdf -quality<span class="o">=</span><span class="m">85</span> inputfile.djvu ouputfile.pdf</code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -524,10 +520,10 @@ for its stable version 4)</p>
 <div class="src src-sh">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">  $ djvu2pdf in.djvu</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">  $ djvu2pdf in.djvu</code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -537,10 +533,10 @@ for its stable version 4)</p>
 <div class="src src-sh">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">  $ ddjvu --format<span class="o">=</span>tiff --page<span class="o">=</span>1-10 input.djvu output.tiff</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">  $ ddjvu --format<span class="o">=</span>tiff --page<span class="o">=</span>1-10 input.djvu output.tiff</code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -562,10 +558,10 @@ Add margins to PDF files:</p>
 <div class="src src-sh">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">  pdfcrop --margin <span class="s1">&#39;29 0 29 0&#39;</span> input.pdf output.pdf</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">  pdfcrop --margin <span class="s1">&#39;29 0 29 0&#39;</span> input.pdf output.pdf</code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -576,10 +572,10 @@ Add margins to PDF files:</p>
 <div class="src src-sh">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">  pdfjam --twoside --offset <span class="s1">&#39;1cm 0cm&#39;</span> file.pdf</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">  pdfjam --twoside --offset <span class="s1">&#39;1cm 0cm&#39;</span> file.pdf</code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -589,10 +585,10 @@ Add margins to PDF files:</p>
 <div class="src src-sh">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">  convert xc:none -page A4 blank.pdf</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">  convert xc:none -page A4 blank.pdf</code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -600,10 +596,10 @@ Add margins to PDF files:</p>
 <div class="src src-sh">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">  convert xc:none -page 842x595 blank.pdf</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">  convert xc:none -page 842x595 blank.pdf</code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -658,7 +654,7 @@ AppleDict, e.g., &#34;Merriam-Webster.Collegiate.Dictionary.BGL&#34;:</p>
 <div class="src src-sh">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -666,7 +662,7 @@ AppleDict, e.g., &#34;Merriam-Webster.Collegiate.Dictionary.BGL&#34;:</p>
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">  pyglossary --write-format<span class="o">=</span>AppleDict <span class="se">\
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">  pyglossary --write-format<span class="o">=</span>AppleDict <span class="se">\
 </span><span class="se"></span>             Merriam-Webster.Collegiate.Dictionary.BGL Merriam-Webster
 
   <span class="nb">cd</span> Merriam-Webster/
@@ -777,10 +773,10 @@ Use 8-cores to convert images to pdf in parallel:</p>
 <div class="src src-sh">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">  parallel -j <span class="m">8</span> convert <span class="o">{}</span> -density <span class="m">300</span> -quality <span class="m">100</span> <span class="o">{</span>.<span class="o">}</span>.pdf ::: *.png</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">  parallel -j <span class="m">8</span> convert <span class="o">{}</span> -density <span class="m">300</span> -quality <span class="m">100</span> <span class="o">{</span>.<span class="o">}</span>.pdf ::: *.png</code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -825,10 +821,10 @@ Convert flv to mp4 without losing quality:</p>
 <div class="src src-sh">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">  ffmpeg -i INPUT.flv -c:v libx264 -crf <span class="m">19</span> -strict experimental OUTPUT.mp4</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">  ffmpeg -i INPUT.flv -c:v libx264 -crf <span class="m">19</span> -strict experimental OUTPUT.mp4</code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -837,10 +833,10 @@ Alternatively, the following only changes container without reencoding:</p>
 <div class="src src-sh">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">  ffmpeg -i INPUT.flv -codec copy OUTPUT.mp4</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">  ffmpeg -i INPUT.flv -codec copy OUTPUT.mp4</code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -857,10 +853,10 @@ download video and audio files separately):</p>
 <div class="src src-sh">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">  avconv -y -i in.mp4 -i in.m4a -c copy out.mp4</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">  avconv -y -i in.mp4 -i in.m4a -c copy out.mp4</code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -969,7 +965,7 @@ download video and audio files separately):</p>
 
 
 
-<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
 
 
 

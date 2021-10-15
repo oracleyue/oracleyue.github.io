@@ -24,7 +24,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.75.1 with theme even" />
+<meta name="generator" content="Hugo 0.87.0 with theme even" />
 
 
 <link rel="canonical" href="https://oracleyue.github.io/post/setup-opengl/" />
@@ -36,7 +36,7 @@
 
 
 
-<link href="/sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css" rel="stylesheet">
+<link href="/sass/main.min.154ed883776547b0e136be39b3037f61350da06f888d0868d1756a9463cd9520.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -50,9 +50,10 @@ The OpenGL has been originally provided on macOS. However, to ease our
 development, we need to install GLEW and GLFW using Homebrew, by
 brew install glew glfw." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://oracleyue.github.io/post/setup-opengl/" />
+<meta property="og:url" content="https://oracleyue.github.io/post/setup-opengl/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-03-10T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-03-10T00:00:00+00:00" />
+
 <meta itemprop="name" content="The first step to OpenGL programming on macOS">
 <meta itemprop="description" content="
 
@@ -61,15 +62,10 @@ Setup
 
 The OpenGL has been originally provided on macOS. However, to ease our
 development, we need to install GLEW and GLFW using Homebrew, by
-brew install glew glfw.">
-<meta itemprop="datePublished" content="2021-03-10T00:00:00+00:00" />
+brew install glew glfw."><meta itemprop="datePublished" content="2021-03-10T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-03-10T00:00:00+00:00" />
 <meta itemprop="wordCount" content="347">
-
-
-
-<meta itemprop="keywords" content="cpp,opengl," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="cpp,opengl," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="The first step to OpenGL programming on macOS"/>
 <meta name="twitter:description" content="
 
@@ -225,10 +221,10 @@ The minimal compilation can be done by </p>
 <div class="src src-sh">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">  g++ main.cpp -o a.out -lglfw -lGLEW -framework OpenGL</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">  g++ main.cpp -o a.out -lglfw -lGLEW -framework OpenGL</code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -260,12 +256,12 @@ search paths in <code class="verbatim">.bashrc</code>:</p>
 <div class="src src-sh">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">  <span class="nb">export</span> <span class="nv">C_INCLUDE_PATH</span><span class="o">=</span>/usr/local/include:<span class="nv">$C_INCLUDE_PATH</span>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">  <span class="nb">export</span> <span class="nv">C_INCLUDE_PATH</span><span class="o">=</span>/usr/local/include:<span class="nv">$C_INCLUDE_PATH</span>
   <span class="nb">export</span> <span class="nv">CPLUS_INCLUDE_PATH</span><span class="o">=</span>/usr/local/include:<span class="nv">$CPLUS_INCLUDE_PATH</span>
   <span class="nb">export</span> <span class="nv">LIBRARY_PATH</span><span class="o">=</span>/usr/local/lib:<span class="nv">$LIBRARY_PATH</span></code></pre></td></tr></table>
 </div>
@@ -284,7 +280,7 @@ Here we provides a simple example of <code class="verbatim">makefile</code>, sup
 <div class="src src-makefile">
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -305,7 +301,7 @@ Here we provides a simple example of <code class="verbatim">makefile</code>, sup
 </span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-makefile" data-lang="makefile">  <span class="nv">OPENGLLIB</span><span class="o">=</span>-framework OpenGL
+<pre tabindex="0" class="chroma"><code class="language-makefile" data-lang="makefile">  <span class="nv">OPENGLLIB</span><span class="o">=</span>-framework OpenGL
   <span class="nv">GLEWLIB</span><span class="o">=</span> -lGLEW
   <span class="nv">GLFWLIB</span> <span class="o">=</span> -lglfw
   <span class="nv">LIBS</span><span class="o">=</span><span class="k">$(</span>OPENGLLIB<span class="k">)</span> <span class="k">$(</span>GLEWLIB<span class="k">)</span> <span class="k">$(</span>GLFWLIB<span class="k">)</span>
@@ -353,7 +349,11 @@ Here we provides a simple example of <code class="verbatim">makefile</code>, sup
           <a href="/tags/opengl/">opengl</a>
           </div>
       <nav class="post-nav">
-        
+        <a class="prev" href="/post/ssh-jupyter-guides/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Tutorial on basic SSH and Jupyter Notebook</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
         <a class="next" href="/post/fix-issues-projectile/">
             <span class="next-text nav-default">Fix issues of Projectile for better project management</span>
             <span class="next-text nav-mobile">Next</span>
@@ -427,7 +427,7 @@ Here we provides a simple example of <code class="verbatim">makefile</code>, sup
 
 
 
-<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
 
 
 
