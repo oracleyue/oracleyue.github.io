@@ -55,7 +55,7 @@
  If you haven&#39;t had an available SSH access, set up one first. And we assume you like to disable password logon and use key access only. Otherwise, it would be pretty easy.
   Create Unprivileged SFTP User Account   Create a group to assign SFTP user accounts to."><meta itemprop="datePublished" content="2021-12-28T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-12-28T00:00:00+00:00" />
-<meta itemprop="wordCount" content="286">
+<meta itemprop="wordCount" content="323">
 <meta itemprop="keywords" content="ssh,ftp,linux," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Set up a SFTP server using an available SSH connection"/>
 <meta name="twitter:description" content="Install and setup your SSH   The key of this blog is to deal with the conflict between key-only SSH and password-enabled SFTP.
@@ -203,6 +203,42 @@ username accordingly;</p>
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">  useradd -M -g sftpgroup -s /usr/sbin/nologin sftpuser</code></pre></td></tr></table>
+</div>
+</div>
+</div>
+<p>
+And set up its password via</p>
+<div class="src src-sh">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">  passwd sftpuser</code></pre></td></tr></table>
+</div>
+</div>
+</div>
+<p>
+If your like to create more groups and add the user to them, </p>
+<div class="src src-sh">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">  usermod -aG NEWGROUP sftpuser</code></pre></td></tr></table>
+</div>
+</div>
+</div>
+<p>
+or, change the default group</p>
+<div class="src src-sh">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">  usermod -g NEWGROUP sftpuser</code></pre></td></tr></table>
 </div>
 </div>
 </div>
@@ -357,7 +393,11 @@ A quick test could be:</p>
           <a href="/tags/linux/">linux</a>
           </div>
       <nav class="post-nav">
-        
+        <a class="prev" href="/post/matlab-lsp-for-emacs/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Adding MATLAB LSP support for Emacs (using lsp-bridge mode)</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
         <a class="next" href="/post/ssh-jupyter-guides/">
             <span class="next-text nav-default">Tutorial on basic SSH and Jupyter Notebook</span>
             <span class="next-text nav-mobile">Next</span>
@@ -414,7 +454,7 @@ A quick test could be:</p>
   <span class="copyright-year">
     &copy; 
     2017 - 
-    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>oracleyue</span>
+    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>oracleyue</span>
   </span>
 </div>
 

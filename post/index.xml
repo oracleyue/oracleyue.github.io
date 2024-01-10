@@ -6,7 +6,18 @@
     <description>Recent content in Posts on Icarus&#39;s Wings - A blog of oracleyue</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 28 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://oracleyue.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 10 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://oracleyue.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Adding MATLAB LSP support for Emacs (using lsp-bridge mode)</title>
+      <link>https://oracleyue.github.io/post/matlab-lsp-for-emacs/</link>
+      <pubDate>Wed, 10 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://oracleyue.github.io/post/matlab-lsp-for-emacs/</guid>
+      <description>Install server If you don&amp;rsquo;t have node and npm installed, install them first. Then, build the matlab LSP language server as follows:
+1 2 3  git clone https://github.com/mathworks/MATLAB-language-server cd MATLAB-language-server/ npm install &amp;amp;&amp;amp; npm run compile &amp;amp;&amp;amp; npm run package   After your installation, you need to keep this MATLAB-language-server/ for you use of LSP langserver in Emacs.
+MATLAB langserver json config 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  { &amp;#34;name&amp;#34;: &amp;#34;matlab-ls&amp;#34;, &amp;#34;languageId&amp;#34;: &amp;#34;matlab&amp;#34;, &amp;#34;command&amp;#34;: [ &amp;#34;/usr/local/bin/node&amp;#34;, &amp;#34;/Users/zyue/Programs/LSP/MATLAB-language-server/out/index.</description>
+    </item>
+    
     <item>
       <title>Set up a SFTP server using an available SSH connection</title>
       <link>https://oracleyue.github.io/post/sftp-setup/</link>

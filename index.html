@@ -116,6 +116,29 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/matlab-lsp-for-emacs/">Adding MATLAB LSP support for Emacs (using lsp-bridge mode)</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2024-01-10 </span>
+      <div class="post-category">
+          <a href="/categories/emacs/"> emacs </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Install server If you don&rsquo;t have node and npm installed, install them first. Then, build the matlab LSP language server as follows:
+1 2 3  git clone https://github.com/mathworks/MATLAB-language-server cd MATLAB-language-server/ npm install &amp;&amp; npm run compile &amp;&amp; npm run package   After your installation, you need to keep this MATLAB-language-server/ for you use of LSP langserver in Emacs.
+MATLAB langserver json config 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  { &#34;name&#34;: &#34;matlab-ls&#34;, &#34;languageId&#34;: &#34;matlab&#34;, &#34;command&#34;: [ &#34;/usr/local/bin/node&#34;, &#34;/Users/zyue/Programs/LSP/MATLAB-language-server/out/index.
+    </div>
+    <div class="read-more">
+      <a href="/post/matlab-lsp-for-emacs/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/sftp-setup/">Set up a SFTP server using an available SSH connection</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2021-12-28 </span>
@@ -217,34 +240,6 @@ the configuration files.</p>
   </div>
 </article>
 
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/fix-issues-projectile/">Fix issues of Projectile for better project management</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2021-03-05 </span>
-      <div class="post-category">
-          <a href="/categories/emacs/"> Emacs </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <h2 id="customize-project-detection">Customize project detection</h2>
-<p>We may like to control whether a folder should be guessed as a project
-root. Sometimes you may see a folder annoyingly being added to project
-list, e.g., HOME, Dropbox root. This is mostly likely due to default set
-of a long list for <code>projectile-project-root-files</code>. For better control,
-it is good to reset it. You may find the policy in the well-written
-<a href="https://docs.projectile.mx/projectile/projects.html#supported-project-types">Projectile
-Docs</a>.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/fix-issues-projectile/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
     </section>
   
   <nav class="pagination">
@@ -285,7 +280,7 @@ Docs</a>.</p>
   <span class="copyright-year">
     &copy; 
     2017 - 
-    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>oracleyue</span>
+    2024<span class="heart"><i class="iconfont icon-heart"></i></span><span>oracleyue</span>
   </span>
 </div>
 
