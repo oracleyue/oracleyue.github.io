@@ -6,7 +6,20 @@
     <description>Recent content in Posts on Icarus&#39;s Wings - A blog of oracleyue</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 10 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://oracleyue.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://oracleyue.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Internet control using Little Snitch vs proxy app</title>
+      <link>https://oracleyue.github.io/post/internet-control-firewall-vs-proxy/</link>
+      <pubDate>Fri, 21 Mar 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://oracleyue.github.io/post/internet-control-firewall-vs-proxy/</guid>
+      <description>&lt;p&gt;
+In macOS, you may like to use &lt;code class=&#34;verbatim&#34;&gt;Little Snitch&lt;/code&gt; to control app-specific
+Internet access; meanwhile the proxy app may also be used, which raises
+troubles on access leaking. The blog provides a good practice for your
+reference.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Adding MATLAB LSP support for Emacs (using lsp-bridge mode)</title>
       <link>https://oracleyue.github.io/post/matlab-lsp-for-emacs/</link>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>proxy on Icarus&#39;s Wings - A blog of oracleyue</title>
+    <link>https://oracleyue.github.io/tags/proxy/</link>
+    <description>Recent content in proxy on Icarus&#39;s Wings - A blog of oracleyue</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 21 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://oracleyue.github.io/tags/proxy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Internet control using Little Snitch vs proxy app</title>
+      <link>https://oracleyue.github.io/post/internet-control-firewall-vs-proxy/</link>
+      <pubDate>Fri, 21 Mar 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://oracleyue.github.io/post/internet-control-firewall-vs-proxy/</guid>
+      <description>&lt;p&gt;
+In macOS, you may like to use &lt;code class=&#34;verbatim&#34;&gt;Little Snitch&lt;/code&gt; to control app-specific
+Internet access; meanwhile the proxy app may also be used, which raises
+troubles on access leaking. The blog provides a good practice for your
+reference.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

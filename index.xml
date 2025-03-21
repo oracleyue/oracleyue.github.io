@@ -6,7 +6,7 @@
     <description>Recent content on Icarus&#39;s Wings - A blog of oracleyue</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 10 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://oracleyue.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://oracleyue.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
       <link>https://oracleyue.github.io/about/</link>
@@ -17,6 +17,19 @@
  Biography Work Experience   Apr 2019 - Present: Postdoctoral fellow at School of Electrical Engineering and Telecommunications, the University of New South Wales, Sydney, Australia
   Mar 2018 - Mar 2019: Postdoctoral research associate and PhD at Luxembourg Centre for Systems Biomedicine, Luxembourg
   Research Interests  network inference/reconstruction system identification machine learning linear and nonlinear systems signal processing  To get more about his work, please visit</description>
+    </item>
+    
+    <item>
+      <title>Internet control using Little Snitch vs proxy app</title>
+      <link>https://oracleyue.github.io/post/internet-control-firewall-vs-proxy/</link>
+      <pubDate>Fri, 21 Mar 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://oracleyue.github.io/post/internet-control-firewall-vs-proxy/</guid>
+      <description>&lt;p&gt;
+In macOS, you may like to use &lt;code class=&#34;verbatim&#34;&gt;Little Snitch&lt;/code&gt; to control app-specific
+Internet access; meanwhile the proxy app may also be used, which raises
+troubles on access leaking. The blog provides a good practice for your
+reference.&lt;/p&gt;</description>
     </item>
     
     <item>

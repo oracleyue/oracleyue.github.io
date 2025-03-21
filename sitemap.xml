@@ -9,14 +9,70 @@
   </url>
   
   <url>
-    <loc>https://oracleyue.github.io/post/matlab-lsp-for-emacs/</loc>
-    <lastmod>2024-01-10T00:00:00+00:00</lastmod>
+    <loc>https://oracleyue.github.io/categories/</loc>
+    <lastmod>2025-03-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://oracleyue.github.io/categories/</loc>
+    <loc>https://oracleyue.github.io/</loc>
+    <lastmod>2025-03-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://oracleyue.github.io/post/internet-control-firewall-vs-proxy/</loc>
+    <lastmod>2025-03-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://oracleyue.github.io/tags/mac/</loc>
+    <lastmod>2025-03-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://oracleyue.github.io/tags/network/</loc>
+    <lastmod>2025-03-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://oracleyue.github.io/categories/network/</loc>
+    <lastmod>2025-03-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://oracleyue.github.io/post/</loc>
+    <lastmod>2025-03-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://oracleyue.github.io/tags/proxy/</loc>
+    <lastmod>2025-03-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://oracleyue.github.io/tags/</loc>
+    <lastmod>2025-03-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://oracleyue.github.io/post/matlab-lsp-for-emacs/</loc>
     <lastmod>2024-01-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -37,13 +93,6 @@
   </url>
   
   <url>
-    <loc>https://oracleyue.github.io/</loc>
-    <lastmod>2024-01-10T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://oracleyue.github.io/tags/lsp/</loc>
     <lastmod>2024-01-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -58,21 +107,7 @@
   </url>
   
   <url>
-    <loc>https://oracleyue.github.io/post/</loc>
-    <lastmod>2024-01-10T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://oracleyue.github.io/tags/programming/</loc>
-    <lastmod>2024-01-10T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://oracleyue.github.io/tags/</loc>
     <lastmod>2024-01-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -402,13 +437,6 @@
   
   <url>
     <loc>https://oracleyue.github.io/tags/latex/</loc>
-    <lastmod>2017-12-04T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://oracleyue.github.io/tags/mac/</loc>
     <lastmod>2017-12-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
